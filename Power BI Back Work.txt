@@ -1,0 +1,140 @@
+TABLES MADE ---
+RIGHTYINFO
+LEFTYINFO
+QUERY1 -- all players excluding defenders
+
+
+MEASURES
+** Test and Test3 do the same thing
+Test = 
+CALCULATE(
+    COUNTROWS(LeftyInfo), ALLEXCEPT(LeftyInfo,LeftyInfo[Dominant Foot], LeftyInfo[Team], LeftyInfo[Seasons]), VALUES(LeftyInfo[Team]) 
+)
+
+Test3 = CALCULATE(
+            SUMX(VALUES(LeftyInfo[Team]),CALCULATE(COUNT(LeftyInfo[Player_Name])))
+)
+
+Max Recruits = IF(
+    COUNTROWS(VALUES(LeftyInfo[Team])) = 1,
+    [Test3],
+    MAXX(
+        VALUES(LeftyInfo[Team]),
+        [Test3]
+    )
+)
+
+LMaxTeam = 
+VAR b = CALCULATE(
+                FIRSTNONBLANK(LeftyInfo[Max Values], 1),
+                FILTER(ALL(LeftyInfo), LeftyInfo[SCount Values] = MAX(LeftyInfo[SCount Values])), VALUES(LeftyInfo[Max Values]))
+RETURN 
+    IF( 
+        ISFILTERED(LeftyInfo[Seasons]),
+        b, 
+        LOOKUPVALUE(LeftyInfo[Max Values], LeftyInfo[Count Values], MAX(LeftyInfo[Count Values]))
+        )
+
+Best LF = 
+VAR goals = LOOKUPVALUE(LeftyInfo[Goals], LeftyInfo[Left Player Rating], MAXX( FILTER(LeftyInfo, LeftyInfo[Position] = "Forward"), LeftyInfo[Left Player Rating]))
+RETURN 
+COMBINEVALUES(" scoring a career high of ", 
+                LOOKUPVALUE(LeftyInfo[Player_Name], LeftyInfo[Left Player Rating], MAXX( FILTER(LeftyInfo, LeftyInfo[Position] = "Forward"), LeftyInfo[Left Player Rating]))
+                , goals)
+
+
+Best LM = 
+VAR goals = LOOKUPVALUE(LeftyInfo[Goals], LeftyInfo[Left Player Rating], MAXX( FILTER(LeftyInfo, LeftyInfo[Position] = "Midfielder"), LeftyInfo[Left Player Rating]))
+RETURN 
+COMBINEVALUES(" scoring a career high of ", 
+                LOOKUPVALUE(LeftyInfo[Player_Name], LeftyInfo[Left Player Rating], MAXX( FILTER(LeftyInfo, LeftyInfo[Position] = "Midfielder"), LeftyInfo[Left Player Rating]))
+                , goals)
+
+Percentage of Lefties in League = 
+VAR a = COUNT(LeftyInfo[Player_Name]) 
+VAR b = COUNT(Query1[Player_Name])
+RETURN
+    FORMAT(DIVIDE(a,b), "0.00%")
+
+----- ALL THESE CALCULATIONS WERE APPLIED TO RIGHTYINFO TABLE
+
+
+
+CREATED COLUMNS
+
+LEFTYINFO ----
+
+
+Count Values = 
+VAR cValue = CALCULATE(SUMX(VALUES(LeftyInfo[Team]),CALCULATE(COUNTA(LeftyInfo[Player_Name]))), ALLEXCEPT(LeftyInfo,LeftyInfo[Team]))
+VAR pValue = CALCULATE(SUMX(VALUES(LeftyInfo[Team]),CALCULATE(COUNTA(LeftyInfo[Player_Name]))), ALLEXCEPT(LeftyInfo, LeftyInfo[Team], LeftyInfo[Player_Name]))  
+RETURN
+    IF(HASONEVALUE(LeftyInfo[Seasons]), pValue, cValue)
+
+SCount Values = 
+VAR pValue = CALCULATE(SUMX(VALUES(LeftyInfo[Player_Name]),CALCULATE(COUNTA(LeftyInfo[Player_Name]))), ALLEXCEPT(LeftyInfo, LeftyInfo[Seasons], LeftyInfo[Team]))  
+RETURN
+    pValue
+
+Max Values = 
+IF(
+    HASONEVALUE(LeftyInfo[Seasons]),
+    IF(
+        CALCULATE(MAX(LeftyInfo[SCount Values]), ALLEXCEPT(LeftyInfo, LeftyInfo[Seasons])) = LeftyInfo[SCount Values],
+        LeftyInfo[Team],
+        BLANK()),
+    IF(
+        CALCULATE(MAX(LeftyInfo[Count Values])) = LeftyInfo[Count Values],
+        LeftyInfo[Team],
+        BLANK())
+
+
+RIGHTYINFO ----
+
+
+
+Count R Values = 
+VAR cValue = CALCULATE(SUMX(VALUES(RightyInfo[Team]),CALCULATE(COUNTA(RightyInfo[Player_Name]))), ALLEXCEPT(RightyInfo,RightyInfo[Team]))
+VAR pValue = CALCULATE(SUMX(VALUES(RightyInfo[Team]),CALCULATE(COUNTA(RightyInfo[Player_Name]))), ALLEXCEPT(RightyInfo, RightyInfo[Team], RightyInfo[Player_Name]))  
+RETURN
+    IF(HASONEVALUE(RightyInfo[Seasons]), pValue, cValue)
+
+SCount Values = 
+VAR pValue = CALCULATE(SUMX(VALUES(RightyInfo[Player_Name]),CALCULATE(COUNTA(RightyInfo[Player_Name]))), ALLEXCEPT(RightyInfo, RightyInfo[Seasons], RightyInfo[Team]))  
+RETURN
+    pValue
+
+Max Values =
+IF(
+    HASONEVALUE(RightyInfo[Seasons]),
+    IF(
+        CALCULATE(MAX(RightyInfo[SCount Values]), ALLEXCEPT(RightyInfo, RightyInfo[Seasons])) = RightyInfo[SCount Values],
+        RightyInfo[Team],
+        BLANK()),
+    IF(
+        CALCULATE(MAX(RightyInfo[Count R Values])) = RightyInfo[Count R Values],
+        RightyInfo[Team],
+        BLANK())
+)
+
+
+
+QUERY1 ---
+
+
+
+Overall L Player Rating = 
+VAR a = (Query1[Goals] + (Query1[Headed_Goals]*0.5) + (Query1[Hit_Woodwork]*0.1) + (Query1[Penalties_Scored]) + (Query1[Freekicks_Scored]))
+RETURN 
+    IF(
+        Query1[Dominant Foot] = "Lefty",
+        a,
+        BLANK())
+
+Overall R Player Rating = 
+VAR a = (Query1[Goals] + (Query1[Headed_Goals]*0.5) + (Query1[Hit_Woodwork]*0.1) + (Query1[Penalties_Scored]) + (Query1[Freekicks_Scored]))
+RETURN 
+    IF(
+        Query1[Dominant Foot] = "Righty",
+        a,
+        BLANK())
