@@ -1,0 +1,1556 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.2">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="6" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>AttackData CSV.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player Name" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Season" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Goals" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Goals Per Match" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Headed Goals" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Goals with Right Foot" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Goals with Left Foot" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Penalties Scored" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Freekicks Scored" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Shots" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Shots on Target" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Shooting Accuracy" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Hit Woodwork" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+            <Field name="Big Chances Missed" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\AttackData CSV.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DefenceData CSV.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player Name" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Season" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Clean Sheets" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Goals Conceded" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Tackles" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Tackle Success %" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Last Man Tackles" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Blocked Shots" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Interceptions" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Clearances" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Headed Clearances" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Clearances Off Line" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Recoveries" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Duels Won" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Duels Lost" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="SuccessFul 50/50's" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Aerial Battles Won" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Aerial Battles Lost" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Own Goals" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+            <Field name="Errors Leading to Goal" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\DefenceData CSV.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\marsh\OneDrive\Documents\Python Scripts\PositionData CSV.txt</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>PositionData CSV.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player Name" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\PositionData CSV.txt" type="V_String" />
+            <Field name="Position" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\PositionData CSV.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings>
+        <Position x="174" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"Player Name"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="270" y="546" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="29" />
+          <Fields>
+            <Field name="Full Season" />
+            <Field name="Seasons" />
+          </Fields>
+          <Data>
+            <r>
+              <c>2020/2021</c>
+              <c>2020/21</c>
+            </r>
+            <r>
+              <c>2019/2020</c>
+              <c>2019/20</c>
+            </r>
+            <r>
+              <c>2018/2019</c>
+              <c>2018/19</c>
+            </r>
+            <r>
+              <c>2017/2018</c>
+              <c>2017/18</c>
+            </r>
+            <r>
+              <c>2016/2017</c>
+              <c>2016/17</c>
+            </r>
+            <r>
+              <c>2015/2016</c>
+              <c>2015/16</c>
+            </r>
+            <r>
+              <c>2014/2015</c>
+              <c>2014/15</c>
+            </r>
+            <r>
+              <c>2013/2014</c>
+              <c>2013/14</c>
+            </r>
+            <r>
+              <c>2012/2013</c>
+              <c>2012/13</c>
+            </r>
+            <r>
+              <c>2011/2012</c>
+              <c>2011/12</c>
+            </r>
+            <r>
+              <c>2010/2011</c>
+              <c>2010/11</c>
+            </r>
+            <r>
+              <c>2009/2010</c>
+              <c>2009/10</c>
+            </r>
+            <r>
+              <c>2008/2009</c>
+              <c>2008/09</c>
+            </r>
+            <r>
+              <c>2007/2008</c>
+              <c>2007/08</c>
+            </r>
+            <r>
+              <c>2006/2007</c>
+              <c>2006/07</c>
+            </r>
+            <r>
+              <c>2005/2006</c>
+              <c>2005/06</c>
+            </r>
+            <r>
+              <c>2004/2005</c>
+              <c>2004/05</c>
+            </r>
+            <r>
+              <c>2003/2004</c>
+              <c>2003/04</c>
+            </r>
+            <r>
+              <c>2002/2003</c>
+              <c>2002/03</c>
+            </r>
+            <r>
+              <c>2001/2002</c>
+              <c>2001/02</c>
+            </r>
+            <r>
+              <c>2000/2001</c>
+              <c>2000/01</c>
+            </r>
+            <r>
+              <c>1999/2000</c>
+              <c>1999/00</c>
+            </r>
+            <r>
+              <c>1998/1999</c>
+              <c>1998/99</c>
+            </r>
+            <r>
+              <c>1997/1998</c>
+              <c>1997/98</c>
+            </r>
+            <r>
+              <c>1996/1997</c>
+              <c>1996/97</c>
+            </r>
+            <r>
+              <c>1995/1996</c>
+              <c>1995/96</c>
+            </r>
+            <r>
+              <c>1994/1995</c>
+              <c>1994/95</c>
+            </r>
+            <r>
+              <c>1993/1994</c>
+              <c>1993/94</c>
+            </r>
+            <r>
+              <c>1992/1993</c>
+              <c>1992/93</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\marsh\OneDrive\Documents\Python Scripts\BasicInfo.txt</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>BasicInfo.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player Name" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\BasicInfo.txt" type="V_String" />
+            <Field name="Seasons" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\BasicInfo.txt" type="V_String" />
+            <Field name="Team" size="254" source="File: C:\Users\marsh\OneDrive\Documents\Python Scripts\BasicInfo.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings>
+        <Position x="174" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"Team"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">True</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="270" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Player Name" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings>
+        <Position x="174" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"Player Name","Season","Clean Sheets","Goals Conceded","Tackles","Tackle Success %","Last Man Tackles","Blocked Shots","Interceptions","Clearances","Headed Clearances","Clearances Off Line","Recoveries","Duels Won","Duels Lost","SuccessFul 50/50's","Aerial Battles Won","Aerial Battles Lost","Own Goals","Errors Leading to Goal"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="270" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Player Name" />
+            <Field field="Seasons" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="378" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>Seasons</FieldFind>
+          <FieldSearch>Seasons</FieldSearch>
+          <ReplaceFoundField>Full Season</ReplaceFoundField>
+          <FindMode>FindWhole</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="True" />
+          <ReplaceMode>Replace</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="270" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Player Name" />
+            <Field field="Season" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings>
+        <Position x="174" y="6" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"Player Name","Season"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="270" y="6" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Player Name" />
+            <Field field="Season" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="270" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="29" />
+          <Fields>
+            <Field name="Full Season" />
+            <Field name="Seasons" />
+          </Fields>
+          <Data>
+            <r>
+              <c>2020/2021</c>
+              <c>2020/21</c>
+            </r>
+            <r>
+              <c>2019/2020</c>
+              <c>2019/20</c>
+            </r>
+            <r>
+              <c>2018/2019</c>
+              <c>2018/19</c>
+            </r>
+            <r>
+              <c>2017/2018</c>
+              <c>2017/18</c>
+            </r>
+            <r>
+              <c>2016/2017</c>
+              <c>2016/17</c>
+            </r>
+            <r>
+              <c>2015/2016</c>
+              <c>2015/16</c>
+            </r>
+            <r>
+              <c>2014/2015</c>
+              <c>2014/15</c>
+            </r>
+            <r>
+              <c>2013/2014</c>
+              <c>2013/14</c>
+            </r>
+            <r>
+              <c>2012/2013</c>
+              <c>2012/13</c>
+            </r>
+            <r>
+              <c>2011/2012</c>
+              <c>2011/12</c>
+            </r>
+            <r>
+              <c>2010/2011</c>
+              <c>2010/11</c>
+            </r>
+            <r>
+              <c>2009/2010</c>
+              <c>2009/10</c>
+            </r>
+            <r>
+              <c>2008/2009</c>
+              <c>2008/09</c>
+            </r>
+            <r>
+              <c>2007/2008</c>
+              <c>2007/08</c>
+            </r>
+            <r>
+              <c>2006/2007</c>
+              <c>2006/07</c>
+            </r>
+            <r>
+              <c>2005/2006</c>
+              <c>2005/06</c>
+            </r>
+            <r>
+              <c>2004/2005</c>
+              <c>2004/05</c>
+            </r>
+            <r>
+              <c>2003/2004</c>
+              <c>2003/04</c>
+            </r>
+            <r>
+              <c>2002/2003</c>
+              <c>2002/03</c>
+            </r>
+            <r>
+              <c>2001/2002</c>
+              <c>2001/02</c>
+            </r>
+            <r>
+              <c>2000/2001</c>
+              <c>2000/01</c>
+            </r>
+            <r>
+              <c>1999/2000</c>
+              <c>1999/00</c>
+            </r>
+            <r>
+              <c>1998/1999</c>
+              <c>1998/99</c>
+            </r>
+            <r>
+              <c>1997/1998</c>
+              <c>1997/98</c>
+            </r>
+            <r>
+              <c>1996/1997</c>
+              <c>1996/97</c>
+            </r>
+            <r>
+              <c>1995/1996</c>
+              <c>1995/96</c>
+            </r>
+            <r>
+              <c>1994/1995</c>
+              <c>1994/95</c>
+            </r>
+            <r>
+              <c>1993/1994</c>
+              <c>1993/94</c>
+            </r>
+            <r>
+              <c>1992/1993</c>
+              <c>1992/93</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="270" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="29" />
+          <Fields>
+            <Field name="Full Season" />
+            <Field name="Seasons" />
+          </Fields>
+          <Data>
+            <r>
+              <c>2020/2021</c>
+              <c>2020/21</c>
+            </r>
+            <r>
+              <c>2019/2020</c>
+              <c>2019/20</c>
+            </r>
+            <r>
+              <c>2018/2019</c>
+              <c>2018/19</c>
+            </r>
+            <r>
+              <c>2017/2018</c>
+              <c>2017/18</c>
+            </r>
+            <r>
+              <c>2016/2017</c>
+              <c>2016/17</c>
+            </r>
+            <r>
+              <c>2015/2016</c>
+              <c>2015/16</c>
+            </r>
+            <r>
+              <c>2014/2015</c>
+              <c>2014/15</c>
+            </r>
+            <r>
+              <c>2013/2014</c>
+              <c>2013/14</c>
+            </r>
+            <r>
+              <c>2012/2013</c>
+              <c>2012/13</c>
+            </r>
+            <r>
+              <c>2011/2012</c>
+              <c>2011/12</c>
+            </r>
+            <r>
+              <c>2010/2011</c>
+              <c>2010/11</c>
+            </r>
+            <r>
+              <c>2009/2010</c>
+              <c>2009/10</c>
+            </r>
+            <r>
+              <c>2008/2009</c>
+              <c>2008/09</c>
+            </r>
+            <r>
+              <c>2007/2008</c>
+              <c>2007/08</c>
+            </r>
+            <r>
+              <c>2006/2007</c>
+              <c>2006/07</c>
+            </r>
+            <r>
+              <c>2005/2006</c>
+              <c>2005/06</c>
+            </r>
+            <r>
+              <c>2004/2005</c>
+              <c>2004/05</c>
+            </r>
+            <r>
+              <c>2003/2004</c>
+              <c>2003/04</c>
+            </r>
+            <r>
+              <c>2002/2003</c>
+              <c>2002/03</c>
+            </r>
+            <r>
+              <c>2001/2002</c>
+              <c>2001/02</c>
+            </r>
+            <r>
+              <c>2000/2001</c>
+              <c>2000/01</c>
+            </r>
+            <r>
+              <c>1999/2000</c>
+              <c>1999/00</c>
+            </r>
+            <r>
+              <c>1998/1999</c>
+              <c>1998/99</c>
+            </r>
+            <r>
+              <c>1997/1998</c>
+              <c>1997/98</c>
+            </r>
+            <r>
+              <c>1996/1997</c>
+              <c>1996/97</c>
+            </r>
+            <r>
+              <c>1995/1996</c>
+              <c>1995/96</c>
+            </r>
+            <r>
+              <c>1994/1995</c>
+              <c>1994/95</c>
+            </r>
+            <r>
+              <c>1993/1994</c>
+              <c>1993/94</c>
+            </r>
+            <r>
+              <c>1992/1993</c>
+              <c>1992/93</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="390" y="18" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>Season</FieldFind>
+          <FieldSearch>Seasons</FieldSearch>
+          <ReplaceFoundField>Full Season</ReplaceFoundField>
+          <FindMode>FindWhole</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="True" />
+          <ReplaceMode>Replace</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="378" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>Season</FieldFind>
+          <FieldSearch>Seasons</FieldSearch>
+          <ReplaceFoundField>Full Season</ReplaceFoundField>
+          <FindMode>FindWhole</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="True" />
+          <ReplaceMode>Replace</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="738" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="834" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Player Name" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Player Name" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Player Name" selected="False" rename="Right_Player Name" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="930" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Player Name" />
+            <Field field="Season" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Player Name" />
+            <Field field="Seasons" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Player Name" selected="False" rename="Right_Player Name" input="Right_" />
+                <SelectField field="Right_Seasons" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1314" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">aka:SQLEARNINGSERVER|||Alteryx View</File>
+          <Passwords />
+          <CachedCosmeticName />
+          <FormatSpecificOptions>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Create</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>aka:SQLEARNINGSERVER
+Query=Alteryx View</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="90" y="114" width="180" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>I am removing the redundancy data here</Text>
+          <Font name="Adobe Heiti Std R" size="12" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Yellow" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="366" y="102" width="240" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>I am making the text in column "Season" uniform here</Text>
+          <Font name="Adobe Heiti Std R" size="12" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Yellow" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="726" y="18" width="180" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>To the left I am removing Null rows</Text>
+          <Font name="Adobe Heiti Std R" size="12" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Yellow" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="55">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1050" y="174" width="204" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Here is the creation of "Dominant Foot" Column</Text>
+          <Font name="Adobe Heiti Std R" size="12" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Yellow" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="485" y="28" width="184" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Remove Null Rows</Caption>
+          <Style TextColor="#314c4a" FillColor="#0080c0" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="510" y="78" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="Player Name" selected="True" />
+                <Field field="Season" selected="True" />
+                <Field field="Goals" selected="True" />
+                <Field field="Goals Per Match" selected="True" />
+                <Field field="Headed Goals" selected="True" />
+                <Field field="Goals with Right Foot" selected="True" />
+                <Field field="Goals with Left Foot" selected="True" />
+                <Field field="Penalties Scored" selected="True" />
+                <Field field="Freekicks Scored" selected="True" />
+                <Field field="Shots" selected="True" />
+                <Field field="Shots on Target" selected="True" />
+                <Field field="Shooting Accuracy" selected="True" />
+                <Field field="Hit Woodwork" selected="True" />
+                <Field field="Big Chances Missed" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Player Name" size="26" source="Formula: [_CurrentField_]" type="V_String" />
+                <Field name="Season" size="9" source="Formula: [_CurrentField_]" type="String" />
+                <Field name="Goals" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Goals Per Match" source="Formula: [_CurrentField_]" type="Double" />
+                <Field name="Headed Goals" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Goals with Right Foot" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Goals with Left Foot" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Penalties Scored" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Freekicks Scored" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Shots" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Shots on Target" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Shooting Accuracy" size="4" source="Formula: [_CurrentField_]" type="String" />
+                <Field name="Hit Woodwork" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Big Chances Missed" source="Formula: [_CurrentField_]" type="Byte" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="36">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="582" y="78" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF [Goals] = 0 &amp;&amp;&#xA;[Goals Per Match] = 0 &amp;&amp; &#xA;[Headed Goals] = 0 &amp;&amp; &#xA;[Goals with Right Foot] = 0 &amp;&amp; &#xA;[Goals with Left Foot] = 0 &amp;&amp; &#xA;[Penalties Scored] = 0 &amp;&amp; &#xA;[Freekicks Scored] = 0 &amp;&amp; &#xA;[Shots] = 0 THEN&#xA;'Delete' ELSE&#xA;'No' ENDIF" field="Deletion" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Deletion = IF [Goals] = 0 &amp;&amp;
+[Goals Per Match] = 0 &amp;&amp; 
+[Headed Goals] = 0 &amp;&amp; 
+[G...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="714" y="77" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>Deletion</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-07-26 16:10:43</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>No</Operand>
+                  <StartDate>2021-07-26 16:10:43</StartDate>
+                  <EndDate>2021-07-26 16:10:43</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Deletion] = "No"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="485" y="209" width="184" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Remove Null Rows</Caption>
+          <Style TextColor="#314c4a" FillColor="#0080c0" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="510" y="258" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="Player Name" selected="True" />
+                <Field field="Season" selected="True" />
+                <Field field="Clean Sheets" selected="True" />
+                <Field field="Goals Conceded" selected="True" />
+                <Field field="Tackles" selected="True" />
+                <Field field="Tackle Success %" selected="True" />
+                <Field field="Last Man Tackles" selected="True" />
+                <Field field="Blocked Shots" selected="True" />
+                <Field field="Interceptions" selected="True" />
+                <Field field="Clearances" selected="True" />
+                <Field field="Headed Clearances" selected="True" />
+                <Field field="Clearances Off Line" selected="True" />
+                <Field field="Recoveries" selected="True" />
+                <Field field="Duels Won" selected="True" />
+                <Field field="Duels Lost" selected="True" />
+                <Field field="SuccessFul 50/50's" selected="True" />
+                <Field field="Aerial Battles Won" selected="True" />
+                <Field field="Aerial Battles Lost" selected="True" />
+                <Field field="Own Goals" selected="True" />
+                <Field field="Errors Leading to Goal" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Player Name" size="25" source="Formula: [_CurrentField_]" type="V_String" />
+                <Field name="Season" size="9" source="Formula: [_CurrentField_]" type="String" />
+                <Field name="Clean Sheets" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Goals Conceded" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Tackles" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Tackle Success %" size="4" source="Formula: [_CurrentField_]" type="String" />
+                <Field name="Last Man Tackles" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Blocked Shots" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Interceptions" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Clearances" source="Formula: [_CurrentField_]" type="Int16" />
+                <Field name="Headed Clearances" source="Formula: [_CurrentField_]" type="Int16" />
+                <Field name="Clearances Off Line" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Recoveries" source="Formula: [_CurrentField_]" type="Int16" />
+                <Field name="Duels Won" source="Formula: [_CurrentField_]" type="Int16" />
+                <Field name="Duels Lost" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="SuccessFul 50/50's" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Aerial Battles Won" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Aerial Battles Lost" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Own Goals" source="Formula: [_CurrentField_]" type="Byte" />
+                <Field name="Errors Leading to Goal" source="Formula: [_CurrentField_]" type="Byte" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="594" y="258" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF [Clean Sheets] = 0 &amp;&amp;&#xA;[Goals Conceded] = 0 &amp;&amp;&#xA;[Tackles] = 0 &amp;&amp;&#xA;[Last Man Tackles] = 0 &amp;&amp;&#xA;[Blocked Shots] = 0 &amp;&amp;&#xA;[Interceptions] = 0 &amp;&amp;&#xA;[Clearances] = 0 &amp;&amp;&#xA;[Headed Clearances] = 0 &amp;&amp;&#xA;[Clearances Off Line] = 0 &amp;&amp;&#xA;[Recoveries] = 0 &amp;&amp;&#xA;[Duels Won] = 0 &amp;&amp;&#xA;[Duels Lost] = 0 THEN&#xA;'Delete' ELSE&#xA;'No' ENDIF" field="Deletion" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Deletion = IF [Clean Sheets] = 0 &amp;&amp;
+[Goals Conceded] = 0 &amp;&amp;
+[Tackles] = 0 &amp;&amp;
+[La...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="714" y="258" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>Deletion</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-07-26 16:13:57</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>No</Operand>
+                  <StartDate>2021-07-26 16:13:57</StartDate>
+                  <EndDate>2021-07-26 16:13:57</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Deletion] = "No"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1049" y="257" width="241" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Dominant Foot Row Creation</Caption>
+          <Style TextColor="#314c4a" FillColor="#ff0000" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="49">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1074" y="306" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF [Goals with Left Foot] &gt; [Goals with Right Foot] THEN &quot;Left Foot&quot;&#xA;ELSEIF [Goals with Left Foot] &lt; [Goals with Right Foot] THEN &quot;Right Foot&quot;&#xA;ELSE &quot;Ambidextrous&quot; ENDIF" field="Dominant Foot" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Dominant Foot = IF [Goals with Left Foot] &gt; [Goals with Right Foot] THEN "Left F...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="50">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1194" y="306" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>Dominant Foot</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2021-07-26 16:31:44</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>Left Foot</Operand>
+                  <StartDate>2021-07-26 16:31:44</StartDate>
+                  <EndDate>2021-07-26 16:31:44</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Dominant Foot] = "Left Foot"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="22" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="16" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="8" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output26" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="20" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Unique" />
+      <Destination ToolID="20" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="14" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output26" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Unique" />
+      <Destination ToolID="46" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="46" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output26" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="47" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Join" />
+      <Destination ToolID="47" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Unique" />
+      <Destination ToolID="27" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="27" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output26" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Unique" />
+      <Destination ToolID="26" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="26" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Join" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="38" Connection="True" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="41" Connection="True" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="True" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Incorporating SQL Server into Alteryx</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="764ef291-7b4c-4fbe-b11b-05b3282a8f61" />
+      <Telemetry>
+        <PreviousWorkflowId value="8ea326f6-30b7-4c45-8d71-fe35823d8a45" />
+        <OriginWorkflowId value="764ef291-7b4c-4fbe-b11b-05b3282a8f61" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
