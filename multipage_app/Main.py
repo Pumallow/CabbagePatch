@@ -20,7 +20,7 @@ with col1:
    </h1>""", unsafe_allow_html= True) 
    
   st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'>I hope to continually update this site with new content. Cheers! :D </h1>", unsafe_allow_html= True)
-  st.markdown("If you are interested in learning more feel free to check out my [LinkedIn](https://www.linkedin.com/in/mturner95/).", unsafe_allow_html= True)
+  st.markdown("If you are interested in connecting with me feel free to check out my [LinkedIn](https://www.linkedin.com/in/mturner95/).", unsafe_allow_html= True)
 with col2:
   pfp = Image.open("images/PFP.JPG")
   st.image(pfp)
