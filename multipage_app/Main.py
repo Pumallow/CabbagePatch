@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
-pfp = Image.open('./pics/PFP.jpg')
+pfp = Image.open('./pics/PFP.JPG')
 st.set_page_config(layout="wide")
 st.markdown("<h1 style='text-align: center; color: white;'>Marshal Turner's Data Science Website</h1>", unsafe_allow_html = True)
 st.write(
