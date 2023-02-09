@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-import openpyxl
+
 
 pfp = Image.open(r'E:\DataScience\Data Science 2\pics\Code Pic.jpg')
 avt = Image.open(r'E:\DataScience\Data Science 2\pics\AVT.jpg')
