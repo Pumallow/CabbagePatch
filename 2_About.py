@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-import openpyxl
 
 vf =  open(r'E:\DataScience\Data Science 2\pics\troy.mov', 'rb')
 vb = vf.read()
