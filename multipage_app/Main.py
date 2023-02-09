@@ -29,7 +29,7 @@ with col3:
 col1, col2, col3 = st.columns([1,1,1])
 with col1:
   st.video(data=vb)
-with col2
+with col2:
   with col3:
     st.markdown("""<h1 style= 'text-align: left; color: white; font-size: 20px;'> Beyond the career drive, I spend my time elsewhere with friends or working on other activities such as soccer, working out, or playing the piano. I look to make the most
     out of life which mostly entails laughs and jokes! The video below is one of many things I've created to mess with my friends.</h1>""", unsafe_allow_html= True) 
