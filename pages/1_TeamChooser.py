@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-import openpyxl
+
 
 
 data = pd.read_excel(io= r'E:\DataScience\Data Science 2/TeamData.xlsx', sheet_name='FINAL', usecols= 'A:V', header = 1)
