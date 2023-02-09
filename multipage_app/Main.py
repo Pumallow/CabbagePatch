@@ -4,6 +4,14 @@ import numpy as np
 from PIL import Image
 
 st.set_page_config(layout="wide")
+st.set_page_config(page_title="Marshal's Data Science")
+hide_default_format = """
+       <style>
+       #MainMenu {visibility: hidden; }
+       footer {visibility: hidden;}
+       </style>
+       """
+st.markdown(hide_default_format, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: white;'>Marshal Turner's Data Science Website</h1>", unsafe_allow_html = True)
 vf =  open(r'images/troy.mov', 'rb')
 vb = vf.read()
