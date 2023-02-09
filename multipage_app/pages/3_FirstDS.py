@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 pfp = Image.open('images/Code Pic.JPG')
-avt = Image.open('images/AVT.JPG')
+avt = Image.open('images/AvT.JPG')
 c1 = Image.open('images/Chart1.PNG')
 c2 = Image.open('images/Chart2.PNG')
 c3 = Image.open('images/Chart3.PNG')
