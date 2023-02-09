@@ -5,6 +5,8 @@ from PIL import Image
 
 st.set_page_config(layout="wide")
 st.markdown("<h1 style='text-align: center; color: white;'>Marshal Turner's Data Science Website</h1>", unsafe_allow_html = True)
+vf =  open(r'images/troy.mov', 'rb')
+vb = vf.read()
 
 col1, col2 = st.columns([1,1])
 with col1:
@@ -13,6 +15,13 @@ with col1:
     This ultimately led me to teach myself languages like SQL and Python as well as expose myself to software like Snowflake, Azure Databricks, Google BigQuery, PowerBi, Tableau, and more.
     Beyond the career drive, I spend my time elsewhere with friends or working on other activities such as soccer, working out, or playing the piano. I look to make the most
     out of life which mostly entails laughs and jokes! The video below is one of many things I've created to mess with my friends.</h1>""", unsafe_allow_html= True)
+  width = 50
+  width = max(width, 0.01)
+  side = max((100 - width) / 2, 0.01)
+
+  _, container, _ = st.columns([side, width, side])
+  container.video(data=vb)
+
   st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'>I hope to continually update this site with new content. Cheers! :D </h1>", unsafe_allow_html= True)
   st.markdown("If you are interested in learning more feel free to check out my [LinkedIn](https://www.linkedin.com/in/mturner95/).", unsafe_allow_html= True)
 with col2:
