@@ -12,7 +12,7 @@ width = 50
 width = max(width, 0.01)
 side = max((100 - width) / 2, 0.01)
 
-col1, col2 = st.beta_columns([3,1])
+col1, col2 = st.beta_columns([5,2])
 with col1: 
     st.markdown("""<h1 style= 'text-align: left; color: white; font-size: 20px;'> Here are some works I have built along my journey as a data analyst and data scientist to prove/better my skills.
       I am a born and raised Georgian! Graduating from Kennesaw State & University with a degree in Industrial and Systems Engineering, I found myself with a fascination in tech.
@@ -25,7 +25,7 @@ with col1:
 with col2:
   pfp = Image.open("images/PFP.JPG")
   st.image(pfp)
-col1, col2 = st.beta_columns([3,1])
+col1, col2 = st.beta_columns([2,5])
 with col1:
   st.video(data=vb)
 with col2:
