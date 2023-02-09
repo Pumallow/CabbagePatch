@@ -14,7 +14,7 @@ with col1:
     Beyond the career drive, I spend my time elsewhere with friends or working on other activities such as soccer, working out, or playing the piano. I look to make the most
     out of life which mostly entails laughs and jokes! The video below is one of many things I've created to mess with my friends.</h1>""", unsafe_allow_html= True)
   st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'>I hope to continually update this site with new content. Cheers! :D </h1>", unsafe_allow_html= True)
-  st.markdown('<h1 style= 'text-align: left; color: white; font-size: 20px;'>If you are interested in learning more feel free to check out my [LinkedIn](https://www.linkedin.com/in/mturner95/).</h1>', unsafe_allow_html= True)
+  st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'>If you are interested in learning more feel free to check out my [LinkedIn](https://www.linkedin.com/in/mturner95/).</h1>", unsafe_allow_html= True)
 with col2:
   pfp = Image.open("images/PFP.JPG")
   st.image(pfp)
