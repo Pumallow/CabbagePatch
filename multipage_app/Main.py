@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-from streamlit_image_select import image_select
 
 pfp = Image.open('images/PFP.jpg')
 st.set_page_config(layout="wide")
