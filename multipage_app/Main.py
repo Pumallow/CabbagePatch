@@ -8,7 +8,7 @@ st.markdown("<h1 style='text-align: center; color: white;'>Marshal Turner's Data
 
 col1, col2 = st.columns([1,1])
 with col1:
-  st.write(
+  st.markdown(
     """
     <h1 style = 'text-align: left; color: white; font-size: 20px;'>
     Here are some works I have built along my journey as a data analyst and data scientist to prove/better my skills. \n
