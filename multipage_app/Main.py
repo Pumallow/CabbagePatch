@@ -12,7 +12,7 @@ width = 50
 width = max(width, 0.01)
 side = max((100 - width) / 2, 0.01)
 
-col1, col2 = st.columns([1,1,1])
+col1, col2, col3 = st.columns([1,1,1])
 with col1, col2:
   st.markdown("""<h1 style= 'text-align: left; color: white; font-size: 20px;'> Here are some works I have built along my journey as a data analyst and data scientist to prove/better my skills.
     I am a born and raised Georgian! Graduating from Kennesaw State & University with a degree in Industrial and Systems Engineering, I found myself with a fascination in tech.
@@ -25,7 +25,7 @@ with col1, col2:
 with col3:
   pfp = Image.open("images/PFP.JPG")
   st.image(pfp)
-col1, col2 = st.columns([1,1,1])
+col1, col2, col3 = st.columns([1,1,1])
 with col2, col3:
   st.markdown("""<h1 style= 'text-align: left; color: white; font-size: 20px;'> Beyond the career drive, I spend my time elsewhere with friends or working on other activities such as soccer, working out, or playing the piano. I look to make the most
     out of life which mostly entails laughs and jokes! The video below is one of many things I've created to mess with my friends.</h1>""", unsafe_allow_html= True) 
