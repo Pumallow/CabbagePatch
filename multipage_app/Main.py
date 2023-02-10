@@ -33,8 +33,8 @@ with col1:
       I am a born and raised Georgian! Graduating from Kennesaw State & University with a degree in Industrial and Systems Engineering, I found myself with a fascination in tech.
       This ultimately led me to teach myself languages like SQL and Python as well as expose myself to software like Snowflake, Azure Databricks, Google BigQuery, PowerBi, Tableau, and more.
      </h1>""", unsafe_allow_html= True) 
-    st.write("""<h1 style= 'text-align: left; font-size: 20px;'>Udemy Course Certifications <br>
-    The Complete SQL Bootcamp by Jose Portilla <br>
+    st.write("""<h1 style= 'text-align: left; font-size: 35px;'>Udemy Course Certifications </h1> <br>
+    <h1 style= 'text-align: left; font-size: 20px;'>The Complete SQL Bootcamp by Jose Portilla <br>
     Advanced SQL: SQL Expert Certification Preparation by Tim Buchalka <br>
     Become a SQL Developer (SSRS, SSIS,SSAS, T-SQL, DW) by BlueLime Learning Institution <br>
     Complete Python Bootcamp: Go from Zero to Hero in Python 3 by Jose Portilla <br>
