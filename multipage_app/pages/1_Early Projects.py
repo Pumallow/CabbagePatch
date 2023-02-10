@@ -20,11 +20,11 @@ st.markdown("""June, 2021 <br>
 This project helped me land my first Data Analyst job at NTG. I combined my love for soccer with my fascination for data by web scraping 2400 + pages of data on the Premier League Website in python, grooming the gathered data in my local SQL host, then presenting an interactive Power BI Dashboard. Its purpose is to highlight the best left footed players/teams vs the best right footed players/teams.""", unsafe_allow_html= True)
 st.markdown("[ETL Project](https://www.linkedin.com/feed/update/urn:li:activity:6821946098987401216/)", unsafe_allow_html= True)
 col1, col2, col3 = st.columns([1,1,1])
-with col1:
+with col3:
     st.image(esq)
 with col2: 
     st.image(pl1)
-with col3:
+with col1:
     st.image(pl2)
 st.markdown("""July, 2021 <br>
 I took the ETL Project one step further by portraying the Transformation phases of the ETL Process with Alteryx after taking an introductory course.""", unsafe_allow_html= True)
