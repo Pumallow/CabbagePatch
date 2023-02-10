@@ -12,9 +12,11 @@ st.set_page_config(layout="wide", page_title="Marshal's Data Science")
 #        """
 # st.markdown(hide_default_format, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: white;'>Marshal Turner's Data Science Website</h1>", unsafe_allow_html = True)
+with open("images/2.9.23.pdf", "rb") as pdf_file:
+    PDFByte = pdf_file.read()
 scol1, scol2, scol3, scol4 = st.columns([5,1,1,5])
 with scol2:
-    st.download_button("Resume", "images/2.9.23.pdf")
+    st.download_button("Resume", data = PDFByte, file_name = "MarshalResume.pdf")         
 with scol3:
     st.markdown("[LinkedIn](https://www.linkedin.com/in/mturner95/)", unsafe_allow_html= True)
     
