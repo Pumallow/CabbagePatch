@@ -22,4 +22,4 @@ st.image(alt)
 st.markdown("""August, 2021 <br> 
 At this point in my journey, SQL had been used quite abit however, I wanted to gain a more holistic understanding of the language to solidify my confidence with technical interviews. I thought making an Adventure Works SQL challenge worksheet would
 be the solution. """, unsafe_allow_html= True)
-st.button("Download", data = PDFByte)
+st.download_button("Download AW Challenge", data = PDFByte, file_name = "AventureWorksChallenge.pdf")
