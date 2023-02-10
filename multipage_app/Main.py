@@ -16,7 +16,7 @@ scol1, scol2 = st.columns(2)
 with scol1:
     st.download_button("Download Resume", "images/2.9.23.pdf")
 with scol2:
-    st.markdown("[LinkedIn](https://www.linkedin.com/in/mturner95/).", unsafe_allow_html= True)
+    st.markdown("[LinkedIn](https://www.linkedin.com/in/mturner95/)", unsafe_allow_html= True)
     
 vf =  open(r'images/troy.mov', 'rb')
 vb = vf.read()
