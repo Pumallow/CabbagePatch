@@ -12,7 +12,7 @@ st.set_page_config(layout="wide", page_title="Marshal's Data Science")
 #        """
 # st.markdown(hide_default_format, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; '>Marshal Turner's Data Science Website</h1>", unsafe_allow_html = True)
-with open("images/2.9.23 Resume.pdf", "rb") as pdf_file:
+with open("images/Resume 2.10.2023.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
 scol1, scol2, scol3, scol4 = st.columns([5,1,1,5])
 with scol2:
