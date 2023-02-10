@@ -25,6 +25,15 @@ with col1:
       I am a born and raised Georgian! Graduating from Kennesaw State & University with a degree in Industrial and Systems Engineering, I found myself with a fascination in tech.
       This ultimately led me to teach myself languages like SQL and Python as well as expose myself to software like Snowflake, Azure Databricks, Google BigQuery, PowerBi, Tableau, and more.
      </h1>""", unsafe_allow_html= True) 
+    st.write("""Udemy Course Certifications \n
+    The Complete SQL Bootcamp by Jose Portilla, November 2019 \n
+    Advanced SQL: SQL Expert Certification Preparation by Tim Buchalka, January 2020 \n
+    Become a SQL Developer (SSRS, SSIS,SSAS, T-SQL, DW) by BlueLime Learning Institution, February 2021 \n
+    Complete Python Bootcamp: Go from Zero to Hero in Python 3 by Jose Portilla, February 2021 \n
+    Alteryx Bootcamp, July 2021 \n
+    Snowflake Decoded - Fundamentals and hands on Training, July 2021 \n
+    Machine Learning A-Z: Hands-On Python & R in Data Science April 2022 \n
+    Data Science in Layman’s Terms: Time Series Analysis September 2022 \n""")
     st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'> A menu for all my past projects is located on the left hand side of the screen (extend it by arrow in the top left corner). </h1>", unsafe_allow_html= True)
     st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'>I hope to continually update this site with new content. Cheers! :D </h1>", unsafe_allow_html= True)
     st.markdown("If you are interested in connecting with me, feel free to check out my [LinkedIn](https://www.linkedin.com/in/mturner95/).", unsafe_allow_html= True)
