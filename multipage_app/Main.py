@@ -12,7 +12,7 @@ st.set_page_config(layout="wide", page_title="Marshal's Data Science")
 #        """
 # st.markdown(hide_default_format, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: white;'>Marshal Turner's Data Science Website</h1>", unsafe_allow_html = True)
-scol1, scol2, scol3, scol4 = st.columns([10,1,1,10])
+scol1, scol2, scol3, scol4 = st.columns([5,1,1,5])
 with scol2:
     st.download_button("Download Resume", "images/2.9.23.pdf")
 with scol3:
