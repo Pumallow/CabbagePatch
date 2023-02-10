@@ -10,7 +10,7 @@ st.set_page_config(layout="wide", page_title="Marshal's Data Science")
 #        footer {visibility: hidden;}
 #        </style>
 #        """
-# st.markdown(hide_default_format, unsafe_allow_html=True)
+st.markdown(hide_default_format, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; '>Marshal Turner's Data Science Website</h1>", unsafe_allow_html = True)
 with open("images/Resume 2.10.2023.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
