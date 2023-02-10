@@ -25,10 +25,10 @@ with col1:
       I am a born and raised Georgian! Graduating from Kennesaw State & University with a degree in Industrial and Systems Engineering, I found myself with a fascination in tech.
       This ultimately led me to teach myself languages like SQL and Python as well as expose myself to software like Snowflake, Azure Databricks, Google BigQuery, PowerBi, Tableau, and more.
      </h1>""", unsafe_allow_html= True) 
-    col1, col2 = st.columns([1,1])
-    with col1:
+    scol1, scol2 = st.columns([1,1])
+    with scol1:
         st.download_button("Download Resume", "images/2.9.23.pdf")
-    with col2:
+    with scol2:
         st.markdown("If you are interested in connecting with me, feel free to check out my [LinkedIn](https://www.linkedin.com/in/mturner95/).", unsafe_allow_html= True)
     st.write("""Udemy Course Certifications \n
     The Complete SQL Bootcamp by Jose Portilla, November 2019 \n
