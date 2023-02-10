@@ -34,12 +34,12 @@ p = pfp.resize((270,245))
 a = avt.resize((250,264))
 
 st.set_page_config(layout="wide", page_title= "Data Analytics/Science Journey")
-st.markdown("""<h1 style= 'text-align: center; color: white; font-size: 40px'>To what extent does attendance and location effect the score for an Arsenal vs Tottenham match?</h1>""", unsafe_allow_html = True) 
+st.markdown("""<h1 style= 'text-align: center; font-size: 40px'>To what extent does attendance and location effect the score for an Arsenal vs Tottenham match?</h1>""", unsafe_allow_html = True) 
 st.sidebar.success("Pages to Peruse")
 st.image(avt)
 st.markdown(
     """
-    <h1 style = 'text-align: left; color: white; font-size: 15px;'> 
+    <h1 style = 'text-align: left; font-size: 15px;'> 
      My first Data Science Project.
      After completing the Machine Learning A-Z: Hands-On Python & R In Data Science Udemy course, this project served as a display of my understandings from the course. It entails Data Extraction (selenium webscraping),
      Exploratory Data Analysis, AI Modeling (Logistic Regressions, SVM, KNN), and model optimization (GridSearchCV). 
@@ -208,7 +208,7 @@ with col2:
 with col3:
     st.image(c5)
     st.markdown(
-        """<h1 style = 'text-align: left; color: white; font-size: 15px;'> We can see that attendance has a healthy bell curve shape (disregarding influx of lower attendance).
+        """<h1 style = 'text-align: left; font-size: 15px;'> We can see that attendance has a healthy bell curve shape (disregarding influx of lower attendance).
         The wins, losses, and ties are not far apart by any means. Spurs have won around 20 less than Arsenal (THAT'S BECAUSE ARSENAL IS BETTER) however, they've tied quite a bit. The trend for both Spurs and Arsenal scores and Location show to be normal.  
         </h1>
         """, unsafe_allow_html= True) 
@@ -225,7 +225,7 @@ htable.describe()
 """,language= "python")
 
 st.markdown(
-    """<h1 style = 'text-align: left; color: white; font-size: 15px;'> The parent table is then split by the location for each game (Home = "htable" / Away = "awtable") to further analyze
+    """<h1 style = 'text-align: left; font-size: 15px;'> The parent table is then split by the location for each game (Home = "htable" / Away = "awtable") to further analyze
     the discrepancies of each team's performance. This is to statistically solidify the notions behind a team having the "home advantage". </h1>
     <h1 style = 'text-align: center; color: white; font-size: 30px;'> Shown below is a description of the "Tottenham Stadium" dataset. </h1>
     """, unsafe_allow_html= True) 
@@ -235,7 +235,7 @@ with col1:
     st.image(hd)
 with col2:
     st.markdown(
-    """<h1 style = 'text-align: left; color: white; font-size: 15px;'> First things first, attendance falls below the parent average of 37K to 35K despite the HotSpur's stadium larger size and the standard deviation remains relatively stagnant around 19.5K. As expected, we see the average score of Spurs rise from 1.4 to 1.6 and the Arsenal
+    """<h1 style = 'text-align: left; font-size: 15px;'> First things first, attendance falls below the parent average of 37K to 35K despite the HotSpur's stadium larger size and the standard deviation remains relatively stagnant around 19.5K. As expected, we see the average score of Spurs rise from 1.4 to 1.6 and the Arsenal
      average score fall from 1.49 to 1.33. Following behind those 2 metrics is the "Winner" average falling from 0.9 to 0.81 (remember 0 represents Spurs winning). </h1>
     """, unsafe_allow_html= True) 
 
@@ -248,7 +248,7 @@ with col2:
     st.image(hc4)
 with col3:
     st.markdown(
-    """<h1 style = 'text-align: left; color: white; font-size: 15px;'> We can see that attendance has some what of a health bell curve shape (disregarding influx of lower attendance).
+    """<h1 style = 'text-align: left; font-size: 15px;'> We can see that attendance has some what of a health bell curve shape (disregarding influx of lower attendance).
     It is interesting to see that the wins, losses, and ties are not far apart by any means. 
     Spurs have won around 20 less than Arsenal (THAT'S BECAUSE ARSENAL IS BETTER) however, they've tied quite a bit. The trend for both Spurs and Arsenal scores and Location show normal trends.  
     </h1>
@@ -257,7 +257,7 @@ with col3:
 
 st.markdown(
     """
-    <h1 style = 'text-align: center; color: white; font-size: 30px;'> Shown below is a description of the "Emirates Stadium" dataset. </h1>
+    <h1 style = 'text-align: center; font-size: 30px;'> Shown below is a description of the "Emirates Stadium" dataset. </h1>
     """, unsafe_allow_html= True)
 
 col1, col2 = st.columns([1,1])
@@ -265,7 +265,7 @@ with col1:
     st.image(ad)
 with col2:
     st.markdown(
-    """<h1 style = 'text-align: left; color: white; font-size: 15px;'> In comparison to the overall performances, the attendance of the Emirates stadium exceeds the overall average attendance of Tottenham stadium with an average
+    """<h1 style = 'text-align: left; font-size: 15px;'> In comparison to the overall performances, the attendance of the Emirates stadium exceeds the overall average attendance of Tottenham stadium with an average
     attendance of 2,500 more (40,000). Arsenal goals per game average increase by 0.18 and Spurs score drop by 0.22 however the standard deviations for both vary little. 
     </h1>
     """, unsafe_allow_html= True)  
@@ -279,7 +279,7 @@ with col2:
     st.image(ac4)
 with col3:
     st.markdown(
-    """<h1 style = 'text-align: left; color: white; font-size: 15px;'> Emirates stadium seats an average of 5,000 more than the Tottenham stadium. The more surprising portion are the scores. There is a difference in performance for
+    """<h1 style = 'text-align: left; font-size: 15px;'> Emirates stadium seats an average of 5,000 more than the Tottenham stadium. The more surprising portion are the scores. There is a difference in performance for
     home vs away games for Spurs by nearly 0.5 goals per game as opposed to 0.3 goals per game performance by Arsenal. Based on the aggregate metrics and the Spurs chart one can argue that if the Spurs beat Arsenal in Emirates that the margin 
     would only by a deficit of 1 majority of the time. Further, with there being a lower standard deviation on the Winner column for Emirates stadium, speculations can be made that Arsenal do not play
     as well as the Spurs do at home but compensate by playing better Away. </h1>
@@ -288,7 +288,7 @@ with col3:
 
 st.markdown(
     """
-    <h1 style = 'text-align: center; color: white; font-size: 30px;'> Visual Depiction of Relationships between each Attribute </h1>
+    <h1 style = 'text-align: center; font-size: 30px;'> Visual Depiction of Relationships between each Attribute </h1>
     """, unsafe_allow_html= True)
 
 col1, col2 = st.columns([1,1])
@@ -297,7 +297,7 @@ with col1:
 with col2:
     st.image(hmd)
     st.markdown(
-    """<h1 style = 'text-align: left; color: white; font-size: 15px;'> Using the seaborn heatmap, we actually can see the EXTENT of correlation between attendance and winning being -0.1231 which is not too serious but still impactful relationship.
+    """<h1 style = 'text-align: left; font-size: 15px;'> Using the seaborn heatmap, we actually can see the EXTENT of correlation between attendance and winning being -0.1231 which is not too serious but still impactful relationship.
     The relationship between attendance and location is shown to be strong (-0.12629). All other stated factors are supported by the visual. The Spurs Score and Location have a good relationship given they are a "home advantage" team as opposed to 
     Arsenal who has a bit less of a correlation between their perforamnce with where they play. On the other hand, Arsenal do play better with larger number of fans attending. One can argue that the rise in attendance at an away game for Arsenal was 
     contributed by the die hard Arsenal fans travelling with the team to the Tottenham Stadium. </h1>
@@ -332,7 +332,7 @@ print(X_train)
 
 st.markdown(
     """
-    <h1 style = 'text-align: left; color: white; font-size: 20px;'> Step 2: Structure the Models </h1>
+    <h1 style = 'text-align: left; font-size: 20px;'> Step 2: Structure the Models </h1>
     """, unsafe_allow_html= True)
 
 st.write("I was a bit overwhelmed by the level of detail you could dive into with each model so I decided to apply grid searches and thin my selection options.")
@@ -380,11 +380,11 @@ Best Logist Regression Score is:  0.4671171171171172 (46.7%) \n
 
 st.markdown(
     """
-    <h1 style = 'text-align: left; color: white; font-size: 20px;'> Step 3: Test the Modelss </h1>
+    <h1 style = 'text-align: left; font-size: 20px;'> Step 3: Test the Modelss </h1>
     """, unsafe_allow_html= True)
 
 st.markdown(  """
-    <h1 style = 'text-align: center; color: white; font-size: 20px;'> Logistic Regression Modeling </h1>
+    <h1 style = 'text-align: center; font-size: 20px;'> Logistic Regression Modeling </h1>
     """, unsafe_allow_html= True)
 
 st.code("""
@@ -423,7 +423,7 @@ with col2:
     st.image(lrcm)
 
 st.markdown(  """
-    <h1 style = 'text-align: center; color: white; font-size: 20px;'> KNN Modeling </h1>
+    <h1 style = 'text-align: center; font-size: 20px;'> KNN Modeling </h1>
     """, unsafe_allow_html= True)
 
 st.code("""
@@ -452,7 +452,7 @@ with col2:
     st.image(kcm)
 
 st.markdown(  """
-    <h1 style = 'text-align: center; color: white; font-size: 20px;'> Support Vector Modeling </h1>
+    <h1 style = 'text-align: center; font-size: 20px;'> Support Vector Modeling </h1>
     """, unsafe_allow_html= True)
 
 st.code("""
@@ -480,7 +480,7 @@ with col2:
 
 st.markdown(
     """
-    <h1 style = 'text-align: center; color: white; font-size: 30px;'> Conclusion </h1>
+    <h1 style = 'text-align: center; font-size: 30px;'> Conclusion </h1>
     """, unsafe_allow_html= True)
 
 st.write("""
