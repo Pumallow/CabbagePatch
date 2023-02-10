@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
-with open("images/Aventure Works Challenge.pdf", "rb") as pdf_file:
+with open("images/Adventure Works Challenge.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
 
 alt = Image.open('images/Alteryx.jpg')
@@ -22,3 +22,4 @@ st.image(alt)
 st.markdown("""August, 2021 <br> 
 At this point in my journey, SQL had been used quite abit however, I wanted to gain a more holistic understanding of the language to solidify my confidence with technical interviews. I thought making an Adventure Works SQL challenge worksheet would
 be the solution. """, unsafe_allow_html= True)
+st.button("Download", data = PDFByte)
