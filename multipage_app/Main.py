@@ -42,7 +42,7 @@ with col1:
     Snowflake Decoded - Fundamentals and hands on Training, July 2021 <br>
     Machine Learning A-Z: Hands-On Python & R in Data Science April 2022 <br>
     Data Science in Layman’s Terms: Time Series Analysis September 2022</h1>""", unsafe_allow_html= True)
-    st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'> A menu for all my past projects is located on the left hand side of the screen (extend it by arrow in the top left corner). </h1>", unsafe_allow_html= True)
+    #st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'> A menu for all my past projects is located on the left hand side of the screen (extend it by arrow in the top left corner). </h1>", unsafe_allow_html= True)
     st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'>I hope to continually update this site with new content. Cheers! :D </h1>", unsafe_allow_html= True)
 with col2:
   pfp = Image.open("images/PFP.JPG")
