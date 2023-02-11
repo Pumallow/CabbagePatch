@@ -14,7 +14,7 @@ esq = Image.open('images/ETL SQL.PNG')
 
 
 st.set_page_config(layout="wide", page_title= "Data Analytics/Science Journey")
-st.markdown("<h1 style= 'text-align: center; font-size: 40px' >Projects that Opened Doors for Me into Data Analytics</h1>", unsafe_allow_html = True)
+st.markdown("<h1 style= 'text-align: center; font-size: 40px' >Projects that Opened Doors for Me in Data Analytics</h1>", unsafe_allow_html = True)
 st.sidebar.success("Pages to Peruse")
 st.markdown("""June, 2021 <br>
 This project helped me land my first Data Analyst job at NTG. I combined my love for soccer with my fascination for data by web scraping 2400 + pages of data on the Premier League Website in python, grooming the gathered data in my local SQL host, then presenting an interactive Power BI Dashboard. Its purpose is to highlight the best left footed players/teams vs the best right footed players/teams.""", unsafe_allow_html= True)
