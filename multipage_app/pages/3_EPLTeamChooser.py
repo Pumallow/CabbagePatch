@@ -228,7 +228,7 @@ if st.button("Submit"):
     with col2:
         st.markdown(
         """<h1 style = 'text-align: left;font-size: 20px;'>Congratulations! Based on your quiz results, for the English Premier League 23/24 season you should support {}! Founded in {}, the team has amassed a fan base of over {} (in millions).
-        Last season, {} , came in {} place in the EPL! At the mid point of the 22/23 season, the team tallied {} passes, {} touches, and {} shots. On defense, {} had {} yellows however, that they all contributed to {} saves and {} cleansheets!
+        Last season, {} , came in {} place in the EPL! At the mid point of the 22/23 season, the team tallied {} passes, {} touches, and {} shots. On defense, {} had {} yellows however, they all contributed to {} saves and {} cleansheets!
         They scored a total of {} goals however were scored on {} times. 
         The team regularly runs a {} style of play with a {} formation.</h1>
         """.format(tea, creyear, fanb, tea, place, passes, touch, shots, tea, Yellow, saves, cleansheet, gf, ga, style, formation), unsafe_allow_html= True)
