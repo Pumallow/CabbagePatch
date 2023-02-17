@@ -270,7 +270,8 @@ if st.button("How Does it Work?"):
         </h1>
         """, unsafe_allow_html= True)
         st.code(
-        """dx['PD'] = dx['Passes'].div(dx['Passes'].sum(), axis= 0)
+        """#These are the coded calculations for "Percentage of Aggregate Totals"
+        dx['PD'] = dx['Passes'].div(dx['Passes'].sum(), axis= 0)
         dx['TD'] = dx['Touches'].div(dx['Touches'].sum(), axis= 0) 
         dx['SD'] = dx['Shots'].div(dx['Shots'].sum(), axis= 0)
         dx['We'] = dx['Wealth'].div(dx['Wealth'].sum(), axis= 0)
