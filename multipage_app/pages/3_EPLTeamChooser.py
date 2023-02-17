@@ -269,8 +269,8 @@ if st.button("How Does it Work?"):
         comparing one to another, I siloed each team's to highlight their most popular activities on/off the field and easily differentiate them from another.
         </h1>
         """, unsafe_allow_html= True)
-        st.code("""
-        dx['PD'] = dx['Passes'].div(dx['Passes'].sum(), axis= 0)
+        st.code(
+        """dx['PD'] = dx['Passes'].div(dx['Passes'].sum(), axis= 0)
         dx['TD'] = dx['Touches'].div(dx['Touches'].sum(), axis= 0) 
         dx['SD'] = dx['Shots'].div(dx['Shots'].sum(), axis= 0)
         dx['We'] = dx['Wealth'].div(dx['Wealth'].sum(), axis= 0)
