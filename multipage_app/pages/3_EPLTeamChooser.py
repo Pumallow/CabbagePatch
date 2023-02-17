@@ -238,108 +238,111 @@ if st.button("Submit"):
     Go {}!!!!! </h1>
     """.format(tea), unsafe_allow_html= True)
     
-   
+
 if st.button("How Does it Work?"):
-    x, y, z = gather()
-    data = pd.read_excel('td.xlsx', sheet_name='FINAL', usecols= 'A:Y', header = 1)
-    data.drop(columns = ['Unnamed: 0'], inplace = True)
-    st.markdown(
-    """
-    <h1 style = 'text-align: center; font-size: 30px;'> Extracting the Data </h1>
-    """, unsafe_allow_html= True)
-    st.markdown(
-    """
-    <h1 style = 'text-align: left; font-size: 15px;'> 
-    To successfully acquire the necessary data set shown below, I pulled from various sources across the internet on the latest EPL futbol stats. To best approach the task of building a "futbol team chooser quiz", I 
-    first thought of attributes in a team I think should pivotally describe someone's preferances as a spectator. The quiz needs to highlight over not only the team's style on the field but their culture, history, fanbase, brand, and other factors that
-    directly impact any fan's experience.   
-    </h1>
-    """, unsafe_allow_html= True)
-    st.dataframe(data, width=1000, height=300)  
-    st.markdown(
-    """
-    <h1 style = 'text-align: center; font-size: 30px;'> Preprocessing the Data </h1>
-    """, unsafe_allow_html= True)   
-    st.markdown(
-    """
-    <h1 style = 'text-align: left; font-size: 15px;'> 
-    Once the data was structured and cleaned, an immediate obstacle stood out amongst the rest: any AI model would be given an initial bias based on the performance of top tier teams like
-    Manchester City or Arsenal. As a result, any quiz result would end up being 1 of 3 responses rather than any 20. By converting a team's attributes to a "Percentage of the aggregate total" then
-    comparing one to another, I siloed each team's to highlight their most popular activities on/off the field and easily differentiate them from another.
-    </h1>
-    """, unsafe_allow_html= True)
-    st.code("""
-    dx['PD'] = dx['Passes'].div(dx['Passes'].sum(), axis= 0)
-    dx['TD'] = dx['Touches'].div(dx['Touches'].sum(), axis= 0) 
-    dx['SD'] = dx['Shots'].div(dx['Shots'].sum(), axis= 0)
-    dx['We'] = dx['Wealth'].div(dx['Wealth'].sum(), axis= 0)
-    dx['TC'] = dx['Trophy Count'].div(dx['Trophy Count'].sum(), axis= 0)
-    dx['FB'] = dx['Fan Base'].div(dx['Fan Base'].sum(), axis= 0)""",language= "python")
-    st.markdown(
-    """
-    <h1 style = 'text-align: left; font-size: 15px;'> 
-    The rest of my preprocessing included various selection statements to format all the "facets" of a futbol fan's experience down to 3 numbers (1,2,3).
-    </h1>
-    """, unsafe_allow_html= True)
-    st.code("""
-    #Here is 1 Example:
-    values = [1,2,3]
-    form = ((dx['Style'] == "High Press"), (dx['Style'] == "Defensive"), (dx['Style'] == "Mid"))
-    dx['formation'] = np.select(form, values, default= np.nan)
-    """, language= "python")
-    st.markdown(
-    """
-    <h1 style = 'text-align: center; font-size: 30px;'> Analyzing the Data </h1>
-    """, unsafe_allow_html= True)
-    fig = plt.figure(figsize=(10, 4))
-    sns.heatmap(y.corr(),  annot=True, fmt=".2f")
-    st.markdown(
-    """
-    <h1 style = 'text-align: left; font-size: 15px;'> 
-    Taking a closer look at the relations between categorical attributes we see that the "Formation" and "fan", "Age" and "primary color", and "Age" and "fan" share close bonds.
-    Seeing this heat map settled my nerves because I initially thought the correlations between fan, history, and growth would hold tight bonds. This later motivated me to attempt using
-    a scikit Decision Tree Classifier model however, after a bit of analysis I concluded that the Decision Tree would not perform as well as a Kernel Nearest Neighbor model. 
-    </h1>
-    """, unsafe_allow_html= True)
-    st.pyplot(fig)
-    st.markdown(
-    """
-    <h1 style = 'text-align: center; font-size: 30px;'> Modeling the Data </h1>
-    """, unsafe_allow_html= True)
-    st.markdown(
-            """
-            <h1 style = 'text-align: left; font-size: 15px;'> 
-            This later motivated me to attempt using a scikit Decision Tree Classifier model.
-            After a bit of analysis however, I concluded that the Decision Tree would not perform as well as a Kernel Nearest Neighbor model. 
-            A healthy model would show that the CCP (cost_complexity_pruning_path) would gradually decline in nodes over alphas until 1 remains. 
-            Even with custom weighting however, my model would drop in nodes in a sudden fashion (i.e. a single question essentially dictates the decision trees answer).
-            </h1>
-            """, unsafe_allow_html= True)
-    col1, col2 = st.columns([1,1])
-    with col1:
-        st.image(DTI)
-    with col2:
-        st.image(IA)
-    st.markdown(
-            """
-            <h1 style = 'text-align: left; font-size: 15px;'> 
-            The KNN model easily molded to my data set with the numerical categories I developed to "represent" each facet of a futbol fan's experience.
-            I modified the weights to rely on distance and to use a KD-tree with a euclidean distance given it was a multi-variable dataset with few rows.
-            </h1>
-            """, unsafe_allow_html= True)
-    st.code("classifier = KNN(n_neighbors= 20, weights = 'distance', algorithm= 'kd_tree', leaf_size= 100, p = 2)", language= "python")
-    st.markdown(
-    """
-    <h1 style = 'text-align: center; font-size: 30px;'> Conclusion </h1>
-    """, unsafe_allow_html= True)    
-    st.markdown(
-            """
-            <h1 style = 'text-align: left; font-size: 15px;'> 
-            Brainstorming questions to correctly develop a usable response from the user that then would be fed into a model proved to be the most difficult obstacle of this project.
-            My largest take aways came from the intense dive I made into decision tree modeling and statistical theory behind KD-tree vs Ball Tree. This project emphasized the growing pressures
-            to know how statistical theorums operate with preprocessed datasets given there is no established metric for accuracy or recall to fall back on for a quiz like this. 
-            </h1>
-            """, unsafe_allow_html= True)    
+    try:
+        x, y, z = gather()
+        data = pd.read_excel('td.xlsx', sheet_name='FINAL', usecols= 'A:Y', header = 1)
+        data.drop(columns = ['Unnamed: 0'], inplace = True)
+        st.markdown(
+        """
+        <h1 style = 'text-align: center; font-size: 30px;'> Extracting the Data </h1>
+        """, unsafe_allow_html= True)
+        st.markdown(
+        """
+        <h1 style = 'text-align: left; font-size: 15px;'> 
+        To successfully acquire the necessary data set shown below, I pulled from various sources across the internet on the latest EPL futbol stats. To best approach the task of building a "futbol team chooser quiz", I 
+        first thought of attributes in a team I think should pivotally describe someone's preferances as a spectator. The quiz needs to highlight over not only the team's style on the field but their culture, history, fanbase, brand, and other factors that
+        directly impact any fan's experience.   
+        </h1>
+        """, unsafe_allow_html= True)
+        st.dataframe(data, width=1000, height=300)  
+        st.markdown(
+        """
+        <h1 style = 'text-align: center; font-size: 30px;'> Preprocessing the Data </h1>
+        """, unsafe_allow_html= True)   
+        st.markdown(
+        """
+        <h1 style = 'text-align: left; font-size: 15px;'> 
+        Once the data was structured and cleaned, an immediate obstacle stood out amongst the rest: any AI model would be given an initial bias based on the performance of top tier teams like
+        Manchester City or Arsenal. As a result, any quiz result would end up being 1 of 3 responses rather than any 20. By converting a team's attributes to a "Percentage of the aggregate total" then
+        comparing one to another, I siloed each team's to highlight their most popular activities on/off the field and easily differentiate them from another.
+        </h1>
+        """, unsafe_allow_html= True)
+        st.code("""
+        dx['PD'] = dx['Passes'].div(dx['Passes'].sum(), axis= 0)
+        dx['TD'] = dx['Touches'].div(dx['Touches'].sum(), axis= 0) 
+        dx['SD'] = dx['Shots'].div(dx['Shots'].sum(), axis= 0)
+        dx['We'] = dx['Wealth'].div(dx['Wealth'].sum(), axis= 0)
+        dx['TC'] = dx['Trophy Count'].div(dx['Trophy Count'].sum(), axis= 0)
+        dx['FB'] = dx['Fan Base'].div(dx['Fan Base'].sum(), axis= 0)""",language= "python")
+        st.markdown(
+        """
+        <h1 style = 'text-align: left; font-size: 15px;'> 
+        The rest of my preprocessing included various selection statements to format all the "facets" of a futbol fan's experience down to 3 numbers (1,2,3).
+        </h1>
+        """, unsafe_allow_html= True)
+        st.code("""
+        #Here is 1 Example:
+        values = [1,2,3]
+        form = ((dx['Style'] == "High Press"), (dx['Style'] == "Defensive"), (dx['Style'] == "Mid"))
+        dx['formation'] = np.select(form, values, default= np.nan)
+        """, language= "python")
+        st.markdown(
+        """
+        <h1 style = 'text-align: center; font-size: 30px;'> Analyzing the Data </h1>
+        """, unsafe_allow_html= True)
+        fig = plt.figure(figsize=(10, 4))
+        sns.heatmap(y.corr(),  annot=True, fmt=".2f")
+        st.markdown(
+        """
+        <h1 style = 'text-align: left; font-size: 15px;'> 
+        Taking a closer look at the relations between categorical attributes we see that the "Formation" and "fan", "Age" and "primary color", and "Age" and "fan" share close bonds.
+        Seeing this heat map settled my nerves because I initially thought the correlations between fan, history, and growth would hold tight bonds. This later motivated me to attempt using
+        a scikit Decision Tree Classifier model however, after a bit of analysis I concluded that the Decision Tree would not perform as well as a Kernel Nearest Neighbor model. 
+        </h1>
+        """, unsafe_allow_html= True)
+        st.pyplot(fig)
+        st.markdown(
+        """
+        <h1 style = 'text-align: center; font-size: 30px;'> Modeling the Data </h1>
+        """, unsafe_allow_html= True)
+        st.markdown(
+                """
+                <h1 style = 'text-align: left; font-size: 15px;'> 
+                This later motivated me to attempt using a scikit Decision Tree Classifier model.
+                After a bit of analysis however, I concluded that the Decision Tree would not perform as well as a Kernel Nearest Neighbor model. 
+                A healthy model would show that the CCP (cost_complexity_pruning_path) would gradually decline in nodes over alphas until 1 remains. 
+                Even with custom weighting however, my model would drop in nodes in a sudden fashion (i.e. a single question essentially dictates the decision trees answer).
+                </h1>
+                """, unsafe_allow_html= True)
+        col1, col2 = st.columns([1,1])
+        with col1:
+            st.image(DTI)
+        with col2:
+            st.image(IA)
+        st.markdown(
+                """
+                <h1 style = 'text-align: left; font-size: 15px;'> 
+                The KNN model easily molded to my data set with the numerical categories I developed to "represent" each facet of a futbol fan's experience.
+                I modified the weights to rely on distance and to use a KD-tree with a euclidean distance given it was a multi-variable dataset with few rows.
+                </h1>
+                """, unsafe_allow_html= True)
+        st.code("classifier = KNN(n_neighbors= 20, weights = 'distance', algorithm= 'kd_tree', leaf_size= 100, p = 2)", language= "python")
+        st.markdown(
+        """
+        <h1 style = 'text-align: center; font-size: 30px;'> Conclusion </h1>
+        """, unsafe_allow_html= True)    
+        st.markdown(
+                """
+                <h1 style = 'text-align: left; font-size: 15px;'> 
+                Brainstorming questions to correctly develop a usable response from the user that then would be fed into a model proved to be the most difficult obstacle of this project.
+                My largest take aways came from the intense dive I made into decision tree modeling and statistical theory behind KD-tree vs Ball Tree. This project emphasized the growing pressures
+                to know how statistical theorums operate with preprocessed datasets given there is no established metric for accuracy or recall to fall back on for a quiz like this. 
+                </h1>
+                """, unsafe_allow_html= True) 
+    except:
+        st.write("Please take quiz before clicking this button :D")
 
 
 
