@@ -266,7 +266,7 @@ if st.button("How Does it Work?"):
         <h1 style = 'text-align: left; font-size: 15px;'> 
         Once the data was structured and cleaned, an immediate obstacle stood out amongst the rest: any AI model would be given an initial bias based on the performance of top tier teams like
         Manchester City or Arsenal. As a result, any quiz result would end up being 1 of 3 responses rather than any 20. By converting a team's attributes to a "Percentage of the aggregate total" then
-        comparing one to another, I siloed each team's to highlight their most popular activities on/off the field and easily differentiate them from another.
+        comparing one to another, I siloed each team's performance to highlight their most popular activities on/off the field and easily differentiate them from another.
         </h1>
         """, unsafe_allow_html= True)
         st.code(
