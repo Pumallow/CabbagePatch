@@ -8,7 +8,6 @@ from sklearn import tree
 from sklearn.preprocessing import StandardScaler
 import time
 import os
-import graphviz as gp
 from sklearn.neighbors import KNeighborsClassifier as KNN
 F1 = Image.open(r'E:\DataScience\Data Science 2\images\France1.jpg')
 K2 = Image.open(r'E:\DataScience\Data Science 2\images\KSA2.jpg')
