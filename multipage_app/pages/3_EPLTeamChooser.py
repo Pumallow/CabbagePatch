@@ -255,7 +255,7 @@ if st.button("How Does it Work?"):
     directly impact any fan's experience.   
     </h1>
     """, unsafe_allow_html= True)
-    st.dataframe(data, width=700, height=300)  
+    st.dataframe(data, width=1000, height=300)  
     st.markdown(
     """
     <h1 style = 'text-align: center; font-size: 30px;'> Preprocessing the Data </h1>
