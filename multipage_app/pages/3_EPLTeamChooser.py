@@ -22,7 +22,7 @@ e = E3.resize((400,225))
 
 st.set_page_config(layout="wide")
 st.markdown("""
-<div style = 'text-align: center; font-size: 50px'>WHAT EPL TEAM SHOULD YOU SUPPORT?</div>
+<div style = 'text-align: center; font-size: 50px'>WHICH EPL TEAM SHOULD YOU SUPPORT?</div>
 """, unsafe_allow_html=True)
 
 st.markdown("""
