@@ -32,13 +32,13 @@ st.markdown("""
 col1, col2, col3 = st.columns([1,1,1])
 with col1:
     st.image(f, caption="You can dribble, cross, or shoot.")
-    first = st.selectbox('How will you react?',['Dribble','Shoot','Pass'])
+    first = st.selectbox('How will you react to 1?',['Dribble','Shoot','Pass'])
 with col2:
     st.image(k, caption="You are dribbling across the top of the box.")
-    second = st.selectbox('How will you react?',['Dribble','Shoot','Pass'])
+    second = st.selectbox('How will you react to 2?',['Dribble','Shoot','Pass'])
 with col3:
     st.image(e, caption="The ball has been headed to you.")
-    third = st.selectbox('How will you react?',['Dribble','Shoot','Pass'])
+    third = st.selectbox('How will you react?to 3',['Dribble','Shoot','Pass'])
     
 fourth = st.selectbox("Which formation style is better?",['Offensive','Defensive','A Balance'])
 
