@@ -38,7 +38,7 @@ with col2:
     second = st.selectbox('How will you react to 2?',['Dribble','Shoot','Pass'])
 with col3:
     st.image(e, caption="The ball has been headed to you.")
-    third = st.selectbox('How will you react?to 3',['Dribble','Shoot','Pass'])
+    third = st.selectbox('How will you react to 3?',['Dribble','Shoot','Pass'])
     
 fourth = st.selectbox("Which formation style is better?",['Offensive','Defensive','A Balance'])
 
