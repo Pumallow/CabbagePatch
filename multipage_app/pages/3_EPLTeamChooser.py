@@ -9,12 +9,11 @@ from sklearn.preprocessing import StandardScaler
 import time
 import os
 from sklearn.neighbors import KNeighborsClassifier as KNN
-F1 = Image.open(r'E:\DataScience\Data Science 2\images\France1.jpg')
-K2 = Image.open(r'E:\DataScience\Data Science 2\images\KSA2.jpg')
-E3 = Image.open(r'E:\DataScience\Data Science 2\images\England3.jpg')
-E3 = Image.open(r'E:\DataScience\Data Science 2\images\England3.jpg')
-DTI = Image.open(r'E:\DataScience\Data Science 2\images\DTInstability.png')
-IA = Image.open(r'E:\DataScience\Data Science 2\images\ImpurityvAlpha.png')
+F1 = Image.open('images/France1.JPG')
+K2 = Image.open('images/KSA2.JPG')
+E3 = Image.open('images/England3.JPG')
+DTI = Image.open('images/DTInstability.png')
+IA = Image.open('images/ImpurityvAlpha.png')
 
 w,h = E3.size
 f = F1.resize((400,225))
@@ -73,7 +72,7 @@ def gather():
     }
     # 1. Let's first format the input
     #input = {'firstscen': 'Shoot', 'secondscen': 'Dribble', 'thirdscen': 'Dribble', 'style': 'Defensive', 'history': 'A lot', 'color': "Black'Yellow'", 'spectate': 'Blowouts', 'growth': 'Local Soccer Academies', 'fan': 'A wealthy club', 'play': 'tiki-taka (quick, clean passing)', 'age': 24}
-    data = pd.read_excel(r'E:\DataScience\Data Science 2\Streamlit\multipage_app\td.xlsx', sheet_name='FINAL', usecols= 'A:Y', header = 1)
+    data = pd.read_excel('td.xlsx', sheet_name='FINAL', usecols= 'A:Y', header = 1)
     inp = pd.DataFrame()
     values = [1,2,3]
     v2 = [1,2,3,4,5,6]
@@ -185,10 +184,10 @@ if st.button("Submit"):
     te = '' 
     tea = te.join(x['Team'].values) 
     team = tea + ".png"
-    files = os.listdir('E:/DataScience/Data Science 2/team logos/')
+    files = os.listdir('team logos/')
     for file in files:
         if file == team:
-            logo = Image.open(os.path.join('E:/DataScience/Data Science 2/team logos/', file))    
+            logo = Image.open(os.path.join('team logos/', file))    
     plc = 0
     w = 0
     d = 0
@@ -242,7 +241,7 @@ if st.button("Submit"):
    
 if st.button("How Does it Work?"):
     x, y, z = gather()
-    data = pd.read_excel(r'E:\DataScience\Data Science 2\Streamlit\multipage_app\td.xlsx', sheet_name='FINAL', usecols= 'A:Y', header = 1)
+    data = pd.read_excel('td.xlsx', sheet_name='FINAL', usecols= 'A:Y', header = 1)
     data.drop(columns = ['Unnamed: 0'], inplace = True)
     st.markdown(
     """
