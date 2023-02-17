@@ -32,13 +32,13 @@ st.markdown("""
 col1, col2, col3 = st.columns([1,1,1])
 with col1:
     st.image(f, caption="You can dribble, cross, or shoot.")
-    first = st.selectbox('How will you react to 1?',['Dribble','Shoot','Pass'])
+    first = st.selectbox('How will you react?',['Dribble','Shoot','Pass'])
 with col2:
     st.image(k, caption="You are dribbling across the top of the box.")
-    second = st.selectbox('How will you react to 2?',['Dribble','Shoot','Pass'])
+    second = st.selectbox('How will you react?',['Dribble','Shoot','Pass'])
 with col3:
     st.image(e, caption="The ball has been headed to you.")
-    third = st.selectbox('How will you react to 3?',['Dribble','Shoot','Pass'])
+    third = st.selectbox('How will you react?',['Dribble','Shoot','Pass'])
     
 fourth = st.selectbox("Which formation style is better?",['Offensive','Defensive','A Balance'])
 
@@ -52,7 +52,7 @@ eighth = st.selectbox('How would you like to recruit your team?', ['Local Soccer
 
 ninth = st.selectbox('Which is more important to you?', ['A large fanbase','A wealthy club', 'A High Trophy Count'])
 
-twelvth = st.slider('What is a good average age for your EPL team?',min_value = 24, max_value= 28, value = 26)
+twelvth = st.slider('What is a good average age for the players on your EPL team?',min_value = 24, max_value= 28, value = 26)
 
 def gather():
     l = ''
