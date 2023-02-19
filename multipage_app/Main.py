@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
+
+st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'>Expand the sidebar on the left hand side to see my projects!</h1>""", unsafe_allow_html= True)
+ 
 st.set_page_config(layout="wide", page_title="Marshal's Data Science")
 hide_default_format = """
        <style>
@@ -19,9 +22,7 @@ with scol2:
     st.download_button(label = "Resume", data = PDFByte, file_name = "MarshalResume.pdf")         
 with scol3:
     st.markdown("[LinkedIn](https://www.linkedin.com/in/mturner95/)", unsafe_allow_html= True)
-
-st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'>Expand the sidebar on the left hand side to see my projects!</h1>""", unsafe_allow_html= True)
-    
+   
 vf =  open(r'images/troy.mov', 'rb')
 vb = vf.read()
 
