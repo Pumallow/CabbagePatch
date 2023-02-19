@@ -16,7 +16,7 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 
 st.markdown("<h1 style='text-align: center; '>Marshal Turner's Data Science Website</h1>", unsafe_allow_html = True)
 
-st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'>Expand the sidebar on the left hand side to see my projects!</h1>""", unsafe_allow_html= True)
+st.markdown("""<h1 style= 'text-align: center; font-size: 20px;'>Expand the sidebar on the left hand side to see my projects!</h1>""", unsafe_allow_html= True)
  
 with open("images/Resume 2.10.2023.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
