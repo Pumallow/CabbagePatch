@@ -4,8 +4,7 @@ import numpy as np
 from PIL import Image
 
 
-st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'>Expand the sidebar on the left hand side to see my projects!</h1>""", unsafe_allow_html= True)
- 
+
 st.set_page_config(layout="wide", page_title="Marshal's Data Science")
 hide_default_format = """
        <style>
@@ -14,6 +13,9 @@ hide_default_format = """
        </style>
        """
 st.markdown(hide_default_format, unsafe_allow_html=True)
+
+st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'>Expand the sidebar on the left hand side to see my projects!</h1>""", unsafe_allow_html= True)
+ 
 st.markdown("<h1 style='text-align: center; '>Marshal Turner's Data Science Website</h1>", unsafe_allow_html = True)
 with open("images/Resume 2.10.2023.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
