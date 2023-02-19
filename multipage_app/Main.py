@@ -21,6 +21,10 @@ with open("images/Resume 2.10.2023.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
 scol1, scol2, scol3, scol4 = st.columns([5,1,1,5])
 with scol2:
+    st.markdown(""" div.stButton > button:first-child {
+       background-color: #00cc00;color:white;font-size:20px;height:3em;width:30em;border-radius:10px 10px 10px 10px;
+       }
+       """, unsafe_allow_html=True)
     st.download_button(label = "Resume", data = PDFByte, file_name = "MarshalResume.pdf")         
 with scol3:
     st.markdown("[LinkedIn](https://www.linkedin.com/in/mturner95/)", unsafe_allow_html= True)
