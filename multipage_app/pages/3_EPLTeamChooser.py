@@ -299,8 +299,7 @@ if st.button("How Does it Work?"):
         """
         <h1 style = 'text-align: left; font-size: 15px;'> 
         Taking a closer look at the relations between categorical attributes we see that the "Formation" and "fan", "Age" and "primary color", and "Age" and "fan" share close bonds.
-        Seeing this heat map settled my nerves because I initially thought the correlations between fan, history, and growth would hold tight bonds. This later motivated me to attempt using
-        a scikit Decision Tree Classifier model however, after a bit of analysis I concluded that the Decision Tree would not perform as well as a Kernel Nearest Neighbor model. 
+        Seeing this heat map settled my nerves because I initially thought the correlations between fan, history, and growth would hold tight bonds. 
         </h1>
         """, unsafe_allow_html= True)
         st.pyplot(fig)
@@ -326,7 +325,7 @@ if st.button("How Does it Work?"):
                 """
                 <h1 style = 'text-align: left; font-size: 15px;'> 
                 The KNN model easily molded to my data set with the numerical categories I developed to "represent" each facet of a futbol fan's experience.
-                I modified the weights to rely on distance and to use a KD-tree with a euclidean distance given it was a multi-variable dataset with few rows.
+                I modified the weights to rely a KD-tree with a euclidean distance given it was a multi-variable dataset with few rows.
                 </h1>
                 """, unsafe_allow_html= True)
         st.code("classifier = KNN(n_neighbors= 20, weights = 'distance', algorithm= 'kd_tree', leaf_size= 100, p = 2)", language= "python")
