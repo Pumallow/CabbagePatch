@@ -37,7 +37,7 @@ col1, col2 = st.columns([5,2])
 with col1: 
     st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> This website is dedicated to all of the studying/projects I commited to outside of work! 
       I am a born and raised Georgian! Graduating from Kennesaw State & University with a degree in Industrial and Systems Engineering, I found myself with a fascination in tech.
-      This ultimately led me to teach myself languages like SQL and Python as well as expose myself to software like Snowflake, Azure Databricks, Google BigQuery, PowerBi, Tableau, and more.
+      This ultimately led me to self-learn languages like SQL and Python as well as expose myself to software like Snowflake, Azure Databricks, Google BigQuery, PowerBi, Tableau, and more.
      </h1>""", unsafe_allow_html= True) 
     st.write("""<h1 style= 'text-align: center; font-size: 35px;'>Udemy Course Certifications </h1>
     <h1 style= 'text-align: left; font-size: 20px;'>The Complete SQL Bootcamp by Jose Portilla <br>
@@ -57,7 +57,7 @@ col1, col2 = st.columns([2,5])
 with col1:
   st.video(data=vb)
 with col2:
-  st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> Beyond the career drive, I spend my time elsewhere with friends or other doing other activities like soccer, working out, or playing the piano. I look to make the most
+  st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> Outside of my career activities, I spend my time socializing with friends, playing soccer, working out, and playing the piano. I look to make the most
   out of life which mostly entails laughs and jokes! The video to the left is one of many things I've created to mess with my friends.</h1>""", unsafe_allow_html= True) 
 
 
