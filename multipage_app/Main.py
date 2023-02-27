@@ -35,6 +35,8 @@ side = max((100 - width) / 2, 0.01)
 
 col1, col2 = st.columns([5,2])
 with col1: 
+    st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> "Do not say what you'll do. Do what you say."
+     </h1>""", unsafe_allow_html= True)
     st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> This website is dedicated to all of the studying/projects I commited to outside of work! 
       I am a born and raised Georgian! Graduating from Kennesaw State & University with a degree in Industrial and Systems Engineering, I found myself with a fascination in tech.
       This ultimately led me to self-learn languages like SQL and Python as well as expose myself to software like Snowflake, Azure Databricks, Google BigQuery, PowerBi, Tableau, and more.
