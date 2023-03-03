@@ -380,7 +380,7 @@ Best Logist Regression Score is:  0.4671171171171172 (46.7%) \n
 
 st.markdown(
     """
-    <h1 style = 'text-align: left; font-size: 20px;'> Step 3: Test the Modelss </h1>
+    <h1 style = 'text-align: left; font-size: 20px;'> Step 3: Test the Models </h1>
     """, unsafe_allow_html= True)
 
 st.markdown(  """
