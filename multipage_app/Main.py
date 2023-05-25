@@ -18,11 +18,11 @@ st.markdown("<h1 style='text-align: center; '>Marshal Turner's Data Science Webs
 
 st.markdown("""<h1 style= 'text-align: center; font-size: 20px;'>Expand the sidebar on the left hand side to see my projects!</h1>""", unsafe_allow_html= True)
  
-with open("images/MarshalResume.pdf", "rb") as pdf_file:
+with open("images/Data Resume.docx.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
 scol1, scol2, scol3, scol4 = st.columns([5,1,1,5])
 with scol2:
-    st.download_button(label = "Resume", data = PDFByte, file_name = "MarshalResume.pdf")         
+    st.download_button(label = "Resume", data = PDFByte, file_name = "Data Resume.docx.pdf")         
 with scol3:
     st.markdown("[LinkedIn](https://www.linkedin.com/in/mturner95/)", unsafe_allow_html= True)
    
