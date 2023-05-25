@@ -18,7 +18,7 @@ st.markdown("<h1 style='text-align: center; '>Marshal Turner's Data Science Webs
 
 st.markdown("""<h1 style= 'text-align: center; font-size: 20px;'>Expand the sidebar on the left hand side to see my projects!</h1>""", unsafe_allow_html= True)
  
-with open("images/Data Resume.pdf", "rb") as pdf_file:
+with open("images/MarshalResume.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
 scol1, scol2, scol3, scol4 = st.columns([5,1,1,5])
 with scol2:
@@ -49,7 +49,8 @@ with col1:
     Alteryx Bootcamp <br>
     Snowflake Decoded - Fundamentals and hands on Training <br>
     Machine Learning A-Z: Hands-On Python & R in Data Science <br>
-    Data Science in Layman’s Terms: Time Series Analysis </h1>""", unsafe_allow_html= True)
+    Data Science in Layman’s Terms: Time Series Analysis <br>
+    Currently enrolled in: EDX - SU23: Introduction to Analytics Modeling </h1>""", unsafe_allow_html= True)
     #st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'> A menu for all my past projects is located on the left hand side of the screen (extend it by arrow in the top left corner). </h1>", unsafe_allow_html= True)
     st.markdown("<h1 style= 'text-align: left; font-size: 20px;'>I hope to continually update this site with new content. Cheers! :D </h1>", unsafe_allow_html= True)
 with col2:
