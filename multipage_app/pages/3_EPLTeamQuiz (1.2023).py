@@ -293,8 +293,9 @@ if st.button("How Does it Work?"):
         """
         <h1 style = 'text-align: center; font-size: 30px;'> Analyzing the Data </h1>
         """, unsafe_allow_html= True)
-        plot = sns.heatmap(y.corr())
-        st.pyplot(plot.get_figure())
+        fig, ax = plt.subplots()
+        sns.heatmap(data = y.corr(), annot = True, ax= ax)
+        st.pyplot(fig)
         st.markdown(
         """
         <h1 style = 'text-align: left; font-size: 15px;'> 
