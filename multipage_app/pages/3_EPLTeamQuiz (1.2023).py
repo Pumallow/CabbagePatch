@@ -301,7 +301,7 @@ if st.button("How Does it Work?"):
         </h1>
         """, unsafe_allow_html= True)
         plot = sns.heatmap(y.corr(),  annot=True, fmt=".2f")
-        st.pyplot(plot.fig)
+        st.pyplot(plot.get_figure())
         st.markdown(
         """
         <h1 style = 'text-align: center; font-size: 30px;'> Modeling the Data </h1>
