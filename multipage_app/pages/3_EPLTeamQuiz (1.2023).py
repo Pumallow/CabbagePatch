@@ -293,7 +293,7 @@ if st.button("How Does it Work?"):
         """
         <h1 style = 'text-align: center; font-size: 30px;'> Analyzing the Data </h1>
         """, unsafe_allow_html= True)
-        fig, ax = plt.subplots()
+        #fig, ax = plt.subplots()
         st.table(y.corr())
         #sns.heatmap(data = y.corr(), annot = True, ax= ax)
         #st.pyplot(fig)
