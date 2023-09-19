@@ -300,8 +300,8 @@ if st.button("How Does it Work?"):
         Seeing this heat map settled my nerves because I initially thought the correlations between only fan, history, and growth would control the classification model. 
         </h1>
         """, unsafe_allow_html= True)
-        plot = sns.heatmap(y.corr())
-        st.pyplot(plot.get_figure())
+        #plot = sns.heatmap(y.corr())
+        #st.pyplot(plot.get_figure())
         st.markdown(
         """
         <h1 style = 'text-align: center; font-size: 30px;'> Modeling the Data </h1>
