@@ -293,15 +293,16 @@ if st.button("How Does it Work?"):
         """
         <h1 style = 'text-align: center; font-size: 30px;'> Analyzing the Data </h1>
         """, unsafe_allow_html= True)
+        st.write(y.corr())
+        #plot = sns.heatmap(y.corr())
+        #st.pyplot(plot.get_figure())
         st.markdown(
         """
         <h1 style = 'text-align: left; font-size: 15px;'> 
         Taking a closer look at the relations between categorical attributes we see that the "Formation" and "fan", "Age" and "primary color", and "Age" and "fan" share close bonds.
         Seeing this heat map settled my nerves because I initially thought the correlations between only fan, history, and growth would control the classification model. 
         </h1>
-        """, unsafe_allow_html= True)
-        #plot = sns.heatmap(y.corr())
-        #st.pyplot(plot.get_figure())
+        """, unsafe_allow_html= True) 
         st.markdown(
         """
         <h1 style = 'text-align: center; font-size: 30px;'> Modeling the Data </h1>
