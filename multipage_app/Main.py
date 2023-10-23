@@ -22,7 +22,7 @@ with open("images/Data Resume.docx.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
 scol1, scol2, scol3, scol4 = st.columns([5,1,1,5])
 with scol2:
-    st.download_button(label = "Resume", data = PDFByte, file_name = "Data Resume.docx.pdf")         
+    st.download_button(label = "Resume", data = PDFByte, file_name = "10.23.2023 Resume.pdf")         
 with scol3:
     st.markdown("[LinkedIn](https://www.linkedin.com/in/mturner95/)", unsafe_allow_html= True)
    
