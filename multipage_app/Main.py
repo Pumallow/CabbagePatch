@@ -64,12 +64,11 @@ with col1:
 with col2:
   pfp = Image.open("images/PFP.JPG")
   st.image(pfp)
-col1, col2, col3 = st.columns(3)
+  st.video(data=intb)
+col1, col2 = st.columns([2,5])
 with col1:
   st.video(data=vb)
 with col2:
-  st.video(data=intb)
-with col3:
   st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> My passion for data extends beyond my career through having been invited onto podcasts. Outside of my career activities, I spend my time socializing with friends, playing soccer, working out, and playing the piano. I look to make the most
   out of life which mostly entails laughs and jokes! The video to the left is one of many things I've created to mess with my friends.</h1>""", unsafe_allow_html= True) 
 
