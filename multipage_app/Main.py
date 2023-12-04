@@ -61,6 +61,8 @@ with col1:
     Currently enrolled in EDX - FA23: Computing for Data Analysis </h1>""", unsafe_allow_html= True)
     #st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'> A menu for all my past projects is located on the left hand side of the screen (extend it by arrow in the top left corner). </h1>", unsafe_allow_html= True)
     st.markdown("<h1 style= 'text-align: left; font-size: 20px;'>I hope to continually update this site with new content. Cheers! :D </h1>", unsafe_allow_html= True)
+    st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> My passion for data extends beyond my career through having been invited onto podcasts. Outside of my career activities, I spend my time socializing with friends, playing soccer, working out, and playing the piano. I look to make the most
+    out of life which mostly entails laughs and jokes! The video to the left is one of many things I've created to mess with my friends.</h1>""", unsafe_allow_html= True) 
 with col2:
   pfp = Image.open("images/PFP.JPG")
   st.image(pfp)
@@ -68,9 +70,8 @@ with col2:
 col1, col2 = st.columns([2,5])
 with col1:
   st.video(data=vb)
-with col2:
-  st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> My passion for data extends beyond my career through having been invited onto podcasts. Outside of my career activities, I spend my time socializing with friends, playing soccer, working out, and playing the piano. I look to make the most
-  out of life which mostly entails laughs and jokes! The video to the left is one of many things I've created to mess with my friends.</h1>""", unsafe_allow_html= True) 
+
+ 
 
 
 
