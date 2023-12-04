@@ -68,7 +68,9 @@ with col2:
   pfp = Image.open("images/PFP.JPG")
   st.image(pfp)
   st.video(data=intb)
-st.video(data=vb)  
+col1, col2 = st.columns([2,5])
+with col1:
+  st.video(data=vb)  
 
  
 
