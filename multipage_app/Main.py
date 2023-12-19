@@ -57,7 +57,7 @@ with col1:
     Machine Learning A-Z: Hands-On Python & R in Data Science <br>
     Data Science in Layman’s Terms: Time Series Analysis <br>""", unsafe_allow_html= True)
     st.write("""<h1 style= 'text-align: center; font-size: 35px;'>EDX Course Certifications </h1>
-    Finished EDX - SU23: Introduction to Analytics Modeling (Score: 84) <br>
+    <h1 style= 'text-align: left; font-size: 20px;'>Finished EDX - SU23: Introduction to Analytics Modeling (Score: 84) <br>
     Finished EDX - Data Analytics for Business (Score: 86) <br>
     Finished EDX - FA23: Computing for Data Analysis (Score: 94) </h1>""", unsafe_allow_html= True)
     #st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'> A menu for all my past projects is located on the left hand side of the screen (extend it by arrow in the top left corner). </h1>", unsafe_allow_html= True)
