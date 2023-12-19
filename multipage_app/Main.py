@@ -57,8 +57,8 @@ with col1:
     Machine Learning A-Z: Hands-On Python & R in Data Science <br>
     Data Science in Layman’s Terms: Time Series Analysis <br>
     Finished EDX - SU23: Introduction to Analytics Modeling (Score: 84) <br>
-    Currently enrolled in EDX - Data Analytics for Business <br>
-    Currently enrolled in EDX - FA23: Computing for Data Analysis </h1>""", unsafe_allow_html= True)
+    Finished EDX - Data Analytics for Business (Score: 86) <br>
+    Finished EDX - FA23: Computing for Data Analysis (Score: 94) </h1>""", unsafe_allow_html= True)
     #st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'> A menu for all my past projects is located on the left hand side of the screen (extend it by arrow in the top left corner). </h1>", unsafe_allow_html= True)
     
     st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> My passion for data extends beyond my career with, for example, having been invited onto podcasts. Outside of my career activities, I spend my time socializing with friends, playing soccer, working out, and playing the piano. I look to make the most
