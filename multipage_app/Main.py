@@ -56,7 +56,7 @@ with col1:
     Snowflake Decoded - Fundamentals and hands on Training <br>
     Machine Learning A-Z: Hands-On Python & R in Data Science <br>
     Data Science in Layman’s Terms: Time Series Analysis <br>""", unsafe_allow_html= True)
-    st.write("""<h1 style= 'text-align: center; font-size: 35px;'>Progress in GT OMSA</h1>
+    st.write("""<h1 style= 'text-align: center; font-size: 35px;'>Progress in Georgia Tech Masters Science of Analytics</h1>
     <h1 style= 'text-align: left; font-size: 20px;'>SUMMER 23: Introduction to Analytics Modeling (Score: 84) <br>
     FALL 23: Data Analytics for Business (Score: 86) <br>
     FALL 23: Computing for Data Analysis (Score: 94) <br>
