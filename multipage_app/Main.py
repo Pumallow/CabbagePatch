@@ -44,7 +44,7 @@ with col1:
       I am a born and raised Georgian! Graduating from Kennesaw State & University with a degree in Industrial and Systems Engineering, I found myself with a fascination in tech.
       This ultimately led me to self-learn languages like SQL and Python as well as expose myself to software like Snowflake, Azure Databricks, Google BigQuery, PowerBi, Tableau, and more. 
      </h1>""", unsafe_allow_html= True) 
-    st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> Currently, I am
+    st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> In December of 2023, I acquired the GTx Micro Masters certificate. Currently, I am
       a graduate student at Georgia Tech in the Online Masters of Science in Analytics.
      </h1>""", unsafe_allow_html= True) 
     st.write("""<h1 style= 'text-align: center; font-size: 35px;'>Udemy Course Certifications </h1>
@@ -56,7 +56,7 @@ with col1:
     Snowflake Decoded - Fundamentals and hands on Training <br>
     Machine Learning A-Z: Hands-On Python & R in Data Science <br>
     Data Science in Layman’s Terms: Time Series Analysis <br>""", unsafe_allow_html= True)
-    st.write("""<h1 style= 'text-align: center; font-size: 35px;'>EDX Course Certifications </h1>
+    st.write("""<h1 style= 'text-align: center; font-size: 35px;'>Progress in GT OMSA</h1>
     <h1 style= 'text-align: left; font-size: 20px;'>SUMMER 23: Introduction to Analytics Modeling (Score: 84) <br>
     FALL 23: Data Analytics for Business (Score: 86) <br>
     FALL 23: Computing for Data Analysis (Score: 94) </h1>""", unsafe_allow_html= True)
