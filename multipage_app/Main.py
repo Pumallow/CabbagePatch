@@ -59,7 +59,9 @@ with col1:
     st.write("""<h1 style= 'text-align: center; font-size: 35px;'>Progress in GT OMSA</h1>
     <h1 style= 'text-align: left; font-size: 20px;'>SUMMER 23: Introduction to Analytics Modeling (Score: 84) <br>
     FALL 23: Data Analytics for Business (Score: 86) <br>
-    FALL 23: Computing for Data Analysis (Score: 94) </h1>""", unsafe_allow_html= True)
+    FALL 23: Computing for Data Analysis (Score: 94) 
+    SPRING 24: Business Fundamentals for Analytics 
+    SPRING 24: Data Visuals & Analytics</h1>""", unsafe_allow_html= True)
     #st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'> A menu for all my past projects is located on the left hand side of the screen (extend it by arrow in the top left corner). </h1>", unsafe_allow_html= True)
     
     st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> My passion for data extends beyond my career with, for example, having been invited onto podcasts. Outside of my career activities, I spend my time socializing with friends, playing soccer, working out, and playing the piano. I look to make the most
