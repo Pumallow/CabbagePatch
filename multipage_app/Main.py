@@ -18,7 +18,7 @@ st.markdown("<h1 style='text-align: center; '>Marshal Turner's Data Science Webs
 
 st.markdown("""<h1 style= 'text-align: center; font-size: 20px;'>Expand the sidebar on the left hand side to see my projects!</h1>""", unsafe_allow_html= True)
  
-with open("images/10.23.2023 Resume.pdf", "rb") as pdf_file:
+with open("images/DataResume 2.25.2024.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
 scol1, scol2, scol3, scol4 = st.columns([5,1,1,5])
 with scol2:
