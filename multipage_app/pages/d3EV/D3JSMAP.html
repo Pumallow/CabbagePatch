@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    <!-- add title -->
+    
+    <!-- import required libraries here -->
+    <script type="text/javascript" src="../lib/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../lib/topojson.v2.min.js"></script>
+    <script type="text/javascript" src="../lib/d3-tip.min.js"></script>
+
+    <style>
+        /* define CSS rules here */
+    
+    </style>
+
+    <title></title>
+</head>
+
+
+<body>
+
+
+    <div id="container" class="svg-container"></div>
+    <script type="text/javascript">
+    
+        //states-albers-10m.json fit a 975×610 viewport
+        const width = 975;
+        const height = 610;
+        // const width = 1400;
+        // const height = 700;
+        buffer = ({t: 50, l: 80, b: 80, r: 80});
+        // const color = d3.scaleOrdinal(d3.schemeAccent); 
+        const title = d3.select('div#container')
+                .append("text")
+                .attr("id","maptitle")
+                .text("Q2 2023 Washington EV Sales Volume and the Allocation of Charging Stations")
+                .attr("text-anchor", "start")
+                .style('font-size', '50px')
+                .attr("dy", "0em");
+        
+        const sel = d3.select("div#container")
+                .append("text")
+                .attr("id","sel")
+                .html("</br> Select a View: ")
+                .style("font-size", "20px")
+                .attr("dy", "1em");
+        
+        let dropDown = d3.select("div#container")
+                    .append("select")
+                    .attr("class", "selection")
+                    .attr("name", "data")
+                    .style("font-size", "20px")
+                    .attr("id", "Dropdown");
+
+        
+        var svg = d3.select("div#container")
+                    .append("svg")
+                    .attr("id", "chloropleth")
+                    .attr("preserveAspectRatio", "xMinYMin meet")
+                    .attr("viewBox", "150 10 " + width/6 + " " + height/6)
+                    //.attr("viewBox", "0 0 " + width + " " + height)
+                    .style("background","turquoise")
+                    .classed("svg-content", true)
+                    .style("border", "4px solid").append("g");
+
+                          
+        svg.attr('transform',function(){
+                        var me = svg.node()
+                        var x1 = me.getBBox().x + me.getBBox().width/2;//the center x about which you want to rotate
+                        var y1 = me.getBBox().y + me.getBBox().height/2;//the center y about which you want to rotate   
+                        return `rotate(-12, ${x1}, ${y1})`;//rotate 180 degrees about x and y
+                    }); 
+    
+        var charginglegend = d3.select("svg#chloropleth.svg-content").append("g")
+                    .attr("id", "clegend")
+                    .attr("transform",
+                        "translate(" + buffer.l + "," + buffer.t + ")");        
+    
+        var legend = d3.select("svg#chloropleth.svg-content").append("g")
+                    .attr("id", "legend")
+                    .attr("transform",
+                        "translate(" + buffer.l + "," + buffer.t + ")");      
+
+        var container = svg.append("g")
+                .attr("id", "states")
+                .attr("transform",
+                    "translate(" + buffer.l + "," + buffer.t + ")");
+    
+        var container3 = svg.append("g")
+                .attr("id", "chargers")
+                .attr("transform",
+                    "translate(" + buffer.l + "," + buffer.t + ")");
+
+        
+    
+        var picks = ['Average Volume of Cars Sold', 'Average MSRP of Cars Sold', 'Average Electric Range of Cars Sold'];
+        var usmap = d3.json("lib/counties-albers-10m.json");
+    
+        var stations = d3.csv("pull.csv", function(d){
+                return{
+                    id: Math.floor(Math.random()*1000000),
+                    zip:  d.zip,
+                    coordinates: [+d.longitude, +d.latitude],
+                    count: d.station_count
+                }
+            }
+        );
+    
+        var csd = d3.csv("csd.csv", function(p){
+                return {
+                    County: p.County,
+                    VIN: +p.VIN,
+                    MSRP: +p.MSRP,
+                    Range: +p.ER,
+                    coordinates: [+p.Longitude, +p.Latitude]                
+                }
+            }   
+        );
+    
+        //U.S. Atlas TopoJSON projection
+        //.scale(1280).translate([480, 300])
+        var projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305]);
+        var path = d3.geoPath()
+        
+        // Pulls proper US Atlas Map https://github.com/topojson/us-atlas#readme
+        
+    
+        const tt = d3.tip().attr("class",'d3-tip')
+                        .attr('id', 'tooltip')
+                        .style("background", 'turquoise')
+                        .style("border-radius", "4px")                   
+                        .html(function(d) {return "Zip: " + d.zip + "<br/>Number of Charging Stations: " + d.count});
+
+    
+        
+        Promise.all([usmap, stations, csd]).then(function(values){ 
+            console.log(usmap);
+
+
+            var ddd = [];
+            for (const[a,b] of values[0].objects.counties.geometries.entries()) {
+                for (i = 0; i < values[2].length; i++) {
+                    if ((b.properties.name === values[2][i]['County'])) {
+                        ddd.push({'type': b.type, 'arcs': b.arcs, 'id': b.id, 'properties': b.properties, 'VIN': values[2][i]['VIN'], 'MSRP': values[2][i]['MSRP'], 'ER': values[2][i]['Range']})
+                    }
+                }    
+            }
+            var fin = []
+            fin.push({'arcs': values[0].arcs,
+                    'bbox': values[0].bbox, 
+                    'objects': {'counties': {'type': 'GeometryCollection', 'geometries': ddd}},
+                    'transform': values[0].transform,
+                    'type': 'Topology'
+                }
+            )
+
+            var options = dropDown.selectAll("option")
+                                .data(picks)
+                                .enter()
+                                .append("option")
+                                .text(function(d) {return d})
+                                .attr("font-size", '10px')
+                                .attr("value", function(d) {return d});
+    
+            const usa = container
+                        .append('g')
+                        .append('path')
+                        .datum(topojson.feature(values[0], values[0].objects.nation))
+                        .attr('fill', '#eee')
+                        .attr('d', path);
+    
+                        
+            sc = []
+            spec = ['#fef0d9','#fdcc8a','#fc8d59','#d7301f']
+            for (i = 0; i < values[2].length; i++) { sc.push(values[2][i].VIN)};  
+            var scale = d3.scaleQuantile().domain(sc).range(spec);
+            var spectext = [d3.min(sc) + ' to ' + Math.round(scale.quantiles()[0])  + ' cars sold',
+                                Math.round(scale.quantiles()[0]) + ' to ' + Math.round(scale.quantiles()[1]) + ' cars sold',
+                                Math.round(scale.quantiles()[1]) + ' to ' + Math.round(scale.quantiles()[2]) + ' cars sold',
+                                Math.round(scale.quantiles()[2]) + ' to ' + d3.max(sc) + ' cars sold'];
+
+
+            const county = container
+                        .append('g')
+                        .selectAll('path')
+                        .data(topojson.feature(fin[0], fin[0].objects.counties).features)
+                        .enter()
+                        .append('path')
+                        .attr('stroke', '#444')
+                        .attr('fill', function(d) {for (i = 0; i < values[2].length; i++) {if (d.properties.name === values[2][i]['County']) { return scale(values[2][i].VIN)} } })
+                        .attr('vector-effect', 'non-scaling-stroke')
+                        .attr('d', path);
+                                  
+    
+            
+            schar = ['#a9fa8e','#3de605','#279403','#175901'];
+            sch = [];
+            for (i = 0; i < values[1].length; i++) { sch.push(values[1][i].count)};  
+            var charscale = d3.scaleQuantile().domain(sch).range(schar);
+            var chartext = [d3.min(sch) + ' charging station',
+                                Math.round(charscale.quantiles()[0]) + ' to ' + Math.round(charscale.quantiles()[1]) + ' charging stations',
+                                Math.round(charscale.quantiles()[1]) + ' to ' + Math.round(charscale.quantiles()[2]) + ' charging stations',
+                                Math.round(charscale.quantiles()[2]) + ' to ' + d3.max(sch) + ' charging stations']
+
+
+
+            stat = []
+            for (const[a,b] of values[0].objects.states.geometries.entries()) {
+                if ((b.properties.name !== "Washington")) {
+                        stat.push({'type': b.type, 'arcs': b.arcs, 'id': b.id, 'properties': b.properties})
+                    }
+            }
+            var fs = []
+            fs.push({'arcs': values[0].arcs,
+                    'bbox': values[0].bbox, 
+                    'objects': {'states': {'type': 'GeometryCollection', 'geometries': stat}},
+                    'transform': values[0].transform,
+                    'type': 'Topology'
+                }
+            )
+            const state = container3
+                        .append('g')
+                        .selectAll('path')
+                        .data(topojson.feature(fs[0], fs[0].objects.states).features)
+                        .enter()
+                        .append('path')
+                        .attr('stroke', '#444')
+                        .attr('stroke-width', 4)
+                        .attr('fill', 'black')
+                        .attr('vector-effect', 'non-scaling-stroke')
+                        .attr('d', path);
+
+
+            container3.call(tt);
+            const chargers = container3.selectAll('.c')
+                        .data(values[1])
+                        .enter()
+                        .append("circle")
+                        .attr("id", function(d) { return d.fadress})
+                        .attr("r", function(d) { return (d.count/5) * 0.2})
+                        .attr("fill", function(d) { return charscale(d.count)})
+                        .attr("filter","url#blur")
+                        .attr("stroke", "black")
+                        .attr("stroke-width", 0.1)
+                        .attr("cx", function(d) { return projection(d.coordinates)[0] })
+                        .attr("cy", function(d) { return projection(d.coordinates)[1] })
+                        .on('mouseover', tt.show)
+                        .on('mouseout', tt.hide);  
+            
+            charginglegend.selectAll('.clegend')
+                        .data(schar)
+                        .enter()
+                        .append('rect')
+                        .attr("height", 2)
+                        .attr("width", 2)
+                        .attr("x", width-812.5)
+                        .attr("y", function(d,i) { return (i*2.5)-37; })
+                        .style("fill", function(d) {return d})
+                        .attr("stroke", "black")
+                        .attr("stroke-width", 0.1);
+
+            charginglegend.selectAll('.clegend')
+                    .data(chartext)
+                    .enter()
+                    .append("text")
+                    .attr("x", width-810)
+                    .attr("y", function(d,i) { return (i*2.5)-35.3; })
+                    .attr('text-anchor', 'start')
+                    .style("fill", "black")
+                    .style('font-size', '2px')
+                    .text(function(d) {return d});
+
+
+            legend.selectAll('.legend')
+                        .data(spec)
+                        .enter()
+                        .append('rect')
+                        .attr("height", 2)
+                        .attr("width", 2)
+                        .attr("x", width-790)
+                        .attr("y", function(d,i) { return (i*2.5)-37; })
+                        .style("fill", function(d) {return d})
+                        .attr("stroke", "black")
+                        .attr("stroke-width", 0.1);
+
+            legend.selectAll('.legend')
+                    .data(spectext)
+                    .enter()
+                    .append("text")
+                    .attr("x", width-787.5)
+                    .attr("y", function(d,i) { return (i*2.5)-35.3; })
+                    .attr('text-anchor', 'start')
+                    .style("fill", "black")
+                    .style('font-size', '2px')
+                    .text(function(d) {return d});
+
+
+
+            function createMapAndLegend(filter, colors, spectext, spec) {
+                container.append('g')
+                        .selectAll('path')
+                        .data(topojson.feature(fin[0], fin[0].objects.counties).features)
+                        .enter()
+                        .append('path')
+                        .attr('stroke', '#444')
+                        .attr('fill', function(d) {for (i = 0; i < values[2].length; i++) {if (d.properties.name === values[2][i]['County']) { return colors(values[2][i][filter])} } })
+                        .attr('vector-effect', 'non-scaling-stroke')
+                        .attr('d', path);
+
+                legend.selectAll("rect").remove();
+                legend.selectAll('.legend')
+                        .data(spec)
+                        .enter()
+                        .append('rect')
+                        .attr("height", 2)
+                        .attr("width", 2)
+                        .attr("x", width-790)
+                        .attr("y", function(d,i) { return (i*2.5)-37; })
+                        .style("fill", function(d) {return d})
+                        .attr("stroke", "black")
+                        .attr("stroke-width", 0.1);
+
+                legend.selectAll("text").remove();
+                legend.selectAll('.legend')
+                        .data(spectext)
+                        .enter()
+                        .append("text")
+                        .attr("x", width-787.5)
+                        .attr("y", function(d,i) { return (i*2.5)-35.3; })
+                        .attr('text-anchor', 'start')
+                        .style("fill", "black")
+                        .style('font-size', '2px')
+                        .text(function(d) {return d});
+                
+                title.text('Q2 2023 Washington EV ' + (filter === "VIN" ? "Sales Volume": filter) + ' and the Allocation of Charging Stations')
+                        .attr('text-anchor', 'start')
+                        .style('font-size','50px');
+            }
+    
+            
+            dropDown
+                .on('change', function (){
+                var filter = d3.select(this).property('value');
+                if (filter === 'Average MSRP of Cars Sold') {
+                    msrp = []
+                    for (i = 0; i < values[2].length; i++) { msrp.push(values[2][i].MSRP)};  
+                    var spec = ['#89bff5','#3695f5','#0258b0','#022d59'];
+                    var scale = d3.scaleQuantile().domain(msrp).range(spec)
+                    var spectext = ["$" + Math.round(d3.min(msrp)/1000)*1000 + ' to ' + "$" + Math.round(scale.quantiles()[0]/1000)*1000,
+                    "$" +  Math.round(scale.quantiles()[0]/1000)*1000 + ' to ' + "$" + Math.round(scale.quantiles()[1]/1000)*1000,
+                    "$" +  Math.round(scale.quantiles()[1]/1000)*1000 + ' to ' + "$" + Math.round(scale.quantiles()[2]/1000)*1000,
+                    "$" +  Math.round(scale.quantiles()[2]/1000)*1000 + ' to ' + "$" + Math.round(d3.max(msrp)/1000)*1000];
+                    createMapAndLegend("MSRP",scale, spectext, spec)                    
+                }
+                else if (filter === 'Average Electric Range of Cars Sold') {
+                    er = []
+                    for (i = 0; i < values[2].length; i++) { er.push(values[2][i].Range)}; 
+                    var spec = ['#eb8ff7','#d93eed','#a109b5','#53005e']; 
+                    var scale2 = d3.scaleQuantile().domain(er).range(spec);
+                    var spectext = [Math.round(d3.min(er)) + ' to ' + Math.round(scale2.quantiles()[0]) + ' miles',
+                                Math.round(scale2.quantiles()[0]) + ' to ' + Math.round(scale2.quantiles()[1]) + ' miles',
+                                Math.round(scale2.quantiles()[1]) + ' to ' + Math.round(scale2.quantiles()[2]) + ' miles',
+                                Math.round(scale2.quantiles()[2]) + ' to ' + Math.round(d3.max(er))  + ' miles'];
+                    createMapAndLegend("Range",scale2, spectext, spec)
+                }
+                else if (filter === 'Average Volume of Cars Sold') {
+                    sv = []
+                    for (i = 0; i < values[2].length; i++) { sv.push(values[2][i].VIN)}; 
+                    var spec = ['#fef0d9','#fdcc8a','#fc8d59','#d7301f'];  
+                    var scale3 = d3.scaleQuantile().domain(sv).range(spec);
+                    var spectext = [Math.round(d3.min(sv)) + ' to ' + Math.round(scale3.quantiles()[0]) + ' cars sold',
+                                Math.round(scale3.quantiles()[0]) + ' to ' + Math.round(scale3.quantiles()[1]) + ' cars sold',
+                                Math.round(scale3.quantiles()[1]) + ' to ' + Math.round(scale3.quantiles()[2]) + ' cars sold',
+                                Math.round(scale3.quantiles()[2]) + ' to ' + Math.round(d3.max(sv)) + ' cars sold'];
+                    createMapAndLegend("VIN",scale3, spectext, spec)
+                }
+            });
+    
+    
+    
+                        
+            
+        })
+        //https://talk.observablehq.com/t/plot-longitude-latitude-points-on-top-of-a-chloropeth-spike-map/4635
+        //https://observablehq.com/d/d56a029f54521440
+    
+    
+    </script>
+
+</body>
+
+</html>
+    
