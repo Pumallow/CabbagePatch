@@ -41,7 +41,8 @@ with col3:
        corr = Image.open("multipage_app/pages/d3EV/Correlation.jpg")
        st.image(corr) 
 
-st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> To accommodate for JSON Geo-Projection for the D3 visual, I transitioned to a counties level of detail rather than cities.
+st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> To accommodate for JSON Geo-Projection for the D3 visual, I transitioned to a counties level of detail rather than cities. The charging stations are sourced from an
+API tap on the [NREL Website] (https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/).
 </h1>""", unsafe_allow_html= True)
 
 
