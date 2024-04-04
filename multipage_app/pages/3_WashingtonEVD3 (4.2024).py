@@ -25,6 +25,11 @@ st.video(data=intb)
 st.markdown("""
 <div style = 'text-align: center; font-size: 30px'>Evaluation of the Sales Activity Data""", unsafe_allow_html=True)
 
+st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> When first looking at the [Kaggle Dataset] (https://www.kaggle.com/datasets/willianoliveiragibin/electric-vehicle-population?resource=download), I wanted to perform
+high level assessments the data. Through the use of panda tools like .info(), .describe(), and .value_counts() I illustrated these visuals
+to show the top 10 most expensive EV models and most active cities.
+</h1>""", unsafe_allow_html= True)
+
 col1, col2, col3 = st.columns([1,1,1])
 with col1:
        pfp = Image.open("multipage_app/pages/d3EV/City_MSRP.jpg")
@@ -35,6 +40,9 @@ with col2:
 with col3:
        corr = Image.open("multipage_app/pages/d3EV/Correlation.jpg")
        st.image(corr) 
+
+st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> To accommodate for JSON Geo-Projection for the D3 visual, I transitioned to a counties level of detail rather than cities.
+</h1>""", unsafe_allow_html= True)
 
 
 
