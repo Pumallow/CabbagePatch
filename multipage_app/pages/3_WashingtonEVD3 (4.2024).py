@@ -42,7 +42,7 @@ with col3:
        st.image(corr) 
 
 st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> To accommodate for JSON Geo-Projection for the D3 visual, I transitioned to a counties level of detail rather than cities. The charging stations are sourced from an
-API tap on the [NREL Website](https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/all/).
+API tap on the
 </h1>""", unsafe_allow_html= True)
 
 
