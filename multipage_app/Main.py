@@ -80,7 +80,7 @@ with col1:
 with col2:
   pfp = Image.open("images/PFP.JPG")
   st.image(pfp)
-  st.video(intb)
+  st.video(intb, loop=True)
   #st.markdown(video_html, unsafe_allow_html=True)
 
  
