@@ -26,11 +26,20 @@ with scol2:
 with scol3:
     st.markdown("[LinkedIn](https://www.linkedin.com/in/mturner95/)", unsafe_allow_html= True)
    
-vf =  open(r'images/troy.mov', 'rb')
-vb = vf.read()
-
 intf = open(r"images/Imputation Methods： Uncovering Data Science's Hidden Magic!.mp4", 'rb')
 intb = intf.read() 
+
+video_html = """
+<video controls width="250" autoplay="true" muted="true" loop="true">
+<source 
+            src="images/Imputation Methods： Uncovering Data Science's Hidden Magic!.mp4"
+            type="video/mp4" />
+</video>"""
+
+
+
+
+
 
 width = 50
 width = max(width, 0.01)
@@ -71,7 +80,7 @@ with col1:
 with col2:
   pfp = Image.open("images/PFP.JPG")
   st.image(pfp)
-  st.video(data=intb)
+  st.markdown(video_html, unsafe_allow_html=True)
 
  
 
