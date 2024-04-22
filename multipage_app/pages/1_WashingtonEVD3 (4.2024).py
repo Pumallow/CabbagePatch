@@ -18,7 +18,7 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 st.markdown("""
 <div style = 'text-align: center; font-size: 30px'>D3 JavaScript Geo-Projection for Washington EV Activity""", unsafe_allow_html=True)
 
-intf = open(r"multipage_app/pages/d3EV/Final Video.mp4", 'rb')
+intf = open(r"multipage_app/pages/d3EV/D3Vid.mp4", 'rb')
 intb = intf.read() 
 st.video(data=intb)
 
