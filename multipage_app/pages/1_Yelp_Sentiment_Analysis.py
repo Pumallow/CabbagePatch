@@ -1,0 +1,37 @@
+import streamlit as st
+import pandas as pd
+import numpy as np
+from PIL import Image
+
+
+st.set_page_config(layout="wide", page_title="NLP Project")
+hide_default_format = """
+       <style>
+       #MainMenu {visibility: hidden; }
+       footer {visibility: hidden;}
+       </style>
+       """
+st.markdown(hide_default_format, unsafe_allow_html=True)
+
+st.markdown("""
+<div style = 'text-align: center; font-size: 30px'>Sentiment Analysis on Bottega Louie Yelp Reviews""", unsafe_allow_html=True)
+
+p = Image.open("images/BottegaNLP/Bottega.jpg")
+bot = st.image(p)
+
+st.markdown("""Bottega Louie, a gourmet market restaurant located in Los Angeles, California holds the record for most
+            reviews on Yelp with 18,756 reviews. Each review contains a written description and rating of 
+            1 to 5 stars. Bottega Louie holds an elite customer review average of 4.1 stars. Using NLP methodologies, can
+            the descriptions of each review correctly be classified to predict the star rating?""", unsafe_allow_html= True)
+
+st.markdown("""
+<div style = 'text-align: center; font-size: 30px'>Initial Web-Scrape Data Extraction""", unsafe_allow_html=True)
+
+st.markdown("""All the data is pulled from the official [Yelp Reviews](https://www.yelp.com/biz/bottega-louie-los-angeles?osq=Bottega+Louie%2Freviews) 
+            page for Bottega Louie. My selenium web-scrape iteratively pulled the first 10,000 reviews.""", unsafe_allow_html= True)
+
+col1 = st.columns([1])
+with col1:
+       pfp = Image.open("images/BottegaNLP/Reviews.jpg")
+       st.image(pfp) 
+
