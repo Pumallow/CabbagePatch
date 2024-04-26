@@ -42,23 +42,10 @@ sentiments, are filtered out. I.E. prepositional phrases, articles, or certain v
 In essence, the filtering turns reviews into a latin-esque fashion.""", unsafe_allow_html= True)
 
 col1, col2 = st.columns([1,1])
-container_style = """
-    <style>
-        .container1 {
-            border: 2px solid #FFFFFF;
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-        .container2 {
-            /* Add styles for Container 2 if needed */
-        }
-    </style>
-"""
 with col1:
        st.markdown(container_style, unsafe_allow_html=True)
-       st.markdown("""<div style = 'font-size: 20px'>Before the transformation:</div>
-       <div>Beautiful restaurant and always delicious food! I always enjoy the Carbonara- my favorite. But pizzas have been great as well as their Pomodoro pasta."</div>""", unsafe_allow_html=True) 
+       st.markdown("""<svg style = 'border-radius: 8px'; 'border: 2px solid #FFFFFF';> <div style = 'font-size: 20px'>Before the transformation:</div>
+       <div>Beautiful restaurant and always delicious food! I always enjoy the Carbonara- my favorite. But pizzas have been great as well as their Pomodoro pasta."</div></svg>""", unsafe_allow_html=True) 
 with col2:
        st.markdown(container_style, unsafe_allow_html=True)
        st.markdown("<div style = 'font-size: 20px'>After the transformation:" , unsafe_allow_html=True) 
