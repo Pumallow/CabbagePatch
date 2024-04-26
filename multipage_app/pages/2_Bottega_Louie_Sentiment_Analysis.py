@@ -33,7 +33,7 @@ st.markdown("""All the data is pulled from the official [Yelp Reviews](https://w
 pfp = Image.open("images/BottegaNLP/Reviews.jpg")
 st.image(pfp) 
 
-st.markdown("""For our classifier to best consume each description, NLTK and Sklearn was used to simplify and remove fluff from the data entries. \n
+st.markdown("""For our classifier to best consume each description, NLTK and Sklearn is used to simplify and remove fluff from the data entries. \n
 1. First to go was punctuation. \n
 2. Stopwords, words within the English language meant for grammar or phrasing but not specifically helpful with evaluating
 sentiments, are filtered out. I.E. prepositional phrases, articles, or certain verbage \n
@@ -50,6 +50,17 @@ with col2:
        contain2 = st.container(height = 150, border=True)
        contain2.markdown("""<div style = 'font-size: 20px'>After the transformation:</div>
        <div>"beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta"</div>""", unsafe_allow_html= True)
+
+st.markdown("""Between Bag-of-words model and Term Frequency - Inverse Document Frequency model, I chose a TF-IDF Vectorizer to perform the sentiment analysis. 
+This type of vectorizer would allow for further manipulation with the kind of words evaluated. This was the initial model:""", unsafe_allow_html= True)
+
+st.code("""from sklearn.feature_extraction.text import TfidfVectorizer as TfV
+vector = TfV(max_features = 1500, min_df = 3, max_df = 0.6)
+X = vector.fit_transform(root).toarray()""", language = "python")
+
+
+
+
 
 
 
