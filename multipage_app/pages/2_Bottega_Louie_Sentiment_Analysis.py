@@ -39,10 +39,12 @@ st.markdown("""For our classifier to best consume each description, NLTK and Skl
 sentiments, are filtered out. I.E. prepositional phrases, articles, or certain verbage \n
 3. Groupings of root words and their conjugations are then made. I.E. [Running, Runs, Runner, Ran] -> run \n
 \n
-In essence, the filtering created this transformation.""", unsafe_allow_html= True)
+In essence, the filtering created this transformation:""", unsafe_allow_html= True)
 
-trans = Image.open("images/BottegaNLP/Transformation.jpg")
-st.image(trans) 
+st.code(print("""Before the transformation: {} \n
+After the transformation: {}""".format(
+"Beautiful restaurant and always delicious food! I always enjoy the Carbonara- my favorite. But pizzas have been great as well as their Pomodoro pasta.", 
+"beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta")),language = "python")
 
 
 
