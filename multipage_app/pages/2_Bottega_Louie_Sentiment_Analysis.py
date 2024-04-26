@@ -58,11 +58,30 @@ st.code("""from sklearn.feature_extraction.text import TfidfVectorizer as TfV
 vector = TfV(max_features = 1500, min_df = 3, max_df = 0.6)
 X = vector.fit_transform(root).toarray()""", language = "python")
 
-st.markdown("""<div style = 'text-align: center; font-size: 20px'>To best rely on the star ratings as our Y_Actual comparison I decided to group the ratings into 3 buckets: <br><br>
+st.markdown("""<div style = 'text-align: center; font-size: 20px'>To avoid overfitting to the star ratings, I decided to group the ratings into 3 buckets: <br><br>
 Positive (4+ stars) <br>
 Neutral (3 stars) <br>
 Bad (3> stars)""", unsafe_allow_html= True)
 
+st.markdown("""With the average rating settling on 4.1 stars, the expectation my K-Nearest-Neighbor classifier would label each description as positive was high. 
+This quickly wsa confirmed with the first model and confusion matrix""", unsafe_allow_html= True)
+
+st.markdown("""<div style = 'text-align: center; font-size: 30px'>First Test""", unsafe_allow_html=True)
+
+st.markdown("KNN Accuracy: 77.49%", unsafe_allow_html=True)
+col1, col2, col3 = st.columns([3,3,3])
+with col1:
+       st.markdown("82", unsafe_allow_html= True)
+       st.markdown("37", unsafe_allow_html= True)
+       st.markdown("133", unsafe_allow_html= True)
+with col2:
+       st.markdown("39", unsafe_allow_html= True)
+       st.markdown("46", unsafe_allow_html= True)
+       st.markdown("303", unsafe_allow_html= True)  
+with col3:
+       st.markdown("49", unsafe_allow_html= True)
+       st.markdown("155", unsafe_allow_html= True)
+       st.markdown("2199", unsafe_allow_html= True) 
 
 
 
