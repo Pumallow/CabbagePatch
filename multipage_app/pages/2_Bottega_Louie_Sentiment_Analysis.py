@@ -28,9 +28,15 @@ st.markdown("""
 <div style = 'text-align: center; font-size: 30px'>Initial Web-Scrape Data Extraction""", unsafe_allow_html=True)
 
 st.markdown("""All the data is pulled from the official [Yelp Reviews](https://www.yelp.com/biz/bottega-louie-los-angeles?osq=Bottega+Louie%2Freviews) 
-            page for Bottega Louie. My selenium web-scrape iteratively pulled the first 10,000 reviews.""", unsafe_allow_html= True)
-
+            page for Bottega Louie. My selenium web-scrape iteratively pulled the first 10,000 review descriptions and respective star rating.""", unsafe_allow_html= True)
 
 pfp = Image.open("images/BottegaNLP/Reviews.jpg")
 st.image(pfp) 
+
+st.markdown("""For our classifier to best consume each description, NLTK and Sklearn was used to simplify the data entries. \n
+1. Stopwords, words within the English language for grammar or phrasing but not specifically helpful with evaluating
+sentiments, are first to be filtered out. I.E. prepositional phrases, articles, or certain verbage \n
+2. Groupings of root words and their conjugations are then made. I.E. [Running, Runs, Runner, Ran] -> run """, unsafe_allow_html= True)
+
+
 
