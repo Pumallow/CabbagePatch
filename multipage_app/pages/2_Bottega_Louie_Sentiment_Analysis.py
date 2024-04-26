@@ -45,7 +45,7 @@ col1, col2 = st.columns([1,1])
 container_style = """
     <style>
         .container1 {
-            border: 2px solid #3498db;
+            border: 2px solid #FFFFFF;
             border-radius: 8px;
             padding: 10px;
             margin-bottom: 20px;
