@@ -30,8 +30,7 @@ st.markdown("""
 st.markdown("""All the data is pulled from the official [Yelp Reviews](https://www.yelp.com/biz/bottega-louie-los-angeles?osq=Bottega+Louie%2Freviews) 
             page for Bottega Louie. My selenium web-scrape iteratively pulled the first 10,000 reviews.""", unsafe_allow_html= True)
 
-col1 = st.columns([1])
-with col1:
-       pfp = Image.open("images/BottegaNLP/Reviews.jpg")
-       st.image(pfp) 
+
+pfp = Image.open("images/BottegaNLP/Reviews.jpg")
+st.image(pfp) 
 
