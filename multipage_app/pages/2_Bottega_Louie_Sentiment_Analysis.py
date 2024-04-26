@@ -42,9 +42,7 @@ sentiments, are filtered out. I.E. prepositional phrases, articles, or certain v
 In essence, the filtering created this transformation:""", unsafe_allow_html= True)
 
 st.code(print("""Before the transformation: {} \n
-After the transformation: {}""".format(
-"Beautiful restaurant and always delicious food! I always enjoy the Carbonara- my favorite. But pizzas have been great as well as their Pomodoro pasta.", 
-"beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta")),language = "python")
+After the transformation: {}""".format("Beautiful restaurant and always delicious food! I always enjoy the Carbonara- my favorite. But pizzas have been great as well as their Pomodoro pasta.","beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta")),language = "python")
 
 
 
