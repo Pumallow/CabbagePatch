@@ -58,7 +58,7 @@ st.code("""from sklearn.feature_extraction.text import TfidfVectorizer as TfV
 vector = TfV(max_features = 1500, min_df = 3, max_df = 0.6)
 X = vector.fit_transform(root).toarray()""", language = "python")
 
-st.markdown("""<div style = 'text-align: center; font-size: 20px'>To best rely on the star ratings as our Y_Actual comparison I decided to group the ratings into 3 buckets: \n
+st.markdown("""<div style = 'text-align: center; font-size: 20px'>To best rely on the star ratings as our Y_Actual comparison I decided to group the ratings into 3 buckets: <br>
 Positive (4+ stars) \n
 Neutral (3 stars) \n
 Bad (3> stars)""", unsafe_allow_html= True)
