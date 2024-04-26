@@ -39,10 +39,12 @@ st.markdown("""For our classifier to best consume each description, NLTK and Skl
 sentiments, are filtered out. I.E. prepositional phrases, articles, or certain verbage \n
 3. Groupings of root words and their conjugations are then made. I.E. [Running, Runs, Runner, Ran] -> run \n
 \n
-In essence, the filtering created this transformation:""", unsafe_allow_html= True)
+In essence, the filtering turns reviews into a latin-esque fashion""", unsafe_allow_html= True)
 
-st.markdown("""Before the transformation: \n 'Beautiful restaurant and always delicious food! I always enjoy the Carbonara- my favorite. But pizzas have been great as well as their Pomodoro pasta.' \n
-After the transformation: \n 'beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta'""", unsafe_allow_html= True)
+st.markdown("""Before the transformation: 
+'Beautiful restaurant and always delicious food! I always enjoy the Carbonara- my favorite. But pizzas have been great as well as their Pomodoro pasta.' \n
+After the transformation: 
+'beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta'""", unsafe_allow_html= True)
 
 
 
