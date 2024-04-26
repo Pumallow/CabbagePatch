@@ -47,7 +47,6 @@ with col1:
               st.markdown("""<div style = 'font-size: 20px'>Before the transformation:</div>
               <div>Beautiful restaurant and always delicious food! I always enjoy the Carbonara- my favorite. But pizzas have been great as well as their Pomodoro pasta."</div>""", unsafe_allow_html=True) 
 with col2:
-       st.markdown(container_style, unsafe_allow_html=True)
        st.markdown("<div style = 'font-size: 20px'>After the transformation:" , unsafe_allow_html=True) 
        st.markdown('"beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta"', unsafe_allow_html= True)
 
