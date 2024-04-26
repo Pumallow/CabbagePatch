@@ -41,10 +41,10 @@ sentiments, are filtered out. I.E. prepositional phrases, articles, or certain v
 \n
 In essence, the filtering turns reviews into a latin-esque fashion""", unsafe_allow_html= True)
 
-st.markdown("""Before the transformation: 
-'Beautiful restaurant and always delicious food! I always enjoy the Carbonara- my favorite. But pizzas have been great as well as their Pomodoro pasta.' \n
-After the transformation: 
-'beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta'""", unsafe_allow_html= True)
+st.markdown("<div style = 'font-size: 20px'>Before the transformation:", unsafe_allow_html=True) 
+st.markdown('"Beautiful restaurant and always delicious food! I always enjoy the Carbonara- my favorite. But pizzas have been great as well as their Pomodoro pasta."', unsafe_allow_html=True) 
+st.markdown("<div style = 'font-size: 20px'>After the transformation:" , unsafe_allow_html=True) 
+st.markdown('"beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta"', unsafe_allow_html= True)
 
 
 
