@@ -43,7 +43,7 @@ In essence, the filtering turns reviews into a latin-esque fashion.""", unsafe_a
 
 col1, col2 = st.columns([1,1])
 with col1:
-       contain = st.container(height = 130 , border=True)
+       contain = st.container()
        contain.markdown("""<div style = 'font-size: 20px'>Before the transformation:</div>
        <div>Beautiful restaurant and always delicious food! I always enjoy the Carbonara- my favorite. But pizzas have been great as well as their Pomodoro pasta."</div>""", unsafe_allow_html=True) 
 with col2:
