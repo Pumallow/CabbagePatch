@@ -34,7 +34,7 @@ pfp = Image.open("images/BottegaNLP/Reviews.jpg")
 st.image(pfp) 
 
 st.markdown("""For our classifier to best consume each description, NLTK and Sklearn was used to simplify and remove fluff from the data entries. \n
-1. First to go need to be punctuation. \n
+1. First to go was punctuation. \n
 2. Stopwords, words within the English language meant for grammar or phrasing but not specifically helpful with evaluating
 sentiments, are filtered out. I.E. prepositional phrases, articles, or certain verbage \n
 3. Groupings of root words and their conjugations are then made. I.E. [Running, Runs, Runner, Ran] -> run \n
