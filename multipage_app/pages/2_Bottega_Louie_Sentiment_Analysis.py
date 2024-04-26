@@ -39,7 +39,7 @@ st.markdown("""For our classifier to best consume each description, NLTK and Skl
 sentiments, are filtered out. I.E. prepositional phrases, articles, or certain verbage \n
 3. Groupings of root words and their conjugations are then made. I.E. [Running, Runs, Runner, Ran] -> run \n
 \n
-In essence, the filtering turns reviews into a latin-esque fashion.""", unsafe_allow_html= True)
+In essence, the filtering turns reviews into a latin-esque format.""", unsafe_allow_html= True)
 
 col1, col2 = st.columns([1,1])
 with col1:
