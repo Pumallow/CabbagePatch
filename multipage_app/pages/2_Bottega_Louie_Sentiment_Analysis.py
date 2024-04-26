@@ -71,17 +71,17 @@ st.markdown("""<div style = 'text-align: center; font-size: 30px'>First Test""",
 st.markdown("KNN Accuracy: 77.49%", unsafe_allow_html=True)
 col1, col2, col3 = st.columns([3,3,3])
 with col1:
-       st.markdown("82", unsafe_allow_html= True)
-       st.markdown("37", unsafe_allow_html= True)
-       st.markdown("133", unsafe_allow_html= True)
+       st.container(height = 150, border=True).markdown("<div style = 'text-align: center>82", unsafe_allow_html= True)
+       st.container(height = 150, border=True).markdown("<div style = 'text-align: center>37", unsafe_allow_html= True)
+       st.container(height = 150, border=True).markdown("<div style = 'text-align: center>133", unsafe_allow_html= True)
 with col2:
-       st.markdown("39", unsafe_allow_html= True)
-       st.markdown("46", unsafe_allow_html= True)
-       st.markdown("303", unsafe_allow_html= True)  
+       st.container(height = 150, border=True).markdown("<div style = 'text-align: center>39", unsafe_allow_html= True)
+       st.container(height = 150, border=True).markdown("<div style = 'text-align: center>46", unsafe_allow_html= True)
+       st.container(height = 150, border=True).markdown("<div style = 'text-align: center>303", unsafe_allow_html= True)  
 with col3:
-       st.markdown("49", unsafe_allow_html= True)
-       st.markdown("155", unsafe_allow_html= True)
-       st.markdown("2199", unsafe_allow_html= True) 
+       st.container(height = 150, border=True).markdown("<div style = 'text-align: center>49", unsafe_allow_html= True)
+       st.container(height = 150, border=True).markdown("<div style = 'text-align: center>155", unsafe_allow_html= True)
+       st.container(height = 150, border=True).markdown("<div style = 'text-align: center>2199", unsafe_allow_html= True) 
 
 
 
