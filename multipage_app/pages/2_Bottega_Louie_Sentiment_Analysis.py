@@ -73,10 +73,9 @@ test1 = Image.open("images/BottegaNLP/Test1.jpg")
 st.image(test1) 
 
 
-st.markdown("""It appears that the negative comments are correctly identified 32.54% of the time.
-It appears that the neutral comments are correctly identified 11.86% of the time.
+st.markdown("""It appears that the negative comments are correctly identified 32.54% of the time. \n
+It appears that the neutral comments are correctly identified 11.86% of the time. \n
 It appears that the positive comments are correctly identified 93.06% of the time.""", unsafe_allow_html= True)
-
 
 st.markdown("""Upon further examination when you raise the number of words (features) and lower the minimum number of appearances you can accomodate the accuracy (or more overfitting) for the smaller sample sized classifications of negative and neutral comments (23%->30% for negative).""", unsafe_allow_html= True)
 
