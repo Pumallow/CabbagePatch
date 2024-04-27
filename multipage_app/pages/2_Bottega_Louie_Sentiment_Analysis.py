@@ -36,9 +36,9 @@ st.image(pfp)
 st.markdown("""For our classifier to best consume each description, NLTK and Sklearn is used to simplify and remove fluff from the data entries. \n
 1. Punctuation are first removed. \n
 2. Stopwords, words within the English language meant for grammar or phrasing but not specifically helpful with evaluating
-sentiments, are then filtered out. 
+sentiments, are then filtered out. \n
 I.E. prepositional phrases, articles, or certain verbage \n
-3. Groupings of root words and their conjugations are then made. 
+3. Groupings of root words and their conjugations are then made. \n
 I.E. [Running, Runs, Runner, Ran] -> run \n
 \n
 In essence, the filtering turns reviews into a latin-esque format.""", unsafe_allow_html= True)
