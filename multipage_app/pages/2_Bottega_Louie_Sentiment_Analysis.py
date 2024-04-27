@@ -68,6 +68,17 @@ This quickly was confirmed with the first model and confusion matrix""", unsafe_
 
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>First Built KNN Classifier""", unsafe_allow_html=True)
 
+nn = Image.open("images/BottegaNLP/N_neighbors.jpg")
+col1, col2 = st.columns([1,1])
+with col1:
+       st.image(nn)
+with col2:
+       
+st.markdown("""Iterating through the number of neighbors included in each query to optimize the accuracy. Something to take
+note of however, the reason the accuracy increases with n_neighbors = 16 is because the model leans to optimize ONLY Positive comments. Lower
+n_neighbors actually up the accuracies for Neutral/Negative reviews.""", unsafe_allow_html= True)
+
+
 test1 = Image.open("images/BottegaNLP/Test1.jpg")
 st.image(test1) 
 
