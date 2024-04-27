@@ -75,13 +75,21 @@ col1, col2 = st.columns([1,1])
 with col1:
        st.image(nn)
 with col2:
-       st.markdown("Iterating through the number of neighbors included in each query to optimize the accuracy. Something to take note of however, the reason the accuracy increases with n_neighbors = 16 is because the model leans to optimize ONLY Positive comments. Lower n_neighbors actually up the accuracies for Neutral/Negative reviews. As a result, n_neighbors = 5 to keep a decent overall metrics and compensation for separate accuracies.", unsafe_allow_html= True)
+       st.markdown("Iterating through the number of neighbors included in each query to optimize the accuracy. Something to take note of however, the reason the accuracy increases with n_neighbors = 16 is because the model leans to optimize ONLY Positive comments. Lower n_neighbors actually up the accuracies for Neutral/Negative reviews. As a result, n_neighbors = 5 to keep a decent overall metrics while compensating for separate accuracies.", unsafe_allow_html= True)
        st.image(nnt)
 
 test1 = Image.open("images/BottegaNLP/Test1.jpg")
 st.image(test1) 
 
-st.markdown("""Upon further examination when you raise the number of words (features) and lower the minimum number of appearances you can accomodate the accuracy (or more overfitting) for the smaller sample sized classifications of negative and neutral comments (23%->30% for negative).""", unsafe_allow_html= True)
+st.markdown("""<div style = 'text-align: center; font-size: 30px'>Grid Search""", unsafe_allow_html=True)
+gcv = Image.open("images/BottegaNLP/GS.jpg")
+st.image(gcv)
+st.code("grid = GridSearchCV(knn, param_grid, cv=10, scoring='balanced_accuracy', return_train_score=False)", language = "python")
+
+st.markdown("""
+1. Optimize Vectorizer
+2. Resample for a more even distribution of Positive/Neutral/Negative reviews.
+3. """, unsafe_allow_html= True)
 
 
 
