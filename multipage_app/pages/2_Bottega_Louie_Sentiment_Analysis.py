@@ -69,7 +69,7 @@ This quickly wsa confirmed with the first model and confusion matrix""", unsafe_
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>First Test""", unsafe_allow_html=True)
 
 st.markdown("KNN Accuracy: 77.49%", unsafe_allow_html=True)
-test1 = Image.open("images/BottegaNLP/Test1.npg")
+test1 = Image.open("images/BottegaNLP/Test1.jpg")
 st.image(test1) 
 
 
