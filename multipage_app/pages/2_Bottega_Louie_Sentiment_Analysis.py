@@ -64,13 +64,16 @@ Neutral (3 stars) <br>
 Bad (3> stars)""", unsafe_allow_html= True)
 
 st.markdown("""With the average rating settling on 4.1 stars, the expectation my K-Nearest-Neighbor classifier would label each description as positive was high. 
-This quickly wsa confirmed with the first model and confusion matrix""", unsafe_allow_html= True)
+This quickly was confirmed with the first model and confusion matrix""", unsafe_allow_html= True)
 
-st.markdown("""<div style = 'text-align: center; font-size: 30px'>First Test""", unsafe_allow_html=True)
+st.markdown("""<div style = 'text-align: center; font-size: 30px'>First Built KNN Classifier""", unsafe_allow_html=True)
 
 st.markdown("KNN Accuracy: 77.49%", unsafe_allow_html=True)
 test1 = Image.open("images/BottegaNLP/Test1.jpg")
 st.image(test1) 
+
+st.markdown("""Upon further examination when you raise the number of words (features) and lower the minimum number of appearances you can accomodate the accuracy (or more overfitting) for the smaller sample sized classifications of negative and neutral comments (23%->30% for negative).""", unsafe_allow_html= True)
+
 
 
 
