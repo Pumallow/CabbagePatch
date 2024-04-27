@@ -88,9 +88,11 @@ gcv = Image.open("images/BottegaNLP/GS.jpg")
 fin = Image.open("images/BottegaNLP/Fintest.jpg")
 col1, col2 = st.columns([1,1])
 with col1:
+       st.markdown("To best service the issue, the GridSearchCV needed to be scored with a 'balancing_accuracy'.", unsafe_allow_html= True)
        st.code("grid = GridSearchCV(knn, param_grid, cv=10, scoring='balanced_accuracy', return_train_score=False)", language = "python")
        st.image(fin) 
 with col2:
+       st.markdown("After inputting the optimum metrics into the KNN classifier. I yielded the final results.", unsafe_allow_html= True)
        st.image(gcv)
 st.markdown("""
 1. Optimize Vectorizer
