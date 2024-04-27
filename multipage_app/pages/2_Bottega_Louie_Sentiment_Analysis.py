@@ -34,10 +34,12 @@ pfp = Image.open("images/BottegaNLP/Reviews.jpg")
 st.image(pfp) 
 
 st.markdown("""For our classifier to best consume each description, NLTK and Sklearn is used to simplify and remove fluff from the data entries. \n
-1. First to go was punctuation. \n
+1. Punctuation are first removed. \n
 2. Stopwords, words within the English language meant for grammar or phrasing but not specifically helpful with evaluating
-sentiments, are filtered out. I.E. prepositional phrases, articles, or certain verbage \n
-3. Groupings of root words and their conjugations are then made. I.E. [Running, Runs, Runner, Ran] -> run \n
+sentiments, are then filtered out. 
+I.E. prepositional phrases, articles, or certain verbage \n
+3. Groupings of root words and their conjugations are then made. 
+I.E. [Running, Runs, Runner, Ran] -> run \n
 \n
 In essence, the filtering turns reviews into a latin-esque format.""", unsafe_allow_html= True)
 
@@ -63,7 +65,7 @@ Positive (4+ stars) <br>
 Neutral (3 stars) <br>
 Bad (3> stars)""", unsafe_allow_html= True)
 
-st.markdown("""With the average rating settling on 4.1 stars, the expectation my K-Nearest-Neighbor classifier would label each description as positive was high. 
+st.markdown("""With the average rating settling of 4.1 stars, the expectation my K-Nearest-Neighbor classifier would label each description as positive was high. 
 This quickly was confirmed with the first model and confusion matrix""", unsafe_allow_html= True)
 
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>First Built KNN Classifier""", unsafe_allow_html=True)
