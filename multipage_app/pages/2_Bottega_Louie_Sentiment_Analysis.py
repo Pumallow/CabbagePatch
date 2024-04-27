@@ -85,13 +85,18 @@ st.image(test1)
 
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>Grid Search""", unsafe_allow_html=True)
 gcv = Image.open("images/BottegaNLP/GS.jpg")
-st.image(gcv)
-st.code("grid = GridSearchCV(knn, param_grid, cv=10, scoring='balanced_accuracy', return_train_score=False)", language = "python")
-
+fin = Image.open("images/BottegaNLP/Fintest.jpg")
+col1, col2 = st.columns([1,1])
+with col1:
+       st.code("grid = GridSearchCV(knn, param_grid, cv=10, scoring='balanced_accuracy', return_train_score=False)", language = "python")
+       st.image(fin) 
+with col2:
+       st.image(gcv)
 st.markdown("""
 1. Optimize Vectorizer
 2. Resample for a more even distribution of Positive/Neutral/Negative reviews.
 3. """, unsafe_allow_html= True)
+
 
 
 
