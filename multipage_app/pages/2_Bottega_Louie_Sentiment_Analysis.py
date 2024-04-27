@@ -69,19 +69,8 @@ This quickly wsa confirmed with the first model and confusion matrix""", unsafe_
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>First Test""", unsafe_allow_html=True)
 
 st.markdown("KNN Accuracy: 77.49%", unsafe_allow_html=True)
-col1, col2, col3 = st.columns([3,3,3])
-with col1:
-       st.container(height = 50, border=True).markdown("82", unsafe_allow_html= True)
-       st.container(height = 50, border=True).markdown("37", unsafe_allow_html= True)
-       st.container(height = 50, border=True).markdown("133", unsafe_allow_html= True)
-with col2:
-       st.container(height = 50, border=True).markdown("39", unsafe_allow_html= True)
-       st.container(height = 50, border=True).markdown("46", unsafe_allow_html= True)
-       st.container(height = 50, border=True).markdown("303", unsafe_allow_html= True)  
-with col3:
-       st.container(height = 50, border=True).markdown("49", unsafe_allow_html= True)
-       st.container(height = 50, border=True).markdown("155", unsafe_allow_html= True)
-       st.container(height = 50, border=True).markdown("2199", unsafe_allow_html= True) 
+test1 = Image.open("images/BottegaNLP/Test1.npg")
+st.image(test1) 
 
 
 
