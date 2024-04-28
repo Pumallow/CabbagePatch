@@ -28,7 +28,7 @@ st.markdown("""
 <div style = 'text-align: center; font-size: 30px'>Initial Web-Scrape Data Extraction""", unsafe_allow_html=True)
 
 st.markdown("""All the data is pulled from the official [Yelp Reviews](https://www.yelp.com/biz/bottega-louie-los-angeles?osq=Bottega+Louie%2Freviews) 
-            page for Bottega Louie. My selenium web-scrape iteratively pulled the first 10,000 review descriptions and respective star rating.""", unsafe_allow_html= True)
+            page for Bottega Louie. My selenium web-scrape iteratively pulled the first 10,000 review descriptions and respective star ratings.""", unsafe_allow_html= True)
 
 pfp = Image.open("images/BottegaNLP/Reviews.jpg")
 st.image(pfp) 
@@ -102,16 +102,16 @@ with col1:
 with col2:
        st.image(gcv)
 
-st.markdown("""<div style = 'text-align: center; font-size: 30px'>MultinomialNB Classifier""", unsafe_allow_html=True)
-st.markdown("""A Naive Bayes Multinomial Classifier might perform better on the data since the model is driven to hande discrete text features.""", unsafe_allow_html= True)
-
-
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>Conclusion""", unsafe_allow_html=True)
-st.markdown("""Based on the sentimental analysis, """, unsafe_allow_html=True)
+st.markdown("""Based on the sentimental analysis, the positive yelp comments are overwhelmingly easier to classify as opposed to negative. The neutral comments
+are left to interpretation. The final results held a 71.83% overall accuracy only to accomodate a strict "3 Bucket" grade system for the 5 star reviews. In an ideal world
+of only looking at Positive vs Negative comments, comparing the frequency for the use of a word to the totals document word count would serve as a viable classifier that pushes an accuracy of 85%+.
+The extra "Neutral" bucket was strictly meant to limit test our TF-IDF vectorizer + KNN combination.""", unsafe_allow_html=True)
 st.markdown("""Potential Improvements:
-1. Optimize the TF-IDF Vectorizer
-2. Resample for a more even distribution of Positive/Neutral/Negative reviews.
-3. Change the logic for the bucketing of Y_Actual (Positive/Neutral/Negative)""", unsafe_allow_html= True)
+1. Resample for a more even distribution of Positive/Neutral/Negative reviews.
+2. Change the logic for the bucketing of Y_Actual (Positive/Neutral/Negative).
+3. Test alternative vectorizers like FastText, Word2Vec, or OneHotEncoding.
+4. Try an ANN with Tensorflow.""", unsafe_allow_html= True)
 
 
 
