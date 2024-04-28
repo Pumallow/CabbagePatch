@@ -57,15 +57,16 @@ st.markdown("""Between Bag-of-words model and Term Frequency - Inverse Document 
 This type of vectorizer would allow for further manipulation with the kind of words evaluated. This was the initial model:""", unsafe_allow_html= True)
 
 st.code("""from sklearn.feature_extraction.text import TfidfVectorizer as TfV
-vector = TfV(max_features = 1500, min_df = 3, max_df = 0.6)
+vector = TfV(max_features = 2000, min_df = 5, max_df = 0.5)
 X = vector.fit_transform(root).toarray()""", language = "python")
 
 st.markdown("""<div style = 'text-align: center; font-size: 20px'>To avoid overfitting to the star ratings, I decided to group the ratings into 3 buckets: <br><br>
 Positive (4+ stars) <br>
 Neutral (3 stars) <br>
-Bad (3> stars)""", unsafe_allow_html= True)
+Bad (3> stars) <br>""", unsafe_allow_html= True)
 
-st.markdown("""<div style = 'text-align: left; font-size: 20px'> Initial Observations: <br>
+cont = st.container(height = 150, border=True)
+cont.markdown("""<div style = 'text-align: left; font-size: 20px'> Initial Observations: <br>
 From a high level, positive descriptions average shorter lengths than Neutral or Negative messages (Positive - 645 / Neutral - 841 / Negative - 844). Psychologically, humans don't
 respond as heavily to postivie experiences as they do negative experiences. Positive descriptions are less anecdotal and as a result, turn out to be more 
 consistent with diction and phrasing. On the other hand, negative experiences are anecdotal with more comments to provide illustration thus creating variance. I chose to add an additional "Neutal"
