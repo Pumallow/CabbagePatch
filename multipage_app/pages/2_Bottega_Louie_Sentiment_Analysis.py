@@ -54,7 +54,7 @@ with col2:
        <div>"beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta"</div>""", unsafe_allow_html= True)
 
 st.markdown("""Between Bag-of-words model and Term Frequency - Inverse Document Frequency model, I chose a TF-IDF Vectorizer to perform the sentiment analysis. 
-This type of vectorizer would allow for further manipulation with the kind of words evaluated. After iteratively testing the varibales with a KNN classifier, this was the final vectorizer:""", unsafe_allow_html= True)
+A TF-IDF model would allow for further manipulation with the text. After iteratively testing the varibales with a KNN classifier, this was the final vectorizer:""", unsafe_allow_html= True)
 
 st.code("""from sklearn.feature_extraction.text import TfidfVectorizer as TfV
 vector = TfV(max_features = 2000, min_df = 5, max_df = 0.5)
@@ -63,17 +63,17 @@ X = vector.fit_transform(root).toarray()""", language = "python")
 st.markdown("""<div style = 'text-align: center; font-size: 20px'>To avoid overfitting to the star ratings, I decided to group the ratings into 3 buckets: <br><br>
 Positive (4+ stars) <br>
 Neutral (3 stars) <br>
-Bad (3> stars) <br>""", unsafe_allow_html= True)
+Bad (3 > stars) <br>""", unsafe_allow_html= True)
 
 cont = st.container(border=True)
-cont.markdown("""<div style = 'text-align: left; font-size: 20px'> Initial Observations: <br>
-From a high level, positive descriptions average shorter lengths than Neutral or Negative messages (Positive - 645 / Neutral - 841 / Negative - 844). <br>
-Psychologically, humans don't respond as heavily to postivie experiences as they do negative experiences. Positive descriptions are less anecdotal and as a result, turn out to be more 
+cont.markdown("""<div style = 'text-align: left; font-size: 20px'> Initial Observations: <br> </div> 
+<div style = 'text-align: left; font-size: 20px'>From a high level, positive descriptions average shorter lengths than Neutral or Negative messages (Positive - 645 / Neutral - 841 / Negative - 844). <br>
+Psychologically, humans don't respond as heavily to postitive experiences as they do negative experiences. Positive descriptions are less anecdotal and as a result, turn out to be more 
 consistent with diction and phrasing. <br>
-On the other hand, negative experiences are anecdotal with more comments to provide illustration thus creating variance. I chose to add an additional "Neutal"
-bucket to assist the vectorizer with bucketing ambiguous descriptions. <br> 
+On the other hand, negative experiences are anecdotal with more comments to provide illustrations thus creating text variance. <br>
+I chose to add an additional "Neutal" bucket to assist the vectorizer with bucketing ambiguous descriptions. <br> 
 With the average rating settling of 4.1 stars, the expectation my K-Nearest-Neighbor classifier would label each description as positive was high. 
-This quickly was confirmed with the first model and confusion matrix.""", unsafe_allow_html= True)
+This quickly was confirmed with the first model and confusion matrix. </div>""", unsafe_allow_html= True)
 
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>KNN Classifier""", unsafe_allow_html=True)
 
@@ -104,8 +104,6 @@ with col2:
 
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>MultinomialNB Classifier""", unsafe_allow_html=True)
 st.markdown("""A Naive Bayes Multinomial Classifier might perform better on the data since the model is driven to hande discrete text features.""", unsafe_allow_html= True)
-
-
 
 
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>Conclusion""", unsafe_allow_html=True)
