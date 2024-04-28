@@ -65,8 +65,12 @@ Positive (4+ stars) <br>
 Neutral (3 stars) <br>
 Bad (3> stars)""", unsafe_allow_html= True)
 
-st.markdown("""With the average rating settling of 4.1 stars, the expectation my K-Nearest-Neighbor classifier would label each description as positive was high. 
-This quickly was confirmed with the first model and confusion matrix""", unsafe_allow_html= True)
+st.markdown("""Observations:
+From a high level positive descriptions average shorter lengths than Neutral or Negative messages. Psychologically, humans don't
+respond as heavily to postivie experiences as they do negative experiences. Positive descriptions are less anecdotal and as a result, turn out to be more 
+consistent with diction and phrasing. On the other hand, negative experiences are anecdotal with more comments to provide illustration thus creating variance. I chose to add an additional "Neutal"
+bucket to assist the vectorizer with bucketing ambiguous descriptions. With the average rating settling of 4.1 stars, the expectation my K-Nearest-Neighbor classifier would label each description as positive was high. 
+This quickly was confirmed with the first model and confusion matrix.""", unsafe_allow_html= True)
 
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>First Built KNN Classifier""", unsafe_allow_html=True)
 
@@ -90,14 +94,16 @@ col1, col2 = st.columns([1,1])
 with col1:
        st.markdown("To best service the issue, the GridSearchCV needed to be scored with a 'balancing_accuracy'.", unsafe_allow_html= True)
        st.code("grid = GridSearchCV(knn, param_grid, cv=10, scoring='balanced_accuracy', return_train_score=False)", language = "python")
-       st.markdown("After inputting the optimum metrics into the KNN classifier. I yielded the final results.", unsafe_allow_html= True)
+       st.markdown("After inputting the optimum metrics into the KNN classifier. I yielded the final results:", unsafe_allow_html= True)
        st.image(fin)      
 with col2:
        st.image(gcv)
-st.markdown("""
-1. Optimize Vectorizer
+st.markdown("""<div style = 'text-align: center; font-size: 30px'>Conclusion""", unsafe_allow_html=True)
+st.markdown("""Based on the sentimental analysis, """, unsafe_allow_html=True)
+st.markdown("""Potential Improvements:
+1. Optimize the TF-IDF Vectorizer
 2. Resample for a more even distribution of Positive/Neutral/Negative reviews.
-3. """, unsafe_allow_html= True)
+3. Change the logic for the bucketing of Y_Actual (Positive/Neutral/Negative)""", unsafe_allow_html= True)
 
 
 
