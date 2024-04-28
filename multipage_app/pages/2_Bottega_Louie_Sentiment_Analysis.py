@@ -65,7 +65,7 @@ Positive (4+ stars) <br>
 Neutral (3 stars) <br>
 Bad (3> stars)""", unsafe_allow_html= True)
 
-st.markdown("""<div style = 'text-align: center; font-size: 20px'>Observations: <br>
+st.markdown("""<div style = 'text-align: left; font-size: 20px'>Observations: <br>
 From a high level positive descriptions average shorter lengths than Neutral or Negative messages. Psychologically, humans don't
 respond as heavily to postivie experiences as they do negative experiences. Positive descriptions are less anecdotal and as a result, turn out to be more 
 consistent with diction and phrasing. On the other hand, negative experiences are anecdotal with more comments to provide illustration thus creating variance. I chose to add an additional "Neutal"
