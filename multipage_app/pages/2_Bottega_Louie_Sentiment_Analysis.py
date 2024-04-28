@@ -108,7 +108,7 @@ are left to interpretation. The final results held a 71.83% overall accuracy onl
 of only looking at Positive vs Negative comments, comparing the frequency for the use of a word to the totals document word count would serve as a viable classifier that pushes an accuracy of 85%+.
 The extra "Neutral" bucket was strictly meant to limit test our TF-IDF vectorizer + KNN combination.""", unsafe_allow_html=True)
 st.markdown("""Potential Improvements:
-1. Resample for a more even distribution of Positive/Neutral/Negative reviews.
+1. Resample our webscrape for a more even pull of Positive/Neutral/Negative reviews.
 2. Change the logic for the bucketing of Y_Actual (Positive/Neutral/Negative).
 3. Test alternative vectorizers like FastText, Word2Vec, or OneHotEncoding.
 4. Try an ANN with Tensorflow.""", unsafe_allow_html= True)
