@@ -72,7 +72,7 @@ consistent with diction and phrasing. On the other hand, negative experiences ar
 bucket to assist the vectorizer with bucketing ambiguous descriptions. With the average rating settling of 4.1 stars, the expectation my K-Nearest-Neighbor classifier would label each description as positive was high. 
 This quickly was confirmed with the first model and confusion matrix.""", unsafe_allow_html= True)
 
-st.markdown("""<div style = 'text-align: center; font-size: 30px'>First Built KNN Classifier""", unsafe_allow_html=True)
+st.markdown("""<div style = 'text-align: center; font-size: 30px'>KNN Classifier""", unsafe_allow_html=True)
 
 nn = Image.open("images/BottegaNLP/N_neighbors.jpg")
 nnt = Image.open("images/BottegaNLP/nntest.jpg")
@@ -98,6 +98,13 @@ with col1:
        st.image(fin)      
 with col2:
        st.image(gcv)
+
+st.markdown("""<div style = 'text-align: center; font-size: 30px'>MultinomialNB Classifier""", unsafe_allow_html=True)
+st.markdown("""A Naive Bayes Multinomial Classifier might perform better on the data since the model is driven to hande discrete text features.""", unsafe_allow_html= True)
+
+
+
+
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>Conclusion""", unsafe_allow_html=True)
 st.markdown("""Based on the sentimental analysis, """, unsafe_allow_html=True)
 st.markdown("""Potential Improvements:
