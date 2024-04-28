@@ -19,7 +19,7 @@ st.markdown("""
 p = Image.open("images/BottegaNLP/Bottega.jpg")
 bot = st.image(p)
 
-st.markdown("""Bottega Louie, a gourmet market restaurant located in Los Angeles, California holds the record for most
+st.markdown("""Bottega Louie, a gourmet restaurant located in Los Angeles, California, holds the record for most
             reviews on Yelp with 18,756 reviews. Each review contains a written description and rating of 
             1 to 5 stars. Bottega Louie holds an elite customer review average of 4.1 stars. Using NLP methodologies, can
             the descriptions of each review correctly be classified to predict the star rating?""", unsafe_allow_html= True)
@@ -28,20 +28,20 @@ st.markdown("""
 <div style = 'text-align: center; font-size: 30px'>Initial Web-Scrape Data Extraction""", unsafe_allow_html=True)
 
 st.markdown("""All the data is pulled from the official [Yelp Reviews](https://www.yelp.com/biz/bottega-louie-los-angeles?osq=Bottega+Louie%2Freviews) 
-            page for Bottega Louie. My selenium web-scrape iteratively pulled the first 10,000 review descriptions and respective star ratings.""", unsafe_allow_html= True)
+            page for Bottega Louie. My selenium web-scrape iteratively pulls the first 10,000 review descriptions and respective star ratings.""", unsafe_allow_html= True)
 
 pfp = Image.open("images/BottegaNLP/Reviews.jpg")
 st.image(pfp) 
 
-st.markdown("""For our classifier to best consume each description, NLTK and Sklearn is used to simplify and remove fluff from the data entries. \n
-1. Punctuation are first removed. \n
+st.markdown("""For our classifier to best consume each description, NLTK and Sklearn are used to simplify and remove fluff from the data entries. \n
+1. Punctuation is first removed. \n
 2. Stopwords, words within the English language meant for grammar or phrasing but not specifically helpful with evaluating
 sentiments, are then filtered out. \n
 \t I.E. prepositional phrases, articles, or certain verbage \n
 3. Groupings of root words and their conjugations are then made. \n
 \t I.E. [Running, Runs, Runner, Ran] -> run \n
 \n
-In essence, the filtering turns reviews into a latin-esque format.""", unsafe_allow_html= True)
+In essence, the filtering turns reviews into a latin-esque format:""", unsafe_allow_html= True)
 
 col1, col2 = st.columns([1,1])
 with col1:
@@ -53,8 +53,8 @@ with col2:
        contain2.markdown("""<div style = 'font-size: 20px'>After the transformation:</div>
        <div>"beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta"</div>""", unsafe_allow_html= True)
 
-st.markdown("""Between Bag-of-words model and Term Frequency - Inverse Document Frequency model, I chose a TF-IDF Vectorizer to perform the sentiment analysis. 
-A TF-IDF model would allow for further manipulation with the text. After iteratively testing the varibales with a KNN classifier, this was the final vectorizer:""", unsafe_allow_html= True)
+st.markdown("""Between a Bag-of-words model and Term Frequency - Inverse Document Frequency model, I chose a TF-IDF Vectorizer to perform the sentiment analysis. 
+A TF-IDF model would allow for further manipulation with the text. After iteratively testing the variables with a KNN classifier, this was the final vectorizer:""", unsafe_allow_html= True)
 
 st.code("""from sklearn.feature_extraction.text import TfidfVectorizer as TfV
 vector = TfV(max_features = 2000, min_df = 5, max_df = 0.5)
@@ -68,9 +68,9 @@ Bad (3 > stars) <br> </div>""", unsafe_allow_html= True)
 cont = st.container(border=True)
 cont.markdown("""<div style = 'text-align: center; font-size: 30px'> Initial Observations: <br> </div> 
 <div style = 'text-align: left; font-size: 20px'>From a high level, positive descriptions average shorter lengths than Neutral or Negative messages (Positive - 645 / Neutral - 841 / Negative - 844). <br>
-Psychologically, humans don't respond as heavily to postitive experiences as they do negative experiences. Positive descriptions are less anecdotal and as a result, turn out to be more 
+Psychologically, humans don't respond as heavily to positive experiences as they do negative experiences. Positive descriptions are less anecdotal and as a result, turn out to be more 
 consistent with diction and phrasing. <br>
-On the other hand, negative experiences are anecdotal with more comments to provide illustrations thus creating text variance. <br>
+On the other hand, negative experiences are anecdotal with more comments to provide illustrations thus creating variance in the text. <br>
 I chose to add an additional "Neutal" bucket to assist the vectorizer with bucketing ambiguous descriptions. <br> 
 With the average rating settling of 4.1 stars, the expectation my K-Nearest-Neighbor classifier would label each description as positive was high. 
 This quickly was confirmed with the first model and confusion matrix. </div>""", unsafe_allow_html= True)
@@ -106,7 +106,7 @@ st.markdown("""<div style = 'text-align: center; font-size: 30px'>Conclusion""",
 st.markdown("""Based on the sentimental analysis, the positive yelp comments are overwhelmingly easier to classify as opposed to negative. The neutral comments
 are left to interpretation. The final results held a 71.83% overall accuracy only to accomodate a strict "3 Bucket" grade system for the 5 star reviews. In an ideal world
 of only looking at Positive vs Negative comments, comparing the frequency for the use of a word to the totals document word count would serve as a viable classifier that pushes an accuracy of 85%+.
-The extra "Neutral" bucket was strictly meant to limit test our TF-IDF vectorizer + KNN combination.""", unsafe_allow_html=True)
+Another reason for why I added an extra "Neutral" bucket was to limit test our TF-IDF vectorizer + KNN combination.""", unsafe_allow_html=True)
 st.markdown("""Potential Improvements:
 1. Resample our webscrape for a more even pull of Positive/Neutral/Negative reviews.
 2. Change the logic for the bucketing of Y_Actual (Positive/Neutral/Negative).
