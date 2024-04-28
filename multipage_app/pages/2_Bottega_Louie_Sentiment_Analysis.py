@@ -54,7 +54,35 @@ with col2:
        <div>"beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta"</div>""", unsafe_allow_html= True)
 
 st.markdown("""Between a Bag-of-words model and Term Frequency - Inverse Document Frequency model, I chose a TF-IDF Vectorizer to perform the sentiment analysis. 
-A TF-IDF model would allow for further manipulation with the text. After iteratively testing the variables with a KNN classifier, this was the final vectorizer:""", unsafe_allow_html= True)
+A TF-IDF model would allow for further manipulation with the text.""", unsafe_allow_html= True)
+
+st.code("""min = [3,4,5]
+max = [1000,1500,2000]
+perc = [0.5,0.6,0.7]
+s = 0
+fin = []
+for t in range(0,3):
+    for l in range(0,3):
+        for i in range(0,3):
+            vector = TfV(max_features = max[t], min_df = min[l], max_df = perc[i])
+            X = vector.fit_transform(root).toarray()
+            X_train, X_test, y_train, y_test = tts(X,y, test_size= 0.3, random_state= 0)
+            KNN = KNeighborsClassifier(n_neighbors= 2, p = 2)
+            KNN.fit(X_train, y_train)
+            y_pred = KNN.predict(X_test)
+            accuracy = accuracy_score(y_test, y_pred)
+            cm = confusion_matrix(y_test, y_pred)
+            print("Iteration {}".format(i))
+            print("Values: Max - {}, Min - {}, Percentage - {}".format(max[t], min[l], perc[i]), )
+            print(accuracy, cm)
+            if t == 0 & l == 0 and i == 0:
+                s = accuracy 
+            if s <= accuracy:
+                s = accuracy
+                fin = [max[t], min[l], perc[i]] 
+print(s, fin)""", language = "python")
+
+st.markdown("""After iteratively testing the variables with a KNN classifier, this was the final vectorizer: """, unsafe_allow_html= True)
 
 st.code("""from sklearn.feature_extraction.text import TfidfVectorizer as TfV
 vector = TfV(max_features = 2000, min_df = 5, max_df = 0.5)
