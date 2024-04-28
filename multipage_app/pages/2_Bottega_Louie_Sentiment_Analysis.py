@@ -72,7 +72,7 @@ Psychologically, humans don't respond as heavily to positive experiences as they
 consistent with diction and phrasing. <br>
 On the other hand, negative experiences are anecdotal with more comments to provide illustrations thus creating variance in the text. <br>
 I chose to add an additional "Neutal" bucket to assist the vectorizer with bucketing ambiguous descriptions. <br> 
-With the average rating settling of 4.1 stars, the expectation my K-Nearest-Neighbor classifier would label each description as positive was high. 
+With the average rating settling of 4.1 stars, I fully expectated my K-Nearest-Neighbor classifier would label each description as positive. 
 This quickly was confirmed with the first model and confusion matrix. </div>""", unsafe_allow_html= True)
 
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>KNN Classifier""", unsafe_allow_html=True)
