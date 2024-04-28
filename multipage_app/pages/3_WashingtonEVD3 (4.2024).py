@@ -22,6 +22,9 @@ intf = open(r"multipage_app/pages/d3EV/D3Vid.mp4", 'rb')
 intb = intf.read() 
 st.video(data=intb)
 
+st.markdown("""This page is primarily meant to showcase my D3 Visualization skills. I am able to seemlessly manipulate GeoProjection and apply various data filters.""", unsafe_allow_html= True)
+
+
 st.markdown("""
 <div style = 'text-align: center; font-size: 30px'>Evaluation of the Sales Activity Data""", unsafe_allow_html=True)
 
