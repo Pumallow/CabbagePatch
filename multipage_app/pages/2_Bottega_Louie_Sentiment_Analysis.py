@@ -65,6 +65,21 @@ Positive (4+ stars) <br>
 Neutral (3 stars) <br>
 Bad (3 > stars) <br> </div>""", unsafe_allow_html= True)
 
+st.markdown("""<div style = 'text-align: center; font-size: 30px'>Sample Reviews</div>""", unsafe_allow_html= True)
+col1, col2, col3 = st.columns([1,1,1])
+with col1:
+       cont1 = st.container(border=True)
+       st.markdown("""<div style = 'text-align: center; font-size: 20px'>Positive Review</div>""", unsafe_allow_html= True)
+       cont1.markdown("""<div style = 'text-align: center; font-size: 15px'>food good went two night row first night got carbonara burrata pizza absolut delici finish meal gelato crazi good good meal second night got calabres pizza bolognes also good good first night also got box macaron soft perfectli chewi cutest littl box love place much""", unsafe_allow_html= True)
+with col2:
+       cont2 = st.container(border=True)
+       st.markdown("""<div style = 'text-align: center; font-size: 20px'>Neutral Reviews</div>""", unsafe_allow_html= True)
+       cont1.markdown("""<div style = 'text-align: center; font-size: 15px'>pizza star rib pasta star honestli expect downtown la restaur price point servic fine atmospher nice area find better""", unsafe_allow_html= True)
+with col3:
+       cont3 = st.container(border=True)
+       st.markdown("""<div style = 'text-align: center; font-size: 20px'>Negative Reviews</div>""", unsafe_allow_html= True)
+       cont1.markdown("""<div style = 'text-align: center; font-size: 15px'>disgrac trick make coupl extra buck alreadi overpr menu br br check receipt may still see surcharg ask worker sinc lockdown well said suppos money help employe benefit cost loss covid waiter get benefit enough said suspect told could potenti loos job br br may request fee remov embarrass ask unjust owner charg br br hope pray get anyon fire""", unsafe_allow_html= True)
+
 cont = st.container(border=True)
 cont.markdown("""<div style = 'text-align: center; font-size: 30px'> Initial Observations: <br> </div> 
 <div style = 'text-align: left; font-size: 20px'>From a high level, positive descriptions average shorter lengths than Neutral or Negative messages (Positive - 645 / Neutral - 841 / Negative - 844). <br>
