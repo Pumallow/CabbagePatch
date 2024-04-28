@@ -63,7 +63,7 @@ X = vector.fit_transform(root).toarray()""", language = "python")
 st.markdown("""<div style = 'text-align: center; font-size: 20px'>To avoid overfitting to the star ratings, I decided to group the ratings into 3 buckets: <br><br>
 Positive (4+ stars) <br>
 Neutral (3 stars) <br>
-Bad (3 > stars) <br>""", unsafe_allow_html= True)
+Bad (3 > stars) <br> </div>""", unsafe_allow_html= True)
 
 cont = st.container(border=True)
 cont.markdown("""<div style = 'text-align: center; font-size: 30px'> Initial Observations: <br> </div> 
