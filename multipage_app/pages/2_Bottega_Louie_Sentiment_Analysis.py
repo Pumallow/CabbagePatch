@@ -65,12 +65,14 @@ Positive (4+ stars) <br>
 Neutral (3 stars) <br>
 Bad (3> stars) <br>""", unsafe_allow_html= True)
 
-cont = st.container(height = 150, border=True)
+cont = st.container(border=True)
 cont.markdown("""<div style = 'text-align: left; font-size: 20px'> Initial Observations: <br>
-From a high level, positive descriptions average shorter lengths than Neutral or Negative messages (Positive - 645 / Neutral - 841 / Negative - 844). Psychologically, humans don't
-respond as heavily to postivie experiences as they do negative experiences. Positive descriptions are less anecdotal and as a result, turn out to be more 
-consistent with diction and phrasing. On the other hand, negative experiences are anecdotal with more comments to provide illustration thus creating variance. I chose to add an additional "Neutal"
-bucket to assist the vectorizer with bucketing ambiguous descriptions. With the average rating settling of 4.1 stars, the expectation my K-Nearest-Neighbor classifier would label each description as positive was high. 
+From a high level, positive descriptions average shorter lengths than Neutral or Negative messages (Positive - 645 / Neutral - 841 / Negative - 844). <br>
+Psychologically, humans don't respond as heavily to postivie experiences as they do negative experiences. Positive descriptions are less anecdotal and as a result, turn out to be more 
+consistent with diction and phrasing. <br>
+On the other hand, negative experiences are anecdotal with more comments to provide illustration thus creating variance. I chose to add an additional "Neutal"
+bucket to assist the vectorizer with bucketing ambiguous descriptions. <br> 
+With the average rating settling of 4.1 stars, the expectation my K-Nearest-Neighbor classifier would label each description as positive was high. 
 This quickly was confirmed with the first model and confusion matrix.""", unsafe_allow_html= True)
 
 st.markdown("""<div style = 'text-align: center; font-size: 30px'>KNN Classifier""", unsafe_allow_html=True)
