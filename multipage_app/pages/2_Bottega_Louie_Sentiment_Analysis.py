@@ -66,7 +66,7 @@ Neutral (3 stars) <br>
 Bad (3 > stars) <br>""", unsafe_allow_html= True)
 
 cont = st.container(border=True)
-cont.markdown("""<div style = 'text-align: left; font-size: 20px'> Initial Observations: <br> </div> 
+cont.markdown("""<div style = 'text-align: center; font-size: 30px'> Initial Observations: <br> </div> 
 <div style = 'text-align: left; font-size: 20px'>From a high level, positive descriptions average shorter lengths than Neutral or Negative messages (Positive - 645 / Neutral - 841 / Negative - 844). <br>
 Psychologically, humans don't respond as heavily to postitive experiences as they do negative experiences. Positive descriptions are less anecdotal and as a result, turn out to be more 
 consistent with diction and phrasing. <br>
