@@ -54,7 +54,7 @@ with col2:
        <div>"beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta"</div>""", unsafe_allow_html= True)
 
 st.markdown("""Between Bag-of-words model and Term Frequency - Inverse Document Frequency model, I chose a TF-IDF Vectorizer to perform the sentiment analysis. 
-This type of vectorizer would allow for further manipulation with the kind of words evaluated. This was the initial model:""", unsafe_allow_html= True)
+This type of vectorizer would allow for further manipulation with the kind of words evaluated. After iteratively testing the varibales with a KNN classifier, this was the final vectorizer:""", unsafe_allow_html= True)
 
 st.code("""from sklearn.feature_extraction.text import TfidfVectorizer as TfV
 vector = TfV(max_features = 2000, min_df = 5, max_df = 0.5)
