@@ -20,6 +20,7 @@ st.markdown("""<h1 style= 'text-align: center; font-size: 20px;'>Expand the side
  
 with open("images/4.29 Resume.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
+       
 scol1, scol2, scol3, scol4 = st.columns([5,1,1,5])
 with scol2:
     st.download_button(label = "Resume", data = PDFByte, file_name = "4.29 Resume.pdf")         
