@@ -51,8 +51,11 @@ with col1:
     st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> "Do not say what you'll do. Do what you say."
      </h1>""", unsafe_allow_html= True)
     st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> This website is dedicated to all of the studying/projects I commited to outside of work! 
-      I am a born and raised Georgian! Graduating from Kennesaw State & University with a degree in Industrial and Systems Engineering, I found myself with a fascination in tech.
-      This ultimately led me to self-learn languages like SQL and Python as well as expose myself to software like Snowflake, Azure Databricks, Google BigQuery, PowerBi, Tableau, and more. 
+      Passionate NLP enthusiast skilled in harnessing the power of data science, analytics, and engineering to unravel intricate patterns within datasets. 
+      Adept at employing diverse programming languages and tools to uncover nuanced linguistic insights. 
+      Demonstrated proficiency in crafting and deploying machine learning models tailored for text classification and sentiment analysis, driving impactful outcomes like reducing error rates 
+      and enhancing revenue streams. Actively pursuing a Master's in Analytics to expand NLP expertise. Eager to leverage my knowledge and capabilities to propel a progressive team 
+      within an innovative organization forward.
      </h1>""", unsafe_allow_html= True) 
     st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> In December of 2023, I acquired the GTx Micro Masters certificate. Currently, I am
       a graduate student at Georgia Tech in the Online Masters of Science in Analytics.
@@ -67,9 +70,9 @@ with col1:
     Machine Learning A-Z: Hands-On Python & R in Data Science <br>
     Data Science in Layman’s Terms: Time Series Analysis <br>""", unsafe_allow_html= True)
     st.write("""<h1 style= 'text-align: center; font-size: 35px;'>Progress in Georgia Tech Masters of Science in Analytics</h1>
-    <h1 style= 'text-align: left; font-size: 20px;'>SUMMER 23: Introduction to Analytics Modeling (Score: 84) <br>
-    FALL 23: Data Analytics for Business (Score: 86) <br>
-    FALL 23: Computing for Data Analysis (Score: 94) <br>
+    <h1 style= 'text-align: left; font-size: 20px;'>SUMMER 23: Introduction to Analytics Modeling <br>
+    FALL 23: Data Analytics for Business <br>
+    FALL 23: Computing for Data Analysis <br>
     SPRING 24: Business Fundamentals for Analytics <br> 
     SPRING 24: Data Visuals & Analytics</h1>""", unsafe_allow_html= True)
     #st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'> A menu for all my past projects is located on the left hand side of the screen (extend it by arrow in the top left corner). </h1>", unsafe_allow_html= True)
