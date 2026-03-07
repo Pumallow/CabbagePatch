@@ -60,6 +60,22 @@ with col1:
     st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> In December of 2023, I acquired the GTx Micro Masters certificate. Currently, I am
       a graduate student at Georgia Tech in the Online Masters of Science in Analytics.
      </h1>""", unsafe_allow_html= True) 
+
+    st.write("""<h1 style= 'text-align: center; font-size: 35px;'>Progress in Georgia Tech Masters of Science in Analytics</h1>
+    <h1 style= 'text-align: left; font-size: 20px;'>SUMMER 23: Introduction to Analytics Modeling <br>
+    FALL 23: Data Analytics for Business <br>
+    FALL 23: Computing for Data Analysis <br>
+    SPRING 24: Business Fundamentals for Analytics <br> 
+    SPRING 24: Data Visuals & Analytics <br>
+    FALL 24: Bayesian Statistics  <br>
+    FALL 24: Computational Data Analytics <br>
+    SPRING 25: Deterministic Optimization <br>
+    SUMMER 25: Applied Natural Language Processing <br>
+    FALL 25: Reinforcement Learning <br>
+    SPRING 26: Applied Analytics Practicum </h1>""", unsafe_allow_html= True)
+
+
+
     st.write("""<h1 style= 'text-align: center; font-size: 35px;'>Udemy Course Certifications </h1>
     <h1 style= 'text-align: left; font-size: 20px;'>The Complete SQL Bootcamp by Jose Portilla <br>
     Advanced SQL: SQL Expert Certification Preparation by Tim Buchalka <br>
@@ -69,12 +85,6 @@ with col1:
     Snowflake Decoded - Fundamentals and hands on Training <br>
     Machine Learning A-Z: Hands-On Python & R in Data Science <br>
     Data Science in Layman’s Terms: Time Series Analysis <br>""", unsafe_allow_html= True)
-    st.write("""<h1 style= 'text-align: center; font-size: 35px;'>Progress in Georgia Tech Masters of Science in Analytics</h1>
-    <h1 style= 'text-align: left; font-size: 20px;'>SUMMER 23: Introduction to Analytics Modeling <br>
-    FALL 23: Data Analytics for Business <br>
-    FALL 23: Computing for Data Analysis <br>
-    SPRING 24: Business Fundamentals for Analytics <br> 
-    SPRING 24: Data Visuals & Analytics</h1>""", unsafe_allow_html= True)
     #st.markdown("<h1 style= 'text-align: left; color: white; font-size: 20px;'> A menu for all my past projects is located on the left hand side of the screen (extend it by arrow in the top left corner). </h1>", unsafe_allow_html= True)
     
     st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> My passion for data extends beyond my career with, for example, talking on podcasts. Outside of my career activities, I spend my time socializing with friends, playing soccer, working out, and playing the piano. I look to make the most
@@ -92,3 +102,4 @@ with col2:
 
 
 st.sidebar.success("Pages to Peruse.")
+
