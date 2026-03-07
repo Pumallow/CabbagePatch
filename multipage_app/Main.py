@@ -61,7 +61,7 @@ with col1:
       a graduate student at Georgia Tech in the Online Masters of Science in Analytics.
      </h1>""", unsafe_allow_html= True) 
 
-    st.write("""<h1 style= 'text-align: center; font-size: 35px;'>Progress in Georgia Tech Masters of Science in Analytics</h1>
+    st.write("""<h1 style= 'text-align: center; font-size: 35px;'>Progress in Georgia Tech OMSA Program</h1>
     <h1 style= 'text-align: left; font-size: 20px;'>SUMMER 23: Introduction to Analytics Modeling <br>
     FALL 23: Data Analytics for Business <br>
     FALL 23: Computing for Data Analysis <br>
@@ -102,4 +102,5 @@ with col2:
 
 
 st.sidebar.success("Pages to Peruse.")
+
 
