@@ -48,7 +48,7 @@ side = max((100 - width) / 2, 0.01)
 
 col1, col2 = st.columns([5,2])
 with col1: 
-    st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> "Do not say what you'll do. Do what you say."
+    st.markdown("""<h1 style= 'text-align: center; font-size: 20px;'> "Do not say what you'll do. Do what you say."
      </h1>""", unsafe_allow_html= True)
     st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> This website is dedicated to all of the studying/projects I commited to outside of work! 
       Passionate NLP enthusiast skilled in harnessing the power of data science, analytics, and engineering to unravel intricate patterns within datasets. 
@@ -102,6 +102,7 @@ with col2:
 
 
 st.sidebar.success("Pages to Peruse.")
+
 
 
 
