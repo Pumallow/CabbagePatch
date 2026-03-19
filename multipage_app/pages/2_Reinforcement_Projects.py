@@ -83,7 +83,11 @@ if project == "Project 4: DeepRacer PPO":
     Trained a **PPO** agent for AWS DeepRacer across 3 tracks (reInvent2019-wide, reInvent2019, Vegas) 
     in Time-Trial, Object-Avoidance, and Head-to-Head modes (~80,000 episodes).
     """)
-
+    
+    intf = open(r"images/ReinforcementLearning/Lap Training - Trial", 'rb')
+    intb = intf.read() 
+    st.video(data=intb)
+    
     # Hero images
     c1, c2, c3 = st.columns(3)
     with c1: st.image(car_img, caption="AWS DeepRacer Car", use_column_width=True)
