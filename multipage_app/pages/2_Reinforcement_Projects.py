@@ -16,7 +16,7 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 st.markdown("""
 <div style = 'text-align: center; font-size: 30px'>PPO Autonomous Driving Project""", unsafe_allow_html=True)
 
-intf = open(r"multipage_app/pages/d3EV/D3Vid.mp4", 'rb')
+intf = open(r"multipage_app/pages/d3EV/Lap Training - Trial", 'rb')
 intb = intf.read() 
 st.video(data=intb)
 
@@ -27,10 +27,9 @@ with open("images/ProjectPaper4.docx", "rb") as pdf_file:
     PDFByte = pdf_file.read()
 
 
-st.markdown("""Bottega Louie, a gourmet restaurant located in Los Angeles, California, holds the record for most
-            reviews on Yelp with 18,756 reviews. Each review contains a written description and rating of 
-            1 to 5 stars. Bottega Louie holds an elite customer review average of 4.1 stars. Using NLP methodologies, can
-            the descriptions of each review correctly be classified to predict the star rating?""", unsafe_allow_html= True)
+st.markdown("""Project 4: DeepRacer – PPO Agent Prepping for the F1 (Marshal Turner, Dec 2025) documents the development of a reinforcement learning agent for AWS DeepRacer to simulate F1-style racing across three tracks (reInvent2019-wide, reInvent2019, and Vegas) in three race modes: Time-Trial, Object-Avoidance, and Head-to-Head.
+The agent uses a CNN + LIDAR encoder (≈1.7M parameters) to process stereo grayscale cameras, a colored front camera, and 64-beam LIDAR data. PPO was selected for its stability in continuous action spaces (steering/throttle) and resilience to volatile rewards. Training spanned ~80,000+ episodes total.
+The core breakthrough was a rigorously engineered “No Mercy, No Exploits” reward function: all bonuses were capped, multiplicative cascades eliminated, and six specific crawling/zigzag/wall-hugging exploits were systematically killed. This replaced an earlier unstable reward design that caused policy collapses and local maxima.""", unsafe_allow_html= True)
 
 st.markdown("""
 <div style = 'text-align: center; font-size: 30px'>Initial Web-Scrape Data Extraction""", unsafe_allow_html=True)
@@ -38,18 +37,18 @@ st.markdown("""
 st.markdown("""All the data is pulled from the official [Yelp Reviews](https://www.yelp.com/biz/bottega-louie-los-angeles?osq=Bottega+Louie%2Freviews) 
             page for Bottega Louie. My selenium web-scrape iteratively pulls the first 10,000 review descriptions and respective star ratings.""", unsafe_allow_html= True)
 
-pfp = Image.open("images/BottegaNLP/Reviews.jpg")
+pfp = Image.open("images/BottegaNLP/car.png")
 st.image(pfp) 
 
-st.markdown("""For our classifier to best consume each description, NLTK and Sklearn are used to simplify and remove fluff from the data entries. \n
-1. Punctuation is first removed. \n
-2. Stopwords, words within the English language meant for grammar or phrasing but not specifically helpful with evaluating
-sentiments, are then filtered out. \n
-\t I.E. prepositional phrases, articles, or certain verbage \n
-3. Groupings of root words and their conjugations are then made. \n
-\t I.E. [Running, Runs, Runner, Ran] -> run \n
-\n
-In essence, the filtering turns reviews into a latin-esque format:""", unsafe_allow_html= True)
+pfp = Image.open("images/BottegaNLP/PPO.png")
+st.image(pfp) 
+
+pfp = Image.open("images/BottegaNLP/racetracks.png")
+st.image(pfp) 
+
+st.markdown("""Time-Trial: Reached 76.3% max progress and clean laps on the wide track (sub-16s potential shown in video).
+Object-Avoidance: Max progress 26.3%; strong on straights but struggled with curve-based obstacles.
+Head-to-Head: Competitive early but faded after ~25% due to turn-handling against 3 AI opponents.""", unsafe_allow_html= True)
 
 col1, col2 = st.columns([1,1])
 with col1:
