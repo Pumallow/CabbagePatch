@@ -83,10 +83,23 @@ if project == "Project 4: DeepRacer PPO":
     Trained a **PPO** agent for AWS DeepRacer across 3 tracks (reInvent2019-wide, reInvent2019, Vegas) 
     in Time-Trial, Object-Avoidance, and Head-to-Head modes (~80,000 episodes).
     """)
+
+    st.markdown("""
+    Trained a **PPO** agent for AWS DeepRacer across 3 tracks (reInvent2019-wide, reInvent2019, Vegas)  
+    in Time-Trial, Object-Avoidance, and Head-to-Head modes (~80,000 episodes).
+    """)
     
-    wintf = open(r"images/ReinforcementLearning/Lap Training - Trial.mp4", 'rb')
-    intb = intf.read() 
-    st.video(data=intb)
+    # ✅ Corrected & simplest way (recommended)
+    video_path = "images/ReinforcementLearning/Lap Training - Trial.mp4"
+    
+    st.video(
+        video_path,           # ← Just pass the path directly
+        start_time=0,
+        loop=True,
+        autoplay=False
+    )
+    
+    st.caption("🎥 PPO Agent – Clean lap on reInvent2019-wide track (sub-16s pace)")
     
     # Hero images
     c1, c2, c3 = st.columns(3)
