@@ -16,9 +16,7 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 st.markdown("""
 <div style = 'text-align: center; font-size: 30px'>PPO Autonomous Driving Project""", unsafe_allow_html=True)
 
-intf = open(r"multipage_app/pages/d3EV/Lap Training - Trial", 'rb')
-intb = intf.read() 
-st.video(data=intb)
+
 
 with open("images/ProjectPaper3.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
