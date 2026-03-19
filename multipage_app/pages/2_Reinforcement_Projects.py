@@ -80,11 +80,6 @@ if project == "Project 4: DeepRacer PPO":
     st.header("Project 4: DeepRacer – PPO Agent Prepping for the F1")
     
     st.markdown("""
-    Trained a **PPO** agent for AWS DeepRacer across 3 tracks (reInvent2019-wide, reInvent2019, Vegas) 
-    in Time-Trial, Object-Avoidance, and Head-to-Head modes (~80,000 episodes).
-    """)
-
-    st.markdown("""
     Trained a **PPO** agent for AWS DeepRacer across 3 tracks (reInvent2019-wide, reInvent2019, Vegas)  
     in Time-Trial, Object-Avoidance, and Head-to-Head modes (~80,000 episodes).
     """)
