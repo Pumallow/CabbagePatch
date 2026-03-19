@@ -16,8 +16,9 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 st.markdown("""
 <div style = 'text-align: center; font-size: 30px'>PPO Autonomous Driving Project""", unsafe_allow_html=True)
 
-p = Image.open("images/BottegaNLP/Bottega.jpg")
-bot = st.image(p)
+intf = open(r"multipage_app/pages/d3EV/D3Vid.mp4", 'rb')
+intb = intf.read() 
+st.video(data=intb)
 
 st.markdown("""Bottega Louie, a gourmet restaurant located in Los Angeles, California, holds the record for most
             reviews on Yelp with 18,756 reviews. Each review contains a written description and rating of 
