@@ -26,7 +26,7 @@ def load_img(path: str):
     return Image.open(path)
 
 # Load once at startup (no repeated opens)
-car_img      = load_img("images/ReinforcementLearningP/car.png")
+car_img      = load_img("images/ReinforcementLearning/car.png")
 ppo_img      = load_img("images/ReinforcementLearning/PPO.png")
 tracks_img   = load_img("images/ReinforcementLearning/racetracks.png")
 map1         = load_img("images/ReinforcementLearning/Map 1.png")
