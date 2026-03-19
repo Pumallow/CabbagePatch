@@ -49,126 +49,24 @@ Object-Avoidance: Max progress 26.3%; strong on straights but struggled with cur
 Head-to-Head: Competitive early but faded after ~25% due to turn-handling against 3 AI opponents.""", unsafe_allow_html= True)
 
 
-st.markdown("""Project 3: Collaborative Onion Soup Delivery via QMIX with Dense Reward Shaping (Marshal Turner, Nov 2025) trains two cooperative agents using QMIX to deliver at least 7 onion soups within 400 seconds across three Overcooked kitchen layouts: cramped room, coordination ring, and counter-circuit-o1order.
+st.markdown("""
+<div style = 'text-align: center; font-size: 30px'>Project 3: Collaborative Onion Soup Delivery via QMIX with Dense Reward Shaping""", unsafe_allow_html=True)
+
+st.markdown(""" (Marshal Turner, Nov 2025) trains two cooperative agents using QMIX to deliver at least 7 onion soups within 400 seconds across three Overcooked kitchen layouts: cramped room, coordination ring, and counter-circuit-o1order.
 The agents receive a 96-feature observation vector and 6 discrete actions. QMIX was chosen for its monotonic value factorization (per-agent GRUs + state-conditioned mixing network) to enable decentralized execution while maintaining joint optimality in a loosely cooperative setting. A dense + event-based reward shaping function was layered on top of the environment rewards (onion/pot/dish/delivery bonuses + idle and collision penalties), scaled to ~10% of the base signal, with an episodic memory dictionary to block redundant actions and prevent loops.""", unsafe_allow_html= True)
 
 
 col1, col2, col3 = st.columns([1,1,1])
 with col1:
-       pfp = Image.open("images/ReinforcementLearning/racetracks.png")
+       pfp = Image.open("images/ReinforcementLearning/Map 1.png")
        st.image(pfp) 
 with col2:
-       pfp = Image.open("images/ReinforcementLearning/car.png")
+       pfp = Image.open("images/ReinforcementLearning/Map 2.png")
        st.image(pfp) 
 with col3:
-       pfp = Image.open("images/ReinforcementLearning/PPO.png")
+       pfp = Image.open("images/ReinforcementLearning/Map 3.png")
        st.image(pfp) 
        
-st.markdown("""Between a Bag-of-words model and Term Frequency - Inverse Document Frequency model, I chose a TF-IDF Vectorizer to perform the sentiment analysis. 
-A TF-IDF model would allow for further manipulation with the text.""", unsafe_allow_html= True)
-
-st.code("""min = [3,4,5]
-max = [1000,1500,2000]
-perc = [0.5,0.6,0.7]
-s = 0
-fin = []
-for t in range(0,3):
-    for l in range(0,3):
-        for i in range(0,3):
-            vector = TfV(max_features = max[t], min_df = min[l], max_df = perc[i])
-            X = vector.fit_transform(root).toarray()
-            X_train, X_test, y_train, y_test = tts(X,y, test_size= 0.3, random_state= 0)
-            KNN = KNeighborsClassifier(n_neighbors= 2, p = 2)
-            KNN.fit(X_train, y_train)
-            y_pred = KNN.predict(X_test)
-            accuracy = accuracy_score(y_test, y_pred)
-            cm = confusion_matrix(y_test, y_pred)
-            print("Iteration {}".format(i))
-            print("Values: Max - {}, Min - {}, Percentage - {}".format(max[t], min[l], perc[i]), )
-            print(accuracy, cm)
-            if t == 0 & l == 0 and i == 0:
-                s = accuracy 
-            if s <= accuracy:
-                s = accuracy
-                fin = [max[t], min[l], perc[i]] 
-print(s, fin)""", language = "python")
-
-st.markdown("""After iteratively testing the variables with a KNN classifier, this was the final vectorizer: """, unsafe_allow_html= True)
-
-st.code("""from sklearn.feature_extraction.text import TfidfVectorizer as TfV
-vector = TfV(max_features = 2000, min_df = 5, max_df = 0.5)
-X = vector.fit_transform(root).toarray()""", language = "python")
-
-st.markdown("""<div style = 'text-align: center; font-size: 20px'>To avoid overfitting to the star ratings, I decided to group the ratings into 3 buckets: <br>
-Positive (4+ stars) <br>
-Neutral (3 stars) <br>
-Negative (3 > stars) <br> </div>""", unsafe_allow_html= True)
-st.markdown("""""",unsafe_allow_html = True)
-
-st.markdown("""<div style = 'text-align: center; font-size: 30px'>Sample Reviews</div>""", unsafe_allow_html= True)
-col1, col2, col3 = st.columns([1,1,1])
-with col1:
-       cont1 = st.container(border=True)
-       cont1.markdown("""<div style = 'text-align: center; font-size: 20px'>Positive Review</div>""", unsafe_allow_html= True)
-       cont1.markdown("""<div style = 'text-align: center; font-size: 15px'>food good went two night row first night got carbonara burrata pizza absolut delici finish meal gelato crazi good good meal second night got calabres pizza bolognes also good good first night also got box macaron soft perfectli chewi cutest littl box love place much""", unsafe_allow_html= True)
-with col2:
-       cont2 = st.container(border=True)
-       cont2.markdown("""<div style = 'text-align: center; font-size: 20px'>Neutral Review</div>""", unsafe_allow_html= True)
-       cont2.markdown("""<div style = 'text-align: center; font-size: 15px'>pizza star rib pasta star honestli expect downtown la restaur price point servic fine atmospher nice area find better""", unsafe_allow_html= True)
-with col3:
-       cont3 = st.container(border=True)
-       cont3.markdown("""<div style = 'text-align: center; font-size: 20px'>Negative Review</div>""", unsafe_allow_html= True)
-       cont3.markdown("""<div style = 'text-align: center; font-size: 15px'>disgrac trick make coupl extra buck alreadi overpr menu br br check receipt may still see surcharg ask worker sinc lockdown well said suppos money help employe benefit cost loss covid waiter get benefit enough said suspect told could potenti loos job br br may request fee remov embarrass ask unjust owner charg br br hope pray get anyon fire""", unsafe_allow_html= True)
-
-cont = st.container(border=True)
-cont.markdown("""<div style = 'text-align: center; font-size: 30px'> Initial Observations: <br> </div> 
-<div style = 'text-align: left; font-size: 20px'>From a high level, positive descriptions average shorter lengths than Neutral or Negative messages (Positive - 645 / Neutral - 841 / Negative - 844). <br>
-Psychologically, humans don't respond as heavily to positive experiences as they do negative experiences. Positive descriptions are less anecdotal and as a result, turn out to be more 
-consistent with diction and phrasing. <br>
-On the other hand, negative experiences are anecdotal with more comments to provide illustrations thus creating variance in the text. <br>
-I chose to add an additional "Neutal" bucket to assist the vectorizer with bucketing ambiguous descriptions. <br> 
-With the average rating settling of 4.1 stars, I fully expectated my K-Nearest-Neighbor classifier would label each description as positive. 
-This quickly was confirmed with the first model and confusion matrix. </div>""", unsafe_allow_html= True)
-
-st.markdown("""<div style = 'text-align: center; font-size: 30px'>KNN Classifier""", unsafe_allow_html=True)
-
-nn = Image.open("images/BottegaNLP/N_neighbors.jpg")
-nnt = Image.open("images/BottegaNLP/nntest.jpg")
-
-col1, col2 = st.columns([1,1])
-with col1:
-       st.image(nn)
-with col2:
-       st.markdown("I iterated through various number of neighbors included in each query to optimize the accuracy. Something to take note of however, the reason the accuracy increases with n_neighbors = 16 is because the model leans to optimize ONLY Positive comments. Lowering n_neighbors increases the accuracies for Neutral/Negative reviews. As a result, I stuck with n_neighbors = 5 to keep a decent overall metric while compensating for separate accuracies.", unsafe_allow_html= True)
-       st.image(nnt)
-
-test1 = Image.open("images/BottegaNLP/Test1.jpg")
-st.image(test1) 
-
-st.markdown("""<div style = 'text-align: center; font-size: 30px'>Grid Search""", unsafe_allow_html=True)
-gcv = Image.open("images/BottegaNLP/GS.jpg")
-fin = Image.open("images/BottegaNLP/Fintest.jpg")
-col1, col2 = st.columns([1,1])
-with col1:
-       st.markdown("To best service the issue, the GridSearchCV needed to be scored with a 'balancing_accuracy'.", unsafe_allow_html= True)
-       st.code("grid = GridSearchCV(knn, param_grid, cv=10, scoring='balanced_accuracy', return_train_score=False)", language = "python")
-       st.markdown("After inputting the optimum metrics into the KNN classifier. I yielded the final results:", unsafe_allow_html= True)
-       st.image(fin)      
-with col2:
-       st.image(gcv)
-
-st.markdown("""<div style = 'text-align: center; font-size: 30px'>Conclusion""", unsafe_allow_html=True)
-st.markdown("""Based on the sentimental analysis, the positive yelp comments are overwhelmingly easier to classify as opposed to negative. The neutral comments
-are left to interpretation. The final results held a 71.83% overall accuracy only to accomodate a strict "3 Bucket" grade system for the 5 star reviews. In an ideal world
-of only looking at Positive vs Negative comments, comparing the frequency for the use of a word to the totals document word count would serve as a viable classifier that pushes an accuracy of 85%+.
-Another reason for why I added an extra "Neutral" bucket was to limit test our TF-IDF vectorizer + KNN combination.""", unsafe_allow_html=True)
-st.markdown("""Potential Improvements:
-1. Resample our webscrape for a more even pull of Positive/Neutral/Negative reviews.
-2. Change the logic for the bucketing of Y_Actual (Positive/Neutral/Negative).
-3. Test alternative vectorizers like FastText, Word2Vec, or OneHotEncoding.
-4. Try an ANN with Tensorflow.""", unsafe_allow_html= True)
-
-
 
 
 
