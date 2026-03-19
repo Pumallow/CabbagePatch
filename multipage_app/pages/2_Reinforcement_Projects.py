@@ -89,17 +89,21 @@ if project == "Project 4: DeepRacer PPO":
     in Time-Trial, Object-Avoidance, and Head-to-Head modes (~80,000 episodes).
     """)
     
-    # ✅ Corrected & simplest way (recommended)
-    video_path = "images/ReinforcementLearning/Lap Training - Trial.mp4"
+    script_dir = Path(__file__).parent
+    video_path = script_dir.parent / "images" / "ReinforcementLearning" / "Lap Training - Trial.mp4"
     
-    st.video(
-        video_path,           # ← Just pass the path directly
-        start_time=0,
-        loop=True,
-        autoplay=False
-    )
-    
-    st.caption("🎥 PPO Agent – Clean lap on reInvent2019-wide track (sub-16s pace)")
+    if video_path.exists():
+        st.video(
+            str(video_path),
+            start_time=0,
+            loop=True,
+            autoplay=False
+        )
+        st.caption("🎥 PPO Agent – Clean lap on reInvent2019-wide track (sub-16s pace)")
+    else:
+        st.error(f"❌ Video file not found at:\n{video_path}")
+        st.info("Expected folder: images/ReinforcementLearning/ at the ROOT of your app")
+        st.info("Make sure the file is named exactly **Lap Training - Trial.mp4** and committed to GitHub")
     
     # Hero images
     c1, c2, c3 = st.columns(3)
