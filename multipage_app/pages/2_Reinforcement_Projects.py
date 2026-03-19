@@ -20,6 +20,13 @@ intf = open(r"multipage_app/pages/d3EV/D3Vid.mp4", 'rb')
 intb = intf.read() 
 st.video(data=intb)
 
+with open("images/ProjectPaper3.docx", "rb") as pdf_file:
+    PDFByte = pdf_file.read()
+
+with open("images/ProjectPaper4.docx", "rb") as pdf_file:
+    PDFByte = pdf_file.read()
+
+
 st.markdown("""Bottega Louie, a gourmet restaurant located in Los Angeles, California, holds the record for most
             reviews on Yelp with 18,756 reviews. Each review contains a written description and rating of 
             1 to 5 stars. Bottega Louie holds an elite customer review average of 4.1 stars. Using NLP methodologies, can
