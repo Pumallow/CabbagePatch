@@ -18,10 +18,10 @@ st.markdown("""
 
 
 
-with open("images/ProjectPaper3.pdf", "rb") as pdf_file:
+with open("images/ReinforcementLearning/ProjectPaper3.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
 
-with open("images/ProjectPaper4.pdf", "rb") as pdf_file:
+with open("images/ReinforcementLearning/ProjectPaper4.pdf", "rb") as pdf_file:
     PDFByte = pdf_file.read()
 
 
@@ -35,29 +35,35 @@ st.markdown("""
 st.markdown("""All the data is pulled from the official [Yelp Reviews](https://www.yelp.com/biz/bottega-louie-los-angeles?osq=Bottega+Louie%2Freviews) 
             page for Bottega Louie. My selenium web-scrape iteratively pulls the first 10,000 review descriptions and respective star ratings.""", unsafe_allow_html= True)
 
-pfp = Image.open("images/BottegaNLP/car.png")
+pfp = Image.open("images/ReinforcementLearningP/car.png")
 st.image(pfp) 
 
-pfp = Image.open("images/BottegaNLP/PPO.png")
+pfp = Image.open("images/ReinforcementLearning/PPO.png")
 st.image(pfp) 
 
-pfp = Image.open("images/BottegaNLP/racetracks.png")
+pfp = Image.open("images/ReinforcementLearning/racetracks.png")
 st.image(pfp) 
 
 st.markdown("""Time-Trial: Reached 76.3% max progress and clean laps on the wide track (sub-16s potential shown in video).
 Object-Avoidance: Max progress 26.3%; strong on straights but struggled with curve-based obstacles.
 Head-to-Head: Competitive early but faded after ~25% due to turn-handling against 3 AI opponents.""", unsafe_allow_html= True)
 
-col1, col2 = st.columns([1,1])
-with col1:
-       contain = st.container(height = 150, border=True)
-       contain.markdown("""<div style = 'font-size: 20px'>Before the transformation:</div>
-       <div>"Beautiful restaurant and always delicious food! I always enjoy the Carbonara- my favorite. But pizzas have been great as well as their Pomodoro pasta."</div>""", unsafe_allow_html=True) 
-with col2:
-       contain2 = st.container(height = 150, border=True)
-       contain2.markdown("""<div style = 'font-size: 20px'>After the transformation:</div>
-       <div>"beauti restaur alway delici food alway enjoy carbonara favorit pizza great well pomodoro pasta"</div>""", unsafe_allow_html= True)
 
+st.markdown("""Project 3: Collaborative Onion Soup Delivery via QMIX with Dense Reward Shaping (Marshal Turner, Nov 2025) trains two cooperative agents using QMIX to deliver at least 7 onion soups within 400 seconds across three Overcooked kitchen layouts: cramped room, coordination ring, and counter-circuit-o1order.
+The agents receive a 96-feature observation vector and 6 discrete actions. QMIX was chosen for its monotonic value factorization (per-agent GRUs + state-conditioned mixing network) to enable decentralized execution while maintaining joint optimality in a loosely cooperative setting. A dense + event-based reward shaping function was layered on top of the environment rewards (onion/pot/dish/delivery bonuses + idle and collision penalties), scaled to ~10% of the base signal, with an episodic memory dictionary to block redundant actions and prevent loops.""", unsafe_allow_html= True)
+
+
+col1, col2, col3 = st.columns([1,1,1])
+with col1:
+       pfp = Image.open("images/ReinforcementLearning/racetracks.png")
+       st.image(pfp) 
+with col2:
+       pfp = Image.open("images/ReinforcementLearning/car.png")
+       st.image(pfp) 
+with col3:
+       pfp = Image.open("images/ReinforcementLearning/PPO.png")
+       st.image(pfp) 
+       
 st.markdown("""Between a Bag-of-words model and Term Frequency - Inverse Document Frequency model, I chose a TF-IDF Vectorizer to perform the sentiment analysis. 
 A TF-IDF model would allow for further manipulation with the text.""", unsafe_allow_html= True)
 
