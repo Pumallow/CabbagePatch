@@ -132,5 +132,3 @@ elif project == "Project 3: Overcooked QMIX":
     - QMIX excels at role specialization but struggles with tight coordination
     """)
 
-# Optional footer
-st.caption("Built with ❤️ using Streamlit • Optimized for speed & readability")
