@@ -39,8 +39,8 @@ def load_pdf(filename: str):
     with open(f"images/ReinforcementLearning/{filename}", "rb") as f:
         return f.read()
 
-pdf4 = load_pdf("ProjectPaper4.pdf")
-pdf3 = load_pdf("ProjectPaper3.pdf")
+pdf4 = load_pdf("Project4Paper.pdf")
+pdf3 = load_pdf("Project3Paper.pdf")
 
 # ====================== SIDEBAR ======================
 st.sidebar.title("🔬 Reinforcement Learning")
