@@ -1,75 +1,132 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
 from PIL import Image
 
+# ====================== CONFIG ======================
+st.set_page_config(
+    page_title="RL Projects | Marshal Turner",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
-st.set_page_config(layout="wide", page_title="Reinforcement Learning")
-hide_default_format = """
-       <style>
-       #MainMenu {visibility: hidden; }
-       footer {visibility: hidden;}
-       </style>
-       """
-st.markdown(hide_default_format, unsafe_allow_html=True)
+# Hide default menu & footer
+st.markdown(
+    """
+    <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        .block-container {padding-top: 2rem;}
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
-st.markdown("""
-<div style = 'text-align: center; font-size: 30px'>PPO Autonomous Driving Project""", unsafe_allow_html=True)
+# ====================== CACHED IMAGE LOADING ======================
+@st.cache_resource(show_spinner=False)
+def load_img(path: str):
+    return Image.open(path)
 
+# Load once at startup (no repeated opens)
+car_img      = load_img("images/ReinforcementLearningP/car.png")
+ppo_img      = load_img("images/ReinforcementLearning/PPO.png")
+tracks_img   = load_img("images/ReinforcementLearning/racetracks.png")
+map1         = load_img("images/ReinforcementLearning/Map 1.png")
+map2         = load_img("images/ReinforcementLearning/Map 2.png")
+map3         = load_img("images/ReinforcementLearning/Map 3.png")
 
+# ====================== PDF DOWNLOADS ======================
+@st.cache_data(show_spinner=False)
+def load_pdf(filename: str):
+    with open(f"images/ReinforcementLearning/{filename}", "rb") as f:
+        return f.read()
 
-with open("images/ReinforcementLearning/ProjectPaper3.pdf", "rb") as pdf_file:
-    PDFByte = pdf_file.read()
+pdf4 = load_pdf("ProjectPaper4.pdf")
+pdf3 = load_pdf("ProjectPaper3.pdf")
 
-with open("images/ReinforcementLearning/ProjectPaper4.pdf", "rb") as pdf_file:
-    PDFByte = pdf_file.read()
+# ====================== SIDEBAR ======================
+st.sidebar.title("🔬 Reinforcement Learning")
+project = st.sidebar.radio(
+    "Choose Project",
+    ["Project 4: DeepRacer PPO", "Project 3: Overcooked QMIX"]
+)
 
+st.sidebar.markdown("---")
+st.sidebar.caption("Marshal Turner • Georgia Tech OMSA")
 
-st.markdown("""Project 4: DeepRacer – PPO Agent Prepping for the F1 (Marshal Turner, Dec 2025) documents the development of a reinforcement learning agent for AWS DeepRacer to simulate F1-style racing across three tracks (reInvent2019-wide, reInvent2019, and Vegas) in three race modes: Time-Trial, Object-Avoidance, and Head-to-Head.
-The agent uses a CNN + LIDAR encoder (≈1.7M parameters) to process stereo grayscale cameras, a colored front camera, and 64-beam LIDAR data. PPO was selected for its stability in continuous action spaces (steering/throttle) and resilience to volatile rewards. Training spanned ~80,000+ episodes total.
-The core breakthrough was a rigorously engineered “No Mercy, No Exploits” reward function: all bonuses were capped, multiplicative cascades eliminated, and six specific crawling/zigzag/wall-hugging exploits were systematically killed. This replaced an earlier unstable reward design that caused policy collapses and local maxima.""", unsafe_allow_html= True)
+# ====================== MAIN APP ======================
+st.title("Reinforcement Learning Projects")
+st.markdown("**Highlight reel of my RL work**")
 
-st.markdown("""
-<div style = 'text-align: center; font-size: 30px'>Initial Web-Scrape Data Extraction""", unsafe_allow_html=True)
+# Download buttons (always visible)
+col_dl1, col_dl2 = st.columns(2)
+with col_dl1:
+    st.download_button(
+        label="📄 Download DeepRacer Paper (PDF)",
+        data=pdf4,
+        file_name="Project4_DeepRacer_PPO.pdf",
+        mime="application/pdf"
+    )
+with col_dl2:
+    st.download_button(
+        label="📄 Download Overcooked QMIX Paper (PDF)",
+        data=pdf3,
+        file_name="Project3_Overcooked_QMIX.pdf",
+        mime="application/pdf"
+    )
 
-st.markdown("""All the data is pulled from the official [Yelp Reviews](https://www.yelp.com/biz/bottega-louie-los-angeles?osq=Bottega+Louie%2Freviews) 
-            page for Bottega Louie. My selenium web-scrape iteratively pulls the first 10,000 review descriptions and respective star ratings.""", unsafe_allow_html= True)
+st.markdown("---")
 
-pfp = Image.open("images/ReinforcementLearningP/car.png")
-st.image(pfp) 
+# ====================== PROJECT TABS ======================
+if project == "Project 4: DeepRacer PPO":
+    st.header("Project 4: DeepRacer – PPO Agent Prepping for the F1")
+    
+    st.markdown("""
+    Trained a **PPO** agent for AWS DeepRacer across 3 tracks (reInvent2019-wide, reInvent2019, Vegas) 
+    in Time-Trial, Object-Avoidance, and Head-to-Head modes (~80,000 episodes).
+    """)
 
-pfp = Image.open("images/ReinforcementLearning/PPO.png")
-st.image(pfp) 
+    # Hero images
+    c1, c2, c3 = st.columns(3)
+    with c1: st.image(car_img, caption="AWS DeepRacer Car", use_column_width=True)
+    with c2: st.image(ppo_img, caption="PPO Architecture", use_column_width=True)
+    with c3: st.image(tracks_img, caption="Race Tracks", use_column_width=True)
 
-pfp = Image.open("images/ReinforcementLearning/racetracks.png")
-st.image(pfp) 
+    st.markdown("""
+    **Key Breakthrough**: “No Mercy, No Exploits” reward function  
+    - Capped all bonuses  
+    - Eliminated multiplicative cascades  
+    - Killed 6 crawling/zigzag/wall-hugging exploits  
 
-st.markdown("""Time-Trial: Reached 76.3% max progress and clean laps on the wide track (sub-16s potential shown in video).
-Object-Avoidance: Max progress 26.3%; strong on straights but struggled with curve-based obstacles.
-Head-to-Head: Competitive early but faded after ~25% due to turn-handling against 3 AI opponents.""", unsafe_allow_html= True)
+    **Results**:
+    - Time-Trial: 76.3% max progress + clean laps (sub-16s potential)
+    - Object-Avoidance: 26.3% max progress
+    - Head-to-Head: Strong early race positioning
+    """)
 
+elif project == "Project 3: Overcooked QMIX":
+    st.header("Project 3: Collaborative Onion Soup Delivery via QMIX")
+    
+    st.markdown("""
+    Trained **two cooperative agents** using **QMIX** (monotonic value factorization + per-agent GRUs) 
+    to deliver ≥7 onion soups across three Overcooked layouts.
+    """)
 
-st.markdown("""
-<div style = 'text-align: center; font-size: 30px'>Project 3: Collaborative Onion Soup Delivery via QMIX with Dense Reward Shaping""", unsafe_allow_html=True)
+    # Kitchen maps in nice columns
+    c1, c2, c3 = st.columns(3)
+    with c1: st.image(map1, caption="Cramped Room", use_column_width=True)
+    with c2: st.image(map2, caption="Coordination Ring", use_column_width=True)
+    with c3: st.image(map3, caption="Counter Circuit", use_column_width=True)
 
-st.markdown(""" (Marshal Turner, Nov 2025) trains two cooperative agents using QMIX to deliver at least 7 onion soups within 400 seconds across three Overcooked kitchen layouts: cramped room, coordination ring, and counter-circuit-o1order.
-The agents receive a 96-feature observation vector and 6 discrete actions. QMIX was chosen for its monotonic value factorization (per-agent GRUs + state-conditioned mixing network) to enable decentralized execution while maintaining joint optimality in a loosely cooperative setting. A dense + event-based reward shaping function was layered on top of the environment rewards (onion/pot/dish/delivery bonuses + idle and collision penalties), scaled to ~10% of the base signal, with an episodic memory dictionary to block redundant actions and prevent loops.""", unsafe_allow_html= True)
+    st.markdown("""
+    **Results** (150-episode evaluation):
+    - Cramped Room: **3.2** soups
+    - Coordination Ring: **0.8** soups
+    - Counter Circuit: **0.0** soups
 
+    **Lessons Learned**:
+    - Dense reward shaping is extremely fragile in MARL
+    - Over-penalization → policy collapse ("paralysis by analysis")
+    - QMIX excels at role specialization but struggles with tight coordination
+    """)
 
-col1, col2, col3 = st.columns([1,1,1])
-with col1:
-       pfp = Image.open("images/ReinforcementLearning/Map 1.png")
-       st.image(pfp) 
-with col2:
-       pfp = Image.open("images/ReinforcementLearning/Map 2.png")
-       st.image(pfp) 
-with col3:
-       pfp = Image.open("images/ReinforcementLearning/Map 3.png")
-       st.image(pfp) 
-       
-
-
-
-
-
-
+# Optional footer
+st.caption("Built with ❤️ using Streamlit • Optimized for speed & readability")
