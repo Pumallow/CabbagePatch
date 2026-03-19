@@ -84,9 +84,11 @@ if project == "Project 4: DeepRacer PPO":
     in Time-Trial, Object-Avoidance, and Head-to-Head modes (~80,000 episodes).
     """)
     
-    intf = open(r"images/ReinforcementLearning/Lap Training - Trial", 'rb')
-    intb = intf.read() 
-    st.video(data=intb)
+    with open("images/ReinforcementLearning/Lap Training - Trial.mp4", "rb") as f:
+    video_bytes = f.read()
+
+    st.video(video_bytes)
+    st.caption("🎥 Final PPO Agent Lap on reInvent2019-wide track")
     
     # Hero images
     c1, c2, c3 = st.columns(3)
