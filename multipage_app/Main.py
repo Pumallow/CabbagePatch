@@ -50,12 +50,9 @@ col1, col2 = st.columns([5,2])
 with col1: 
     st.markdown("""<h1 style= 'text-align: center; font-size: 20px;'> "Do not say what you'll do. Do what you say."
      </h1>""", unsafe_allow_html= True)
-    st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> This website is dedicated to all of the studying/projects I commited to outside of work! 
-      Passionate NLP enthusiast skilled in harnessing the power of data science, analytics, and engineering to unravel intricate patterns within datasets. 
-      Adept at employing diverse programming languages and tools to uncover nuanced linguistic insights. 
-      Demonstrated proficiency in crafting and deploying machine learning models tailored for text classification and sentiment analysis, driving impactful outcomes like reducing error rates 
-      and enhancing revenue streams. Actively pursuing a Master's in Analytics to expand NLP expertise. Eager to leverage my knowledge and capabilities to propel a progressive team 
-      within an innovative organization forward.
+    st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> Machine Learning Engineer with 4+ years of hands-on experience building, deploying, and scaling production-grade ML models that deliver multimillion-dollar business impact. I specialize in end-to-end ML pipelines — from data integration and feature engineering through model training, evaluation, and cloud-native deployment — using Python, PyTorch, Scikit-learn, and cloud platforms like AWS and Snowflake.
+I’ve delivered high-precision classifiers achieving 91% precision / 89% recall, propensity models directly tied to over $4M in annual revenue, and forecasting systems that reduced error to 1.9% MAPE, while automating workflows that cut manual effort by more than 50%. Currently pursuing a Master’s in Analytics at Georgia Tech to deepen my expertise in advanced deep learning, reinforcement learning, MLOps, and scalable AI systems.
+Passionate about architecting reliable, high-performing ML solutions that drive measurable outcomes, I’m eager to bring my production ML experience and technical depth to a forward-thinking team.
      </h1>""", unsafe_allow_html= True) 
     st.markdown("""<h1 style= 'text-align: left; font-size: 20px;'> In December of 2023, I acquired the GTx Micro Masters certificate. Currently, I am
       a graduate student at Georgia Tech in the Online Masters of Science in Analytics.
