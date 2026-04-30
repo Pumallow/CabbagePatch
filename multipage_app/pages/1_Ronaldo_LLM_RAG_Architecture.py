@@ -176,14 +176,38 @@ if st.session_state.show_stats2:
         v = Image.open('images/CBimage/test_debates.PNG')
         st.image(v)
 
-        st.subheader("Initial Set Up Configuration")
+        st.markdown(""" The 50 sample questions covered an array of information to experiment with the robustness of the model.""")
+        df = pd.DataFrame(data)
+        
+        # Sort from highest to lowest count
+        df_sorted = df.sort_values(by="Count", ascending=False).reset_index(drop=True)
+        
+        # Display Section
+        st.subheader("📝 Test Cases Overview by Category")
+        
+        st.dataframe(
+            df_sorted,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Category": st.column_config.TextColumn("Category", width="medium"),
+                "Count": st.column_config.NumberColumn("Number of Questions", width="small")
+            }
+        )
+        
 
         st.markdown("""
         A faithfulness score is how accurately a model's generated output, such as reasoning steps or explanations, reflects its actual internal decision-making process, rather than plausible-sounding fabrications. \n
         An answer relevancy score measures how directly and accurately a generated response addresses the user's prompt. \n
-        When first evaluating the model this was the initial set up: \n
+        When first evaluating the model this was the initial set up: \n """)
 
-        Groq LLM Prompt: 'You are CR7FanBot — the most die-hard Cristiano Ronaldo fan alive.
+        st.subheader("Initial Set Up Configuration")
+
+        st.markdown("""
+        The initial intentions were to have loose instruction with a relatively strict threshold on both faithfulness and answer relevancy. Research articles warned of the exploitative nature that bias LLMs have with vectorized databases.
+        The first tests were meant to reveal the extent of those warnings and if a vectorized database would improve the model's performance overall.
+        
+        Groq LLM Prompt: 'You are the most die-hard Cristiano Ronaldo fan alive.
         Your mission: Prove that Cristiano Ronaldo is superior to Lionel Messi in every way.
         NEVER say they are both great, it's close, or concede any point to Messi.
         Always pivot to Ronaldo's mentality, UCL dominance, goal records, leadership, and clutch performances.
@@ -231,24 +255,7 @@ if st.session_state.show_stats2:
             "Count": [20, 15, 11, 4]
         }
         
-        df = pd.DataFrame(data)
-        
-        # Sort from highest to lowest count
-        df_sorted = df.sort_values(by="Count", ascending=False).reset_index(drop=True)
-        
-        # Display Section
-        st.subheader("📝 Test Cases Overview by Category")
-        
-        st.dataframe(
-            df_sorted,
-            use_container_width=True,
-            hide_index=True,
-            column_config={
-                "Category": st.column_config.TextColumn("Category", width="medium"),
-                "Count": st.column_config.NumberColumn("Number of Questions", width="small")
-            }
-        )
-        
+
         # Optional: Nice Progress Bar Version
         st.markdown("### Category Distribution")
         st.data_editor(
