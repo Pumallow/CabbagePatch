@@ -9,10 +9,6 @@ from io import BytesIO
 import sys
 from pathlib import Path
 
-root_dir = Path(__file__).resolve().parent.parent  # Goes up from pages/ to multipage_app/
-sys.path.append(str(root_dir))
-
-# Now import cleanly
 from llm.llm import get_cr7_response
 
 # Page config & styling
