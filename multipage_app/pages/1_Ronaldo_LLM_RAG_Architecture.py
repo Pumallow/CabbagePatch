@@ -142,22 +142,7 @@ if st.session_state.show_stats:
         }
         
         df = pd.DataFrame(data)
-        
-        # Display nice table in Streamlit
-        st.subheader("📊 Stats Overview by Category")
-        
-        st.dataframe(
-            df,
-            use_container_width=True,
-            hide_index=True,
-            column_config={
-                "Category": st.column_config.TextColumn("Category", width="medium"),
-                "Count": st.column_config.NumberColumn("Number of Stats", width="small"),
-                "Description": st.column_config.TextColumn("Description", width="large")
-            }
-        )
-        
-        # Optional: Add a nicer styled version with highlighting
+    
         st.markdown("### Category Summary")
         st.data_editor(
             df,
