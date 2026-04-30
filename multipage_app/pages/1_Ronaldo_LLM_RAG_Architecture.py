@@ -172,8 +172,11 @@ if st.button("Evaluation & Quality"):
     st.session_state.show_stats2 = not st.session_state.show_stats2
 if st.session_state.show_stats2:
     try:
-        st.markdown("""To properly evaluate the bias Cristiano Ronaldo fan llm,  I asked Chatgpt to generate 50 sample questions that the Groq judge could input with the intention of harnessing a faithfulness and answer relevancy score. \n
-        A faithfulness score is how accurately a model's generated output, such as reasoning steps or explanations, reflects its actual internal decision-making process, rather than plausible-sounding fabrications. \n
+        st.markdown("""To properly evaluate the bias Cristiano Ronaldo fan llm,  I asked Chatgpt to generate 50 sample questions that the Groq judge could input with the intention of harnessing a faithfulness and answer relevancy score.
+        A faithfulness score is how accurately a model's generated output, such as reasoning steps or explanations, reflects its actual internal decision-making process, rather than plausible-sounding fabrications.""")
+        v = Image.open('images/CBimage/test_debates.PNG')
+        st.image(v)
+        st.markdown("""
         An answer relevancy score measures how directly and accurately a generated response addresses the user's prompt. \n
         When first evaluating the model this was the initial set up: \n
 
@@ -220,8 +223,7 @@ if st.session_state.show_stats2:
         """, language="python")
         
         
-        v = Image.open('images/CBimage/test_debates.PNG')
-        st.image(v)
+
 
         data = {
             "Category": ["comparison", "adversarial", "factual", "general"],
