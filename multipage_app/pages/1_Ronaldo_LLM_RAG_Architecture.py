@@ -93,10 +93,42 @@ To better understand the building, testing, and deployment of an LLM atop of a R
 """)
 
 st.markdown("**The most biased Ronaldo supremacy LLM on Earth** 🔥\n\nArgue with me if you dare... Siuuu!")
+if "show_stats" not in st.session_state:
+    st.session_state.show_stats = False
 
-if st.button("How Does it Work?"):
+# Button that toggles on every click
+if st.button("Architecture: RAG Transparency"):
+    st.session_state.show_stats = not st.session_state.show_stats
+    
+if st.session_state.show_stats:
     try:
         s = Image.open('images/CBimage/Rag Architecture.png')
         st.image(s)
     except:
         st.write("Please take quiz before clicking this button :D")
+
+if st.button("Evaluation & Quality"):
+    try:
+        st.markdown("""
+        Most every futbol fan has argued this one debate at one point or another but if you are not particularly a futbol fan this can set the stage. Cristiano Ronaldo and Lionel Messi
+        stand as to modern day futbolling giants that have raised the bar for anyone pushing to be the "best" in the sport. Having won many cups, accollades, and both scoring over 900 goals, these 2 individuals are continually juxtaposed
+        as the better talent despite their difference in playstyle and positions.
+        \n
+        To better understand the building, testing, and deployment of an LLM atop of a RAG Architecture design, I combined my love for futbol with my love for data.
+        """)
+    except:
+        st.write("Please take quiz before clicking this button :D")
+
+if st.button("Learning and Improvements"):
+    try:
+        st.markdown("""
+        Most every futbol fan has argued this one debate at one point or another but if you are not particularly a futbol fan this can set the stage. Cristiano Ronaldo and Lionel Messi
+        stand as to modern day futbolling giants that have raised the bar for anyone pushing to be the "best" in the sport. Having won many cups, accollades, and both scoring over 900 goals, these 2 individuals are continually juxtaposed
+        as the better talent despite their difference in playstyle and positions.
+        \n
+        To better understand the building, testing, and deployment of an LLM atop of a RAG Architecture design, I combined my love for futbol with my love for data.
+        """)
+    except:
+        st.write("Please take quiz before clicking this button :D")
+
+
