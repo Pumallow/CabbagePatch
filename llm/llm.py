@@ -81,6 +81,8 @@ def get_llm():
 
 llm = get_llm()
 
+
+@st.cache_resource(show_spinner=False)
 def get_vectorstore():
     embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
