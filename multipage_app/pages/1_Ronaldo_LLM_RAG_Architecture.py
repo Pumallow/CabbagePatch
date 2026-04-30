@@ -5,7 +5,12 @@ from pathlib import Path
 from PIL import Image
 import base64
 from io import BytesIO
-from llm.llm import get_cr7_response
+
+import sys
+from pathlib import Path
+
+
+from multipage_app.pages.llm.llm import get_cr7_response
 
 # Page config & styling
 st.set_page_config(
