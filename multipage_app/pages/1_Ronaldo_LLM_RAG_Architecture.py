@@ -16,29 +16,56 @@ st.set_page_config(
 
 
 
-def set_bg_from_pil(img):
-    # 1. Convert PIL image to BytesIO
+def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
     buffered = BytesIO()
-    img.save(buffered, format="PNG") # Use PNG or JPEG
-    
-    # 2. Encode to Base64 string
+    img.save(buffered, format="PNG")
     img_str = base64.b64encode(buffered.getvalue()).decode()
-    
-    # 3. Create the CSS
-    # Use [data-testid="stAppViewContainer"] to target the main app container
+
     page_bg_img = f'''
     <style>
     [data-testid="stAppViewContainer"] {{
-        background-image: url("data:image/png;base64,{img_str}");
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, {darkness}), rgba(0, 0, 0, {darkness})), 
+            url("data:image/png;base64,{img_str}");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
+
+    /* Optional: subtle vignette (darker corners) for more "silhouette" feel */
+    [data-testid="stAppViewContainer"]::before {{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at center,
+            transparent 40%,
+            rgba(0, 0, 0, {vignette}) 90%
+        );
+        pointer-events: none;
+        z-index: 0;
+    }}
+
+    /* Make sure main content sits above the overlay */
+    [data-testid="stAppViewContainer"] .main {{
+        position: relative;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.1);   /* very light extra dark layer if needed */
+        border-radius: 15px;
+        padding: 2rem 1rem;
+    }}
+
+    /* Improve text readability */
+    h1, h2, h3, .stMarkdown, .stChatMessage {{
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }}
     </style>
     '''
     st.markdown(page_bg_img, unsafe_allow_html=True)
-
 # Example Usage:
 # Open your image using PIL
 img = Image.open('images/CBimage/cr7 v messi.jpg')
