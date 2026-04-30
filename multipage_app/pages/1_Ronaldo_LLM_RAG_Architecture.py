@@ -98,3 +98,5 @@ if st.button("How Does it Work?"):
     try:
         s = Image.open('images/CBimage/Rag Architecture.png')
         st.image(s)
+    except:
+        st.write("Please take quiz before clicking this button :D")
