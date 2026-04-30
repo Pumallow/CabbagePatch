@@ -5,6 +5,7 @@ from pathlib import Path
 from PIL import Image
 import base64
 from io import BytesIO
+from llm.llm import get_cr7_response
 
 # Page config & styling
 st.set_page_config(
@@ -95,7 +96,41 @@ To better understand the building, testing, and deployment of an LLM atop of a R
 
 st.markdown("**The most biased Ronaldo supremacy LLM on Earth** 🔥\n\nArgue with me if you dare... Siuuu!")
 
+# ====================== SESSION STATE ======================
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
+if "show_architecture" not in st.session_state:
+    st.session_state.show_architecture = False
+if "show_evaluation" not in st.session_state:
+    st.session_state.show_evaluation = False
+if "show_lessons" not in st.session_state:
+    st.session_state.show_lessons = False
+
+# ====================== CHAT INTERFACE ======================
+st.title("CR7FanBot ⚽")
+st.markdown("**The most biased Ronaldo supremacy LLM on Earth** 🔥  •  Argue with me if you dare... **Siuuu!**")
+
+# Chat input at the top
+if prompt := st.chat_input("Ask me anything about Ronaldo vs Messi..."):
+    # Add user message
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    
+    # Get response from your LLM
+    with st.spinner("CR7 is thinking... 🔥"):
+        response = get_cr7_response(prompt)        # ← Your LLM function
+    
+    # Add assistant response
+    st.session_state.messages.append({"role": "assistant", "content": response})
+
+# Display chat history
+for message in st.session_state.messages:
+    if message["role"] == "user":
+        with st.chat_message("user"):
+            st.markdown(message["content"])
+    else:
+        with st.chat_message("assistant", avatar="⚽"):
+            st.markdown(message["content"])
 
 
 
