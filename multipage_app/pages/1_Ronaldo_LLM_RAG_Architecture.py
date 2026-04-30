@@ -218,8 +218,6 @@ if st.session_state.show_stats2:
             groq_api_key=groq_key,
         )
         """, language="python")
-        """)
-
         
         
         v = Image.open('images/CBimage/test_debates.PNG')
