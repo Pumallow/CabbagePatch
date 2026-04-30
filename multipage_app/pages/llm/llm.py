@@ -17,7 +17,7 @@ from langchain_core.documents import Document
 from deepeval.models import DeepEvalBaseLLM
 
 load_dotenv()
-
+@st.cache_resource(show_spinner=False)
 # ====================== CONFIG ======================
 PERSIST_DIRECTORY = "./chroma_db"
 JSON_PATH = "data/comparison.json"
