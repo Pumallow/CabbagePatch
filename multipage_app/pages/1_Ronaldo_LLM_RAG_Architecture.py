@@ -82,5 +82,19 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("Who is the best futbol player? Cristiano Ronaldo or Lionel Messi")
+st.title("Why Cristiano Ronaldo is greater than Lionel Messi. An LLM RAG Architecture story.\n")
+
+st.markdown("""
+Most every futbol fan has argued this one debate at one point or another but if you are not particularly a futbol fan this can set the stage. Cristiano Ronaldo and Lionel Messi
+stand as to modern day futbolling giants that have raised the bar for anyone pushing to be the "best" in the sport. Having won many cups, accollades, and both scoring over 900 goals, these 2 individuals are continually juxtaposed
+as the better talent despite their difference in playstyle and positions.
+\n
+To better understand the building, testing, and deployment of an LLM atop of a RAG Architecture design, I combined my love for futbol with my love for data.
+""")
+
 st.markdown("**The most biased Ronaldo supremacy LLM on Earth** 🔥\n\nArgue with me if you dare... Siuuu!")
+
+if st.button("How Does it Work?"):
+    try:
+        s = Image.open('images/CBimage/Rag Architecture.png')
+        st.image(s)
