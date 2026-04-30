@@ -177,12 +177,15 @@ if st.session_state.show_stats2:
         st.image(v)
 
         st.markdown(""" The 50 sample questions covered an array of information to experiment with the robustness of the model.""")
+
+        
+        data = {
+            "Category": ["comparison", "adversarial", "factual", "general"],
+            "Count": [20, 15, 11, 4]
+        }
+
         df = pd.DataFrame(data)
-        
-        # Sort from highest to lowest count
         df_sorted = df.sort_values(by="Count", ascending=False).reset_index(drop=True)
-        
-        # Display Section
         st.subheader("📝 Test Cases Overview by Category")
         
         st.dataframe(
@@ -192,6 +195,23 @@ if st.session_state.show_stats2:
             column_config={
                 "Category": st.column_config.TextColumn("Category", width="medium"),
                 "Count": st.column_config.NumberColumn("Number of Questions", width="small")
+            }
+        )
+                
+        st.markdown("### Category Distribution")
+        st.data_editor(
+            df_sorted,
+            use_container_width=True,
+            hide_index=True,
+            disabled=True,
+            column_config={
+                "Count": st.column_config.ProgressColumn(
+                    "Count",
+                    min_value=0,
+                    max_value=20,
+                    format="%d questions",
+                    width="medium"
+                )
             }
         )
         
@@ -250,29 +270,6 @@ if st.session_state.show_stats2:
         
 
 
-        data = {
-            "Category": ["comparison", "adversarial", "factual", "general"],
-            "Count": [20, 15, 11, 4]
-        }
-        
-
-        # Optional: Nice Progress Bar Version
-        st.markdown("### Category Distribution")
-        st.data_editor(
-            df_sorted,
-            use_container_width=True,
-            hide_index=True,
-            disabled=True,
-            column_config={
-                "Count": st.column_config.ProgressColumn(
-                    "Count",
-                    min_value=0,
-                    max_value=20,
-                    format="%d questions",
-                    width="medium"
-                )
-            }
-        )
     except:
         st.write("Please take quiz before clicking this button :D")
 
