@@ -95,41 +95,68 @@ To better understand the building, testing, and deployment of an LLM atop of a R
 """)
 
 st.markdown("**The most biased Ronaldo supremacy LLM on Earth** 🔥\n\nArgue with me if you dare... Siuuu!")
+
 # ====================== SESSION STATE ======================
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# ====================== CHAT UI ======================
+if "current_session_id" not in st.session_state:
+    st.session_state.current_session_id = "default_" + str(int(time.time()))  # Unique per browser session
+
+# ====================== PAGE CONFIG & STYLING ======================
+st.set_page_config(
+    page_title="CR7FanBot ⚽",
+    page_icon="⚽",
+    layout="centered",
+    initial_sidebar_state="collapsed"
+)
+
+# Your background function + custom CSS (keep what you already have)
+# ... [your set_bg_from_pil and custom CSS here] ...
+
+# ====================== CHAT HEADER ======================
 st.title("CR7FanBot ⚽")
 st.markdown("**The most biased Ronaldo supremacy LLM on Earth** 🔥")
+st.caption("Argue with me if you dare... Siuuu!")
 
-st.caption("Ask me anything about Ronaldo vs Messi... Siuuu!")
+# ====================== CHAT INTERFACE ======================
 
 # Chat Input
-if prompt := st.chat_input("Type your question here..."):
-    # Save user message
+if prompt := st.chat_input("Ask anything about Ronaldo vs Messi..."):
+    
+    # Add user message to history
     st.session_state.messages.append({"role": "user", "content": prompt})
     
-    # Generate response
-    with st.spinner("CR7 is cooking... 🔥"):
-        response = get_cr7_response(prompt)
-    
-    # Save assistant response
+    # Generate response using your llm function
+    with st.spinner("CR7 is thinking... 🔥"):
+        try:
+            response = get_cr7_response(
+                user_message=prompt, 
+                session_id=st.session_state.current_session_id
+            )
+        except Exception as e:
+            response = f"⚠️ Error: {str(e)}"
+
+    # Add assistant response
     st.session_state.messages.append({"role": "assistant", "content": response})
 
-# Display chat messages
-for msg in st.session_state.messages:
-    if msg["role"] == "user":
+# Display chat history
+for message in st.session_state.messages:
+    if message["role"] == "user":
         with st.chat_message("user"):
-            st.markdown(msg["content"])
+            st.markdown(message["content"])
     else:
         with st.chat_message("assistant", avatar="⚽"):
-            st.markdown(msg["content"])
+            st.markdown(message["content"])
 
-# Optional: Clear chat button
-if st.button("Clear Chat"):
+# Clear Chat Button
+if st.button("🗑️ Clear Chat"):
     st.session_state.messages = []
     st.rerun()
+
+st.divider()
+
+
 
 
 if "show_stats" not in st.session_state:
