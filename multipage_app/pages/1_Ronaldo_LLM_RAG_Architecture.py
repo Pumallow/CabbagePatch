@@ -93,23 +93,11 @@ To better understand the building, testing, and deployment of an LLM atop of a R
 """)
 
 st.markdown("**The most biased Ronaldo supremacy LLM on Earth** 🔥\n\nArgue with me if you dare... Siuuu!")
+
 if "show_stats" not in st.session_state:
     st.session_state.show_stats = False
-if "show_stats2" not in st.session_state:
-    st.session_state.show_stats2 = False
-if "show_stats3" not in st.session_state:
-    st.session_state.show_stats3 = False
-
-# Button that toggles on every click
 if st.button("Architecture: RAG Transparency"):
     st.session_state.show_stats = not st.session_state.show_stats
-
-if st.button("Evaluation & Quality"):
-    st.session_state.show_stats2 = not st.session_state.show_stats2
-
-if st.button("Learning and Improvements"):
-    st.session_state.show_stats3 = not st.session_state.show_stats3
-    
 if st.session_state.show_stats:
     try:
         s = Image.open('images/CBimage/Rag Architecture.png')
@@ -117,6 +105,11 @@ if st.session_state.show_stats:
     except:
         st.write("Please take quiz before clicking this button :D")
 
+
+if "show_stats2" not in st.session_state:
+    st.session_state.show_stats2 = False
+if st.button("Evaluation & Quality"):
+    st.session_state.show_stats2 = not st.session_state.show_stats2
 if st.session_state.show_stats2:
     try:
         st.markdown("""
@@ -129,6 +122,11 @@ if st.session_state.show_stats2:
     except:
         st.write("Please take quiz before clicking this button :D")
 
+
+if "show_stats3" not in st.session_state:
+    st.session_state.show_stats3 = False
+if st.button("Learning and Improvements"):
+    st.session_state.show_stats3 = not st.session_state.show_stats3
 if st.session_state.show_stats3:
     try:
         st.markdown("""
@@ -140,5 +138,10 @@ if st.session_state.show_stats3:
         """)
     except:
         st.write("Please take quiz before clicking this button :D")
+    
+
+
+
+
 
 
