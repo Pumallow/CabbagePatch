@@ -99,6 +99,12 @@ if "show_stats" not in st.session_state:
 # Button that toggles on every click
 if st.button("Architecture: RAG Transparency"):
     st.session_state.show_stats = not st.session_state.show_stats
+
+if st.button("Evaluation & Quality"):
+    st.session_state.show_stats = not st.session_state.show_stats
+
+if st.button("Learning and Improvements"):
+    st.session_state.show_stats = not st.session_state.show_stats
     
 if st.session_state.show_stats:
     try:
@@ -107,7 +113,7 @@ if st.session_state.show_stats:
     except:
         st.write("Please take quiz before clicking this button :D")
 
-if st.button("Evaluation & Quality"):
+if st.session_state.show_stats:
     try:
         st.markdown("""
         Most every futbol fan has argued this one debate at one point or another but if you are not particularly a futbol fan this can set the stage. Cristiano Ronaldo and Lionel Messi
@@ -119,7 +125,7 @@ if st.button("Evaluation & Quality"):
     except:
         st.write("Please take quiz before clicking this button :D")
 
-if st.button("Learning and Improvements"):
+if st.session_state.show_stats:
     try:
         st.markdown("""
         Most every futbol fan has argued this one debate at one point or another but if you are not particularly a futbol fan this can set the stage. Cristiano Ronaldo and Lionel Messi
