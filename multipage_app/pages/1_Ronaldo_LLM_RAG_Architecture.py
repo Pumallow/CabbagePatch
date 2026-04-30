@@ -100,6 +100,79 @@ if st.button("Architecture: RAG Transparency"):
     st.session_state.show_stats = not st.session_state.show_stats
 if st.session_state.show_stats:
     try:
+        st.markdown(""" Bias alone cannot win the debate these 2 champions so to ensure quick, reliable facts were held at the ready if Ronaldo's reputation were ever to be questioned, a RAG architecture is needed to vectorize and
+        store supporting facts to any argument made. With the use of langchain_huggingface and langchain_chroma, 120 facts evenly split out between the 2 competing careers were vectorized and stored for the LLM. Initially, a fact would be received
+        in this format via a "comparison.json" file:
+        """)
+        p = Image.open('images/CBimage/Sample.png")
+        st.image(p)
+        st.markdown("""The comparison.json file held a variety of categories and descriptions including:""")
+      
+        data = {
+            "Category": [
+                "UCL", "Trophies", "Individual", "International", "Goals", "Club", 
+                "World Cup", "La Liga", "Longevity", "Versatility", "Assists", 
+                "Skill", "MLS", "Penalties", "Finishing", "Right Foot", "Left Foot", 
+                "Distance Finishing", "Free Kicks", "UCL Goals", "Both Feet"
+            ],
+            "Count": [8, 8, 5, 8, 10, 12, 5, 4, 5, 2, 2, 2, 6, 7, 5, 4, 4, 6, 5, 3, 1],
+            "Description": [
+                "UEFA Champions League related stats",
+                "Major trophies and titles won",
+                "Individual awards (Ballon d'Or, Golden Shoe, etc.)",
+                "International career with Portugal/Argentina",
+                "Goal scoring records and milestones",
+                "Club-specific achievements",
+                "World Cup performances",
+                "La Liga records and titles",
+                "Career longevity and consistency",
+                "Versatility across competitions",
+                "Assist records",
+                "Dribbling and technical skills",
+                "MLS performances with Inter Miami",
+                "Penalty taking and conversion stats",
+                "General finishing ability",
+                "Right-foot finishing",
+                "Left-foot finishing",
+                "Long-range and distance goals",
+                "Free-kick goals and accuracy",
+                "UEFA Champions League goals",
+                "Balance between both feet"
+            ]
+        }
+        
+        df = pd.DataFrame(data)
+        
+        # Display nice table in Streamlit
+        st.subheader("📊 Stats Overview by Category")
+        
+        st.dataframe(
+            df,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Category": st.column_config.TextColumn("Category", width="medium"),
+                "Count": st.column_config.NumberColumn("Number of Stats", width="small"),
+                "Description": st.column_config.TextColumn("Description", width="large")
+            }
+        )
+        
+        # Optional: Add a nicer styled version with highlighting
+        st.markdown("### Category Summary")
+        st.data_editor(
+            df,
+            use_container_width=True,
+            hide_index=True,
+            disabled=True,   # Make it read-only
+            column_config={
+                "Count": st.column_config.ProgressColumn(
+                    "Count",
+                    min_value=0,
+                    max_value=12,
+                    format="%d stats"
+                )
+            }
+        )
         s = Image.open('images/CBimage/Rag Architecture.png')
         st.image(s)
     except:
