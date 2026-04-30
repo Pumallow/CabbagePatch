@@ -104,7 +104,7 @@ if st.session_state.show_stats:
         store supporting facts to any argument made. With the use of langchain_huggingface and langchain_chroma, 120 facts evenly split out between the 2 competing careers were vectorized and stored for the LLM. Initially, a fact would be received
         in this format via a "comparison.json" file:
         """)
-        p = Image.open('images/CBimage/Sample.PNG")
+        p = Image.open('images/CBimage/Sample.PNG')
         st.image(p)
         st.markdown("""The comparison.json file held a variety of categories and descriptions including:""")
       
