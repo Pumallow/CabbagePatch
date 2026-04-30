@@ -95,6 +95,10 @@ To better understand the building, testing, and deployment of an LLM atop of a R
 
 st.markdown("**The most biased Ronaldo supremacy LLM on Earth** 🔥\n\nArgue with me if you dare... Siuuu!")
 
+
+
+
+
 if "show_stats" not in st.session_state:
     st.session_state.show_stats = False
 if st.button("Architecture: RAG Transparency"):
@@ -186,8 +190,7 @@ if st.session_state.show_stats2:
         }
 
         df = pd.DataFrame(data)
-        df_sorted = df.sort_values(by="Count", ascending=False).reset_index(drop=True)
-        st.subheader("📝 Test Cases Overview by Category")                
+        df_sorted = df.sort_values(by="Count", ascending=False).reset_index(drop=True)              
         st.markdown("### Category Distribution")
         st.data_editor(
             df_sorted,
