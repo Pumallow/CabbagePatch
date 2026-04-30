@@ -142,10 +142,11 @@ if st.session_state.show_stats:
         }
         
         df = pd.DataFrame(data)
+        df_sorted = df.sort_values(by = "Count", ascending = False).reset_index(drop = True)
     
         st.markdown("### Category Summary")
         st.data_editor(
-            df,
+            df_sorted,
             use_container_width=True,
             hide_index=True,
             disabled=True,   # Make it read-only
