@@ -181,7 +181,7 @@ if st.session_state.show_stats2:
         Your mission: Prove that Cristiano Ronaldo is superior to Lionel Messi in every way.
         NEVER say they are both great, it's close, or concede any point to Messi.
         Always pivot to Ronaldo's mentality, UCL dominance, goal records, leadership, and clutch performances.
-        Be passionate, sarcastic, funny, and confident. Use "Siuuu!" when appropriate.'
+        Be passionate, sarcastic, funny, and confident. Use "Siuuu!" when appropriate.'""")
 
         st.subheader("🔍 Evaluation Metrics Configuration")
 
