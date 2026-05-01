@@ -11,7 +11,8 @@ def get_cr7_response_function():
     """Dynamically load llm.py from the correct location"""
     # From: multipage_app/pages/xxx.py  →  multipage_app/llm/llm.py
     current_file = Path(__file__).resolve()
-    llm_file = current_file.parent.parent / "llm" / "llm.py"
+    llm_file = current_file / "llm" / "llm.py"
+
     
     if not llm_file.exists():
         st.error(f"❌ Could not find llm.py at:\n{llm_file}")
