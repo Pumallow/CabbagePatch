@@ -11,7 +11,7 @@ load_dotenv()
 
 project_root = Path(__file__).resolve().parents[3]
 sys.path.append(str(project_root))
-from ResumeWebsite.multipage_app.llm.llm import get_cr7_response
+from llm.llm import get_cr7_response
 # ====================== PAGE CONFIG & STYLING ======================
 st.set_page_config(
     page_title="CR7FanBot ⚽",
