@@ -7,12 +7,22 @@ import sys
 from pathlib import Path
 import time
 
-# ====================== FIX IMPORT PATH ======================
-# Go from multipage_app/pages/ → multipage_app/
-root_dir = Path(__file__).resolve().parent.parent
-sys.path.append(str(root_dir))
+# ====================== DYNAMIC IMPORT ======================
+def import_from_path(module_name, file_path):
+    spec = importlib.util.spec_from_file_location(module_name, file_path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[module_name] = module
+    spec.loader.exec_module(module)
+    return module
 
-from llm.llm import get_cr7_response
+# Build absolute path to llm.py
+llm_file = Path(__file__).resolve().parent.parent / "llm" / "llm.py"
+
+# Import the module
+llm_module = import_from_path("llm_module", str(llm_file))
+
+# Now use the function
+get_cr7_response = llm_module.get_cr7_response
 
 # ====================== PAGE CONFIG & STYLING ======================
 st.set_page_config(
