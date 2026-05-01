@@ -10,7 +10,7 @@ import time
 def get_cr7_response_function():
     """Dynamically load llm.py from the correct location"""
     # From: multipage_app/pages/xxx.py  →  multipage_app/llm/llm.py
-    current_file = Path(__file__).resolve()
+    current_file = Path(__file__).resolve().parent.parent
     llm_file = current_file / "llm" / "llm.py"
 
     
