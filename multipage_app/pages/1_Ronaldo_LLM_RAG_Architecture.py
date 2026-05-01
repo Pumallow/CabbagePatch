@@ -7,23 +7,24 @@ import sys
 from pathlib import Path
 import time
 
-# ====================== DYNAMIC IMPORT ======================
-def import_from_path(module_name, file_path):
-    spec = importlib.util.spec_from_file_location(module_name, file_path)
-    module = importlib.util.module_from_spec(spec)
-    sys.modules[module_name] = module
-    spec.loader.exec_module(module)
-    return module
+# ====================== CLEAN DYNAMIC IMPORT ======================
+def load_llm_function():
+    # Go from pages/ → parent (multipage_app) → llm/llm.py
+    llm_path = Path(__file__).resolve().parent.parent / "llm" / "llm.py"
+    
+    if not llm_path.exists():
+        st.error(f"Could not find llm.py at: {llm_path}")
+        st.stop()
+    
+    spec = importlib.util.spec_from_file_location("llm_custom", str(llm_path))
+    llm_module = importlib.util.module_from_spec(spec)
+    sys.modules["llm_custom"] = llm_module
+    spec.loader.exec_module(llm_module)
+    
+    return llm_module.get_cr7_response
 
-# Build absolute path to llm.py
-llm_file = Path(__file__).resolve().parent.parent / "llm" / "llm.py"
-
-# Import the module
-llm_module = import_from_path("llm_module", str(llm_file))
-
-# Now use the function
-get_cr7_response = llm_module.get_cr7_response
-
+# Load the function once
+get_cr7_response = load_llm_function()
 # ====================== PAGE CONFIG & STYLING ======================
 st.set_page_config(
     page_title="CR7FanBot ⚽",
