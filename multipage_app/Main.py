@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-st.switch_page("multipage_app/pages/1_Ronaldo_LLM_RAG_Architecture.py")
+
 
 
 
