@@ -9,7 +9,7 @@ import time
 from dotenv import load_dotenv
 load_dotenv()
 
-from llm.llm import get_cr7_response
+from pages.llm.llm import get_cr7_response
 # ====================== PAGE CONFIG & STYLING ======================
 st.write("Secrets loaded:", "GROQ_API_KEY" in st.secrets)
 st.set_page_config(
