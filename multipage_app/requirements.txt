@@ -16,7 +16,7 @@ python-dotenv==1.2.2
 # --- LLM / RAG stack (stable Windows-safe versions) ---
 langchain==0.1.20
 langchain-core==0.1.52
-langchain-community==0.0.28
+langchain-community==0.0.38
 langchain-chroma==0.1.4
 chromadb==0.4.22
 
