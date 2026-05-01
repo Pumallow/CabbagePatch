@@ -19,6 +19,8 @@ from langchain.chains import LLMChain
 from langchain_chroma import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
+import streamlit as st
+st.switch_page("multipage_app/pages/1_Ronaldo_LLM_RAG_Architecture.py")
 # --- DeepEval ---
 from deepeval.models import DeepEvalBaseLLM
 
