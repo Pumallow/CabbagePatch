@@ -9,7 +9,7 @@ import time
 from dotenv import load_dotenv
 load_dotenv()
 
-from llm.llm import get_cr7_response
+from multipage_app.pages.llm.llm import get_cr7_response
 # ====================== PAGE CONFIG & STYLING ======================
 st.set_page_config(
     page_title="CR7FanBot ⚽",
