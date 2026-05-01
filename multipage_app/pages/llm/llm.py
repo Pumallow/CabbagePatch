@@ -42,10 +42,7 @@ Use ONLY the provided facts. Never invent stats.
 
 # ====================== GROQ CLIENT ======================
 def get_groq_client():
-    key = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
-    if not key:
-        raise ValueError("GROQ_API_KEY missing")
-    return Groq(api_key=key)
+    return Groq(api_key=st.secrets["GROQ_API_KEY"])
 
 client = get_groq_client()
 
