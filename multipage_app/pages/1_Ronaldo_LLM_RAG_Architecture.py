@@ -5,9 +5,11 @@ from pathlib import Path
 from PIL import Image
 import base64
 from io import BytesIO
-
 import sys
 from pathlib import Path
+
+root_dir = Path(__file__).resolve().parent.parent
+sys.path.append(str(root_dir))
 
 from llm.llm import get_cr7_response
 
