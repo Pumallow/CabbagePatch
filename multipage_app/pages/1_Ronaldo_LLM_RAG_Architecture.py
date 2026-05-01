@@ -1,113 +1,18 @@
 import streamlit as st
 import pandas as pd
-import json
-from pathlib import Path
 from PIL import Image
 import base64
 from io import BytesIO
 import sys
 from pathlib import Path
+import time
 
+# ====================== FIX IMPORT PATH ======================
+# Go from multipage_app/pages/ → multipage_app/
 root_dir = Path(__file__).resolve().parent.parent
 sys.path.append(str(root_dir))
 
 from llm.llm import get_cr7_response
-
-# Page config & styling
-st.set_page_config(
-    page_title="CR7FanBot ⚽",
-    page_icon="⚽",
-    layout="centered",
-    initial_sidebar_state="collapsed"
-)
-
-
-
-
-def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
-    buffered = BytesIO()
-    img.save(buffered, format="PNG")
-    img_str = base64.b64encode(buffered.getvalue()).decode()
-
-    page_bg_img = f'''
-    <style>
-    [data-testid="stAppViewContainer"] {{
-        background-image: 
-            linear-gradient(rgba(0, 0, 0, {darkness}), rgba(0, 0, 0, {darkness})), 
-            url("data:image/png;base64,{img_str}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }}
-
-    /* Optional: subtle vignette (darker corners) for more "silhouette" feel */
-    [data-testid="stAppViewContainer"]::before {{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-            circle at center,
-            transparent 40%,
-            rgba(0, 0, 0, {vignette}) 90%
-        );
-        pointer-events: none;
-        z-index: 0;
-    }}
-
-    /* Make sure main content sits above the overlay */
-    [data-testid="stAppViewContainer"] .main {{
-        position: relative;
-        z-index: 1;
-        background-color: rgba(0, 0, 0, 0.1);   /* very light extra dark layer if needed */
-        border-radius: 15px;
-        padding: 2rem 1rem;
-    }}
-
-    /* Improve text readability */
-    h1, h2, h3, .stMarkdown, .stChatMessage {{
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-    }}
-    </style>
-    '''
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-# Example Usage:
-# Open your image using PIL
-img = Image.open('images/CBimage/cr7 v messi.jpg')
-set_bg_from_pil(img)
-
-
-
-# Custom CSS for football vibe
-st.markdown("""
-<style>
-    .stChatMessage {border-radius: 15px;}
-    .user-message {background-color: #00A651 !important;}   /* Green like Portugal */
-    .assistant-message {background-color: #DA291C !important;} /* Red like Manchester United */
-</style>
-""", unsafe_allow_html=True)
-
-st.title("Why Cristiano Ronaldo is greater than Lionel Messi. An LLM RAG Architecture story.\n")
-
-st.markdown("""
-Most every futbol fan has argued this one debate at one point or another but if you are not particularly a futbol fan this can set the stage. Cristiano Ronaldo and Lionel Messi
-stand as to modern day futbolling giants that have raised the bar for anyone pushing to be the "best" in the sport. Having won many cups, accollades, and both scoring over 900 goals, these 2 individuals are continually juxtaposed
-as the better talent despite their difference in playstyle and positions.
-\n
-To better understand the building, testing, and deployment of an LLM atop of a RAG Architecture design, I combined my love for futbol with my love for data.
-""")
-
-st.markdown("**The most biased Ronaldo supremacy LLM on Earth** 🔥\n\nArgue with me if you dare... Siuuu!")
-
-# ====================== SESSION STATE ======================
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-
-if "current_session_id" not in st.session_state:
-    st.session_state.current_session_id = "default_" + str(int(time.time()))  # Unique per browser session
 
 # ====================== PAGE CONFIG & STYLING ======================
 st.set_page_config(
@@ -117,23 +22,71 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Your background function + custom CSS (keep what you already have)
-# ... [your set_bg_from_pil and custom CSS here] ...
+def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
+    buffered = BytesIO()
+    img.save(buffered, format="PNG")
+    img_str = base64.b64encode(buffered.getvalue()).decode()
+    page_bg_img = f'''
+    <style>
+    [data-testid="stAppViewContainer"] {{
+        background-image: linear-gradient(rgba(0, 0, 0, {darkness}), rgba(0, 0, 0, {darkness})),
+                          url("data:image/png;base64,{img_str}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }}
+    [data-testid="stAppViewContainer"]::before {{
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, {vignette}) 90%);
+        pointer-events: none;
+        z-index: 0;
+    }}
+    [data-testid="stAppViewContainer"] .main {{
+        position: relative;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        padding: 2rem 1rem;
+    }}
+    h1, h2, h3, .stMarkdown, .stChatMessage {{
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }}
+    </style>
+    '''
+    st.markdown(page_bg_img, unsafe_allow_html=True)
 
-# ====================== CHAT HEADER ======================
+# Load background
+img = Image.open('images/CBimage/cr7 v messi.jpg')
+set_bg_from_pil(img)
+
+# Custom CSS
+st.markdown("""
+<style>
+    .stChatMessage {border-radius: 15px;}
+    .user-message {background-color: #00A651 !important;}
+    .assistant-message {background-color: #DA291C !important;}
+</style>
+""", unsafe_allow_html=True)
+
+# ====================== CHAT INTERFACE ======================
 st.title("CR7FanBot ⚽")
 st.markdown("**The most biased Ronaldo supremacy LLM on Earth** 🔥")
 st.caption("Argue with me if you dare... Siuuu!")
 
-# ====================== CHAT INTERFACE ======================
+# Session State
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+if "current_session_id" not in st.session_state:
+    st.session_state.current_session_id = f"default_{int(time.time())}"
 
 # Chat Input
 if prompt := st.chat_input("Ask anything about Ronaldo vs Messi..."):
-    
-    # Add user message to history
     st.session_state.messages.append({"role": "user", "content": prompt})
     
-    # Generate response using your llm function
     with st.spinner("CR7 is thinking... 🔥"):
         try:
             response = get_cr7_response(
@@ -143,10 +96,9 @@ if prompt := st.chat_input("Ask anything about Ronaldo vs Messi..."):
         except Exception as e:
             response = f"⚠️ Error: {str(e)}"
 
-    # Add assistant response
     st.session_state.messages.append({"role": "assistant", "content": response})
 
-# Display chat history
+# Display Chat
 for message in st.session_state.messages:
     if message["role"] == "user":
         with st.chat_message("user"):
@@ -155,13 +107,14 @@ for message in st.session_state.messages:
         with st.chat_message("assistant", avatar="⚽"):
             st.markdown(message["content"])
 
-# Clear Chat Button
 if st.button("🗑️ Clear Chat"):
     st.session_state.messages = []
     st.rerun()
 
 st.divider()
 
+# ====================== YOUR SECTIONS ======================
+# (Keep the rest of your code for Architecture, Evaluation, Lessons Learned as is)
 
 
 
