@@ -6,6 +6,9 @@ from io import BytesIO
 import sys
 from pathlib import Path
 import time
+from dotenv import load_dotenv
+load_dotenv()
+
 project_root = Path(__file__).resolve().parents[2]
 sys.path.append(str(project_root))
 from llm.llm import get_cr7_response
