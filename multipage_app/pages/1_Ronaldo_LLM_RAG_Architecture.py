@@ -6,7 +6,7 @@ from io import BytesIO
 import sys
 from pathlib import Path
 import time
-from multipage_app.llm.llm import get_cr7_response
+from llm.llm import get_cr7_response
 # ====================== PAGE CONFIG & STYLING ======================
 st.set_page_config(
     page_title="CR7FanBot ⚽",
