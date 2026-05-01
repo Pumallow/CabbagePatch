@@ -6,6 +6,8 @@ from io import BytesIO
 import sys
 from pathlib import Path
 import time
+project_root = Path(__file__).resolve().parents[2]
+sys.path.append(str(project_root))
 from llm.llm import get_cr7_response
 # ====================== PAGE CONFIG & STYLING ======================
 st.set_page_config(
