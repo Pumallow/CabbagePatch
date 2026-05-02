@@ -33,7 +33,7 @@ w,h = pfp.size
 p = pfp.resize((270,245))
 a = avt.resize((250,264))
 
-st.set_page_config(layout="wide", page_title= "Data Analytics/Science Journey")
+# st.set_page_config(layout="wide", page_title= "Data Analytics/Science Journey")
 st.markdown("""<h1 style= 'text-align: center; font-size: 40px'>To what extent does attendance and location effect the score for an Arsenal vs Tottenham match?</h1>""", unsafe_allow_html = True) 
 st.sidebar.success("Pages to Peruse")
 st.image(avt)
