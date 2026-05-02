@@ -13,7 +13,7 @@ pl2 = Image.open('images/PL2.PNG')
 esq = Image.open('images/ETL SQL.PNG')
 
 
-st.set_page_config(layout="wide", page_title= "Data Analytics/Science Journey")
+# st.set_page_config(layout="wide", page_title= "Data Analytics/Science Journey")
 st.markdown("<h1 style= 'text-align: center; font-size: 40px' >Projects that Opened Doors for Me in Data Analytics</h1>", unsafe_allow_html = True)
 st.sidebar.success("Pages to Peruse")
 st.markdown("""June, 2021 <br>
