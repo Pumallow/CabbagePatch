@@ -55,7 +55,7 @@ def groq_chat(prompt: str, model="llama-3.1-8b-instant", temperature=0.8):
         temperature=temperature,
         max_tokens=1024
     )
-    return response.choices[0].message["content"]
+    return response.choices[0].message.content
 
 # ====================== DeepEval Wrapper ======================
 class GroqDeepEvalLLM(DeepEvalBaseLLM):
