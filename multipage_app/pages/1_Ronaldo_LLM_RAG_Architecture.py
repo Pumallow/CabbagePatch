@@ -11,7 +11,7 @@ load_dotenv()
 
 from pages.llm.llm import get_cr7_response
 # ====================== PAGE CONFIG & STYLING ======================
-st.write("Secrets loaded:", "GROQ_API_KEY" in st.secrets)
+
 st.set_page_config(
     page_title="CR7FanBot ⚽",
     page_icon="⚽",
