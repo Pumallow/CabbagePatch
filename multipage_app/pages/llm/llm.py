@@ -26,7 +26,8 @@ from deepeval.models import DeepEvalBaseLLM
 load_dotenv()
 
 # ====================== CONFIG ======================
-PERSIST_DIRECTORY = "chroma_db"
+BASE_DIR = Path(__file__).resolve().parent
+PERSIST_DIRECTORY = BASE_DIR / "chroma_db"
 JSON_PATH = "data/comparison.json"
 
 SYSTEM_PROMPT = """
