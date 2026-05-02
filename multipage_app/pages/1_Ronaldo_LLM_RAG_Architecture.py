@@ -186,11 +186,10 @@ if st.session_state.show_stats:
         The Vectorstore was built atop of Chroma, HuggingfaceEmbeddings, and Langchain's documents library. Chroma was chosen for its lightweight, local, and ease of use. The Vectorstore with all 120 embedded facts was persisted within my github repo.
         Initially, a larger HuggingFace embedding model was experimented with however, due unnecessary overhead caused deployment issues. As a result, the Mini was chosen for its faster run times.
         """)
-            st.code("""
+        st.code("""
         embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
-        )
-            """, language="python")
+        )""", language="python")
     
     except:
         st.write("Please take quiz before clicking this button :D")
