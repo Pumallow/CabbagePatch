@@ -20,6 +20,7 @@ langchain-community==0.0.38
 langchain-chroma==0.1.4
 chromadb==0.4.22
 deepeval==3.9.7
+sentence-transformers==5.4.1
 
 # --- Embeddings / LLM clients ---
 groq==0.37.1
