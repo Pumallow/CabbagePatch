@@ -42,7 +42,7 @@ Use ONLY the provided facts. Never invent stats.
 
 # ====================== GROQ CLIENT ======================
 def get_groq_client():
-    return Groq(api_key=st.secrets["GROQ_API_KEY"])
+    return Groq(api_key="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")
 
 client = get_groq_client()
 
