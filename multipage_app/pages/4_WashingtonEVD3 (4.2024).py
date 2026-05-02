@@ -6,7 +6,7 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 
 
-st.set_page_config(layout="wide", page_title="D3 Washington Electric Vehicle Project")
+# st.set_page_config(layout="wide", page_title="D3 Washington Electric Vehicle Project")
 hide_default_format = """
        <style>
        #MainMenu {visibility: hidden; }
