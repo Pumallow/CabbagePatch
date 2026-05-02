@@ -13,8 +13,7 @@ from pages.llm.llm import get_cr7_response
 # ====================== PAGE CONFIG & STYLING ======================
 
 st.set_page_config(
-    page_title="CR7FanBot ⚽",
-    page_icon="⚽",
+    page_title="CR7FanLLM",
     layout="centered",
     initial_sidebar_state="collapsed"
 )
@@ -69,8 +68,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ====================== CHAT INTERFACE ======================
-st.title("CR7FanBot ⚽")
-st.markdown("**The most biased Ronaldo supremacy LLM on Earth** 🔥")
+st.title("This is the CR7 FAN LLM")
+st.markdown("**The most biased Ronaldo supremacy LLM on Earth**")
 st.caption("Argue with me if you dare... Siuuu!")
 
 # Session State
@@ -84,7 +83,7 @@ if "current_session_id" not in st.session_state:
 if prompt := st.chat_input("Ask anything about Ronaldo vs Messi..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     
-    with st.spinner("CR7 is thinking... 🔥"):
+    with st.spinner("CR7 FAN is thinking... "):
         try:
             response = get_cr7_response(
                 user_message=prompt, 
@@ -182,7 +181,17 @@ if st.session_state.show_stats:
                 )
             }
         )
-        
+        st.title("The Vectorstore")
+        st.markdown(""" 
+        The Vectorstore was built atop of Chroma, HuggingfaceEmbeddings, and Langchain's documents library. Chroma was chosen for its lightweight, local, and ease of use. The Vectorstore with all 120 embedded facts was persisted within my github repo.
+        Initially, a larger HuggingFace embedding model was experimented with however, due unnecessary overhead caused deployment issues. As a result, the Mini was chosen for its faster run times.
+        """)
+            st.code("""
+        embeddings = HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2"
+        )
+            """, language="python")
+    
     except:
         st.write("Please take quiz before clicking this button :D")
 
