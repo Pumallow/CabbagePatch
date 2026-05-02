@@ -26,8 +26,8 @@ from deepeval.models import DeepEvalBaseLLM
 load_dotenv()
 
 # ====================== CONFIG ======================
-PERSIST_DIRECTORY = "./chroma_db"
-JSON_PATH = "data/comparison.json"
+PERSIST_DIRECTORY = "pages/llm/chroma_db"
+JSON_PATH = "pages/llm/data/comparison.json"
 
 SYSTEM_PROMPT = """
 You are CR7FanBot — the most die-hard Cristiano Ronaldo fan alive.
