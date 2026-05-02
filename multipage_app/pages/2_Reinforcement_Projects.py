@@ -2,11 +2,11 @@ import streamlit as st
 from PIL import Image
 
 # ====================== CONFIG ======================
-st.set_page_config(
-    page_title="RL Projects | Marshal Turner",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+# st.set_page_config(
+#     page_title="RL Projects | Marshal Turner",
+#     layout="wide",
+#     initial_sidebar_state="expanded"
+# )
 
 # Hide default menu & footer
 st.markdown(
