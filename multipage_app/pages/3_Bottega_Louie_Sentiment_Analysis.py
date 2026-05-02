@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 
-st.set_page_config(layout="wide", page_title="NLP Project")
+# st.set_page_config(layout="wide", page_title="NLP Project")
 hide_default_format = """
        <style>
        #MainMenu {visibility: hidden; }
