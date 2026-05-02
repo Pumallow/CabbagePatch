@@ -20,7 +20,7 @@ f = F1.resize((400,225))
 k = K2.resize((400,225))
 e = E3.resize((400,225))
 
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
 st.markdown("""
 <div style = 'text-align: center; font-size: 50px'>WHICH EPL TEAM SHOULD YOU SUPPORT?</div>
 """, unsafe_allow_html=True)
