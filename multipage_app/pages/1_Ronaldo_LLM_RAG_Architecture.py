@@ -59,12 +59,40 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
 img = Image.open('images/CBimage/cr7 v messi.jpg')
 set_bg_from_pil(img)
 
-# Custom CSS
+# ====================== CUSTOM CSS ======================
 st.markdown("""
 <style>
     .stChatMessage {border-radius: 15px;}
-    .user-message {background-color: #00A651 !important;}
-    .assistant-message {background-color: #DA291C !important;}
+
+    /* User message - keep green */
+    .user-message {
+        background-color: #00A651 !important;
+        color: #ffffff !important;
+    }
+
+    /* Assistant message - Ronaldo red + white text */
+    .assistant-message {
+        background-color: #DA291C !important;
+        color: #ffffff !important;
+    }
+
+    /* Chat input placeholder */
+    .stChatInput input::placeholder {
+        color: #ffffff !important;
+        opacity: 0.85;
+    }
+
+    /* Caption text */
+    .stCaption {
+        color: #ffffff !important;
+        font-weight: 500;
+    }
+
+    /* General chat text */
+    .stChatMessage .stMarkdown,
+    .stChatMessage .stMarkdown p {
+        color: #ffffff !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
