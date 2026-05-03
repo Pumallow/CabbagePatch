@@ -22,6 +22,7 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
     buffered = BytesIO()
     img.save(buffered, format="PNG")
     img_str = base64.b64encode(buffered.getvalue()).decode()
+    
     page_bg_img = f'''
     <style>
     [data-testid="stAppViewContainer"] {{
@@ -32,6 +33,7 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
+    
     [data-testid="stAppViewContainer"]::before {{
         content: "";
         position: absolute;
@@ -40,6 +42,7 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
         pointer-events: none;
         z-index: 0;
     }}
+    
     [data-testid="stAppViewContainer"] .main {{
         position: relative;
         z-index: 1;
@@ -47,9 +50,51 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
         border-radius: 15px;
         padding: 2rem 1rem;
     }}
+    
     h1, h2, h3, .stMarkdown, .stChatMessage {{
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     }}
+
+    /* General styles */
+    .stChatMessage {{ border-radius: 15px; }}
+    .user-message {{ background-color: #00A651 !important; }}
+    .assistant-message {{ background-color: #DA291C !important; }}
+
+    /* ====================== MOBILE WHITE TEXT ====================== */
+    @media (max-width: 768px) {
+        * {{
+            color: #ffffff !important;
+        }}
+        
+        a, a:hover {{
+            color: #ffffff !important;
+        }}
+        
+        /* Chat messages */
+        .stChatMessage p,
+        .stChatMessage span,
+        .stChatMessage div {{
+            color: #ffffff !important;
+        }}
+        
+        /* Buttons */
+        button, .stButton button, .stButton button p {{
+            color: #ffffff !important;
+        }}
+        
+        /* Dataframes and tables */
+        .stDataFrame td, 
+        .stDataEditor td, 
+        .stDataEditor th,
+        .stDataFrame th {{
+            color: #ffffff !important;
+        }}
+        
+        /* Smaller text */
+        .stCaption, small, label, .stMarkdown p {{
+            color: #ffffff !important;
+        }}
+    }
     </style>
     '''
     st.markdown(page_bg_img, unsafe_allow_html=True)
