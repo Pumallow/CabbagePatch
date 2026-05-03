@@ -19,8 +19,8 @@ st.set_page_config(
 )
 
 def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
-    buffered = BytesIO()
-    img.save(buffered, format="PNG")
+    buffered = BytesIO()
+    img.save(buffered, format="PNG")
     img_str = base64.b64encode(buffered.getvalue()).decode()
     page_bg_img = f'''
     <style>
