@@ -19,96 +19,40 @@ st.set_page_config(
 )
 
 def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
-    buffered = BytesIO()
-    img.save(buffered, format="PNG")
-    img_str = base64.b64encode(buffered.getvalue()).decode()
-   
-    css = '''
-    <style>
-    [data-testid="stAppViewContainer"] {
-        background-image: linear-gradient(rgba(0, 0, 0, {darkness}), rgba(0, 0, 0, {darkness})),
-                          url("data:image/png;base64,{img_str}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-   
-    [data-testid="stAppViewContainer"]::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, {vignette}) 90%);
-        pointer-events: none;
-        z-index: 0;
-    }
-   
-    [data-testid="stAppViewContainer"] .main {
-        position: relative;
-        z-index: 1;
-        background-color: rgba(0, 0, 0, 0.1);
-        border-radius: 15px;
-        padding: 2rem 1rem;
-    }
-   
-    h1, h2, h3, .stMarkdown, .stChatMessage {
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-    }
-
-    /* General styles */
-    .stChatMessage { border-radius: 15px; }
-    .user-message { background-color: #00A651 !important; }
-    .assistant-message { background-color: #DA291C !important; }
-
-    /* ====================== MOBILE WHITE TEXT ====================== */
-    @media (max-width: 768px) {
-        [data-testid="stAppViewContainer"] * {
-            color: #ffffff !important;
-        }
-        
-        div[data-testid="stChatMessage"] *,
-        div[data-testid="stChatMessageContent"] *,
-        .stChatMessage * {
-            color: #ffffff !important;
-        }
-        
-        div[data-testid="stChatMessageContent"] p,
-        div[data-testid="stChatMessageContent"] span,
-        div[data-testid="stChatMessageContent"] div {
-            color: #ffffff !important;
-        }
-        
-        .stMarkdown p,
-        .stMarkdown h1,
-        .stMarkdown h2,
-        .stMarkdown h3,
-        .stCaption,
-        small,
-        label {
-            color: #ffffff !important;
-        }
-        
-        button, 
-        .stButton button * {
-            color: #ffffff !important;
-        }
-        
-        .stDataFrame *, 
-        .stDataEditor * {
-            color: #ffffff !important;
-        }
-    }
-    </style>
-    '''
-    
-    # Apply variables safely
-    page_bg_img = css.format(
-        darkness=darkness,
-        vignette=vignette,
-        img_str=img_str
-    )
-    
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+    buffered = BytesIO()
+    img.save(buffered, format="PNG")
+    img_str = base64.b64encode(buffered.getvalue()).decode()
+    page_bg_img = f'''
+    <style>
+    [data-testid="stAppViewContainer"] {{
+        background-image: linear-gradient(rgba(0, 0, 0, {darkness}), rgba(0, 0, 0, {darkness})),
+                          url("data:image/png;base64,{img_str}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }}
+    [data-testid="stAppViewContainer"]::before {{
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, {vignette}) 90%);
+        pointer-events: none;
+        z-index: 0;
+    }}
+    [data-testid="stAppViewContainer"] .main {{
+        position: relative;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        padding: 2rem 1rem;
+    }}
+    h1, h2, h3, .stMarkdown, .stChatMessage {{
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }}
+    </style>
+    '''
+    st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 # Load background
