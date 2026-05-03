@@ -60,38 +60,47 @@ img = Image.open('images/CBimage/cr7 v messi.jpg')
 set_bg_from_pil(img)
 
 # ====================== CUSTOM CSS ======================
+# ====================== CUSTOM CSS ======================
 st.markdown("""
 <style>
-    .stChatMessage {border-radius: 15px;}
+    /* Force white text on mobile + desktop */
+    h1, h2, h3, .stMarkdown h1, .stMarkdown h2 {
+        color: #ffffff !important;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+    }
 
-    /* User message - keep green */
-    .user-message {
-        background-color: #00A651 !important;
+    /* Main title */
+    .stApp h1 {
         color: #ffffff !important;
     }
 
-    /* Assistant message - Ronaldo red + white text */
-    .assistant-message {
-        background-color: #DA291C !important;
+    /* Subtitle / Markdown text */
+    .stMarkdown, .stMarkdown p, .stMarkdown h3 {
         color: #ffffff !important;
+    }
+
+    /* Caption */
+    .stCaption, .stCaption p {
+        color: #ffffff !important;
+        font-weight: 600;
     }
 
     /* Chat input placeholder */
     .stChatInput input::placeholder {
         color: #ffffff !important;
-        opacity: 0.85;
+        opacity: 0.9;
     }
 
-    /* Caption text */
-    .stCaption {
+    /* Assistant messages - white text */
+    .stChatMessage[data-testid="stChatMessage"] .stMarkdown,
+    .stChatMessage .stMarkdown p,
+    .stChatMessage[aria-label="assistant"] {
         color: #ffffff !important;
-        font-weight: 500;
     }
 
-    /* General chat text */
-    .stChatMessage .stMarkdown,
-    .stChatMessage .stMarkdown p {
-        color: #ffffff !important;
+    /* Background contrast fix */
+    [data-testid="stAppViewContainer"] .main {
+        background-color: rgba(0, 0, 0, 0.25) !important;
     }
 </style>
 """, unsafe_allow_html=True)
