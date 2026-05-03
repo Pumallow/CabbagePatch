@@ -109,8 +109,7 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
             color: #ffffff !important;
         }}
     }
-    </style>
-    '''
+    </style>'''
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Load background
