@@ -62,33 +62,47 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
 
     /* ====================== MOBILE WHITE TEXT ====================== */
     @media (max-width: 768px) {
-        * {{
-            color: #ffffff !important;
-        }}
-        
-        a, a:hover {{
-            color: #ffffff !important;
-        }}
-        
-        /* Chat messages */
-        .stChatMessage p,
-        .stChatMessage span,
-        .stChatMessage div {{
-            color: #ffffff !important;
-        }}
-        
-        /* Buttons */
-        button, .stButton button, .stButton button p {{
-            color: #ffffff !important;
-        }}
-        
-        /* Dataframes and tables */
-        .stDataFrame td, 
-        .stDataEditor td, 
-        .stDataEditor th,
-        .stDataFrame th {{
-            color: #ffffff !important;
-        }}
+    /* Force everything white */
+    [data-testid="stAppViewContainer"] * {
+        color: #ffffff !important;
+    }
+    
+    /* Specifically target chat messages (this is usually the stubborn one) */
+    div[data-testid="stChatMessage"] *,
+    div[data-testid="stChatMessageContent"] *,
+    .stChatMessage * {
+        color: #ffffff !important;
+    }
+    
+    /* Assistant and user message content */
+    div[data-testid="stChatMessageContent"] p,
+    div[data-testid="stChatMessageContent"] span,
+    div[data-testid="stChatMessageContent"] div {
+        color: #ffffff !important;
+    }
+    
+    /* Markdown text including your caption */
+    .stMarkdown p,
+    .stMarkdown h1,
+    .stMarkdown h2,
+    .stMarkdown h3,
+    .stCaption,
+    small,
+    label {
+        color: #ffffff !important;
+    }
+    
+    /* Buttons */
+    button, .stButton button * {
+        color: #ffffff !important;
+    }
+    
+    /* Data editor / tables */
+    .stDataFrame *, 
+    .stDataEditor * {
+        color: #ffffff !important;
+    }
+}
         
         /* Smaller text */
         .stCaption, small, label, .stMarkdown p {{
