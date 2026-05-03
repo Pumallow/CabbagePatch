@@ -22,7 +22,7 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
     buffered = BytesIO()
     img.save(buffered, format="PNG")
     img_str = base64.b64encode(buffered.getvalue()).decode()
-    
+   
     page_bg_img = f'''
     <style>
     [data-testid="stAppViewContainer"] {{
@@ -33,7 +33,7 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
-    
+   
     [data-testid="stAppViewContainer"]::before {{
         content: "";
         position: absolute;
@@ -42,7 +42,7 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
         pointer-events: none;
         z-index: 0;
     }}
-    
+   
     [data-testid="stAppViewContainer"] .main {{
         position: relative;
         z-index: 1;
@@ -50,7 +50,7 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
         border-radius: 15px;
         padding: 2rem 1rem;
     }}
-    
+   
     h1, h2, h3, .stMarkdown, .stChatMessage {{
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     }}
@@ -62,55 +62,51 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
 
     /* ====================== MOBILE WHITE TEXT ====================== */
     @media (max-width: 768px) {
-    /* Force everything white */
-    [data-testid="stAppViewContainer"] * {
-        color: #ffffff !important;
-    }
-    
-    /* Specifically target chat messages (this is usually the stubborn one) */
-    div[data-testid="stChatMessage"] *,
-    div[data-testid="stChatMessageContent"] *,
-    .stChatMessage * {
-        color: #ffffff !important;
-    }
-    
-    /* Assistant and user message content */
-    div[data-testid="stChatMessageContent"] p,
-    div[data-testid="stChatMessageContent"] span,
-    div[data-testid="stChatMessageContent"] div {
-        color: #ffffff !important;
-    }
-    
-    /* Markdown text including your caption */
-    .stMarkdown p,
-    .stMarkdown h1,
-    .stMarkdown h2,
-    .stMarkdown h3,
-    .stCaption,
-    small,
-    label {
-        color: #ffffff !important;
-    }
-    
-    /* Buttons */
-    button, .stButton button * {
-        color: #ffffff !important;
-    }
-    
-    /* Data editor / tables */
-    .stDataFrame *, 
-    .stDataEditor * {
-        color: #ffffff !important;
-    }
-}
-        
-        /* Smaller text */
-        .stCaption, small, label, .stMarkdown p {{
+        /* Force most elements white */
+        [data-testid="stAppViewContainer"] * {
             color: #ffffff !important;
-        }}
-    
-    </style>'''
+        }
+        
+        /* Strong targeting for chat messages */
+        div[data-testid="stChatMessage"] *,
+        div[data-testid="stChatMessageContent"] *,
+        .stChatMessage * {
+            color: #ffffff !important;
+        }
+        
+        div[data-testid="stChatMessageContent"] p,
+        div[data-testid="stChatMessageContent"] span,
+        div[data-testid="stChatMessageContent"] div {
+            color: #ffffff !important;
+        }
+        
+        /* Markdown + caption */
+        .stMarkdown p,
+        .stMarkdown h1,
+        .stMarkdown h2,
+        .stMarkdown h3,
+        .stCaption,
+        small,
+        label {
+            color: #ffffff !important;
+        }
+        
+        /* Buttons */
+        button, 
+        .stButton button * {
+            color: #ffffff !important;
+        }
+        
+        /* Dataframes */
+        .stDataFrame *, 
+        .stDataEditor * {
+            color: #ffffff !important;
+        }
+    }
+    </style>
+    '''
     st.markdown(page_bg_img, unsafe_allow_html=True)
+
 
 # Load background
 img = Image.open('images/CBimage/cr7 v messi.jpg')
