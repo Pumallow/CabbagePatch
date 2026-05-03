@@ -108,7 +108,7 @@ def set_bg_from_pil(img, darkness=0.65, vignette=0.4):
         .stCaption, small, label, .stMarkdown p {{
             color: #ffffff !important;
         }}
-    }
+    
     </style>'''
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
