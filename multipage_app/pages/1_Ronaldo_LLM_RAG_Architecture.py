@@ -361,7 +361,9 @@ if st.session_state.show_stats3:
         for the game and Portuguese hero, Cristiano Ronaldo does not have a clear dominance over Messi and vice versa. Like me, the LLM bot would implement sarcasm or embellish on details to sway the narrative in its favor when the topic 
         didn't sit well for Ronaldo. 
         Many challenges sat within the unexpected corners of the project scope. OpenAI's limited free daily token supply slowed my progress and DeepEval's default version compatibilities with my environment continuously threw errors in my face.
-        Sync generation for the vector store prevented me from properly vectorizing the data and 
+        Sync generation for the vector store prevented me from properly vectorizing the data and retaining it in a file as the LLM's data source. Certain models, either for the vectorizing, the LLM, or behind the LLM's judge caused severe
+        latency issues due to their overhead costs. 
+        Future expansions would entail building a retrieval heatmap, a confidence score for model given answers, and a hallucination detector.
         """)
     except:
         st.write("Please take quiz before clicking this button :D")
