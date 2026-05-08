@@ -28,7 +28,7 @@ load_dotenv()
 # ====================== CONFIG ======================
 BASE_DIR = Path(__file__).resolve().parent
 PERSIST_DIRECTORY = BASE_DIR / "chroma_db"
-JSON_PATH = "data/comparison.json"
+JSON_PATH = BASE_DIR / "data" / "comparison.json"
 
 SYSTEM_PROMPT = """
 You are CR7FanBot — the most die-hard Cristiano Ronaldo fan alive.
