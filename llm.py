@@ -54,6 +54,18 @@ def get_groq_client():
     
     return Groq(api_key=API_KEY)
 client = get_groq_client()
+# def get_groq_client():
+#     try:
+#         # First try Streamlit secrets (works on Streamlit Cloud)
+#         api_key = st.secrets["GROQ_API_KEY"]
+#     except:
+#         # Fallback: Try .env (for local development)
+#         api_key = os.getenv("GROQ_API_KEY")
+    
+#     if not api_key or not api_key.startswith("gsk_"):
+#         raise ValueError("❌ Groq API Key not found! Add it to secrets.toml or .env")
+    
+#     return Groq(api_key=api_key)
 # ====================== LLM WRAPPER ======================
 def groq_chat(prompt: str, model="llama-3.1-8b-instant", temperature=0.8):
     response = client.chat.completions.create(
