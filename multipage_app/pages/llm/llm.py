@@ -47,7 +47,7 @@ Use ONLY the provided facts. Never invent stats.
 # ====================== GROQ CLIENT ======================
 def get_groq_client():
     # ⚠️ Hardcoded for local development only
-    API_KEY = "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"   # ← Put your real key here
+    API_KEY = "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"   # ← Put your real key here
     
     if not API_KEY or API_KEY == "gsk_your_actual_valid_key_here":
         raise ValueError("Please put your valid Groq API key in the code")
