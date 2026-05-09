@@ -66,6 +66,7 @@ def get_groq_client():
         raise ValueError("❌ Groq API Key not found! Add it to secrets.toml or .env")
     
     return Groq(api_key=api_key)
+client = get_groq_client()
 # ====================== LLM WRAPPER ======================
 def groq_chat(prompt: str, model="llama-3.1-8b-instant", temperature=0.8):
     response = client.chat.completions.create(
