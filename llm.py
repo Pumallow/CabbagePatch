@@ -45,27 +45,27 @@ Use ONLY the provided facts. Never invent stats.
 """
 
 # ====================== GROQ CLIENT ======================
-def get_groq_client():
-    # ⚠️ Hardcoded for local development only
-    API_KEY = "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"   # ← Put your real key here
-    
-    if not API_KEY or API_KEY == "gsk_your_actual_valid_key_here":
-        raise ValueError("Please put your valid Groq API key in the code")
-    
-    return Groq(api_key=API_KEY)
-client = get_groq_client()
 # def get_groq_client():
-#     try:
-#         # First try Streamlit secrets (works on Streamlit Cloud)
-#         api_key = st.secrets["GROQ_API_KEY"]
-#     except:
-#         # Fallback: Try .env (for local development)
-#         api_key = os.getenv("GROQ_API_KEY")
+#     # ⚠️ Hardcoded for local development only
+#     API_KEY = "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"   # ← Put your real key here
     
-#     if not api_key or not api_key.startswith("gsk_"):
-#         raise ValueError("❌ Groq API Key not found! Add it to secrets.toml or .env")
+#     if not API_KEY or API_KEY == "gsk_your_actual_valid_key_here":
+#         raise ValueError("Please put your valid Groq API key in the code")
     
-#     return Groq(api_key=api_key)
+#     return Groq(api_key=API_KEY)
+# client = get_groq_client()
+def get_groq_client():
+    try:
+        # First try Streamlit secrets (works on Streamlit Cloud)
+        api_key = st.secrets["GROQ_API_KEY"]
+    except:
+        # Fallback: Try .env (for local development)
+        api_key = os.getenv("GROQ_API_KEY")
+    
+    if not api_key or not api_key.startswith("gsk_"):
+        raise ValueError("❌ Groq API Key not found! Add it to secrets.toml or .env")
+    
+    return Groq(api_key=api_key)
 # ====================== LLM WRAPPER ======================
 def groq_chat(prompt: str, model="llama-3.1-8b-instant", temperature=0.8):
     response = client.chat.completions.create(
