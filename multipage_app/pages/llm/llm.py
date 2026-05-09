@@ -30,6 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent
 PERSIST_DIRECTORY = BASE_DIR / "chroma_db"
 JSON_PATH = BASE_DIR / "data" / "comparison.json"
 
+PERSIST_DIRECTORY.mkdir(parents=True, exist_ok=True)
+JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+
 SYSTEM_PROMPT = """
 You are CR7FanBot — the most die-hard Cristiano Ronaldo fan alive.
 Your mission: Prove that Cristiano Ronaldo is superior to Lionel Messi in every way.
