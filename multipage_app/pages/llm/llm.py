@@ -46,9 +46,13 @@ Use ONLY the provided facts. Never invent stats.
 
 # ====================== GROQ CLIENT ======================
 def get_groq_client():
-    return Groq(api_key="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")
-
-client = get_groq_client()
+    # ⚠️ Hardcoded for local development only
+    API_KEY = "gsk_your_actual_valid_key_here"   # ← Put your real key here
+    
+    if not API_KEY or API_KEY == "gsk_your_actual_valid_key_here":
+        raise ValueError("Please put your valid Groq API key in the code")
+    
+    return Groq(api_key=API_KEY)
 
 # ====================== LLM WRAPPER ======================
 def groq_chat(prompt: str, model="llama-3.1-8b-instant", temperature=0.8):
