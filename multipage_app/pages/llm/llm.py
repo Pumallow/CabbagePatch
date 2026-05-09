@@ -26,7 +26,7 @@ from deepeval.models import DeepEvalBaseLLM
 load_dotenv()
 
 # ====================== CONFIG ======================
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 PERSIST_DIRECTORY = BASE_DIR / "chroma_db"
 JSON_PATH = BASE_DIR / "data" / "comparison.json"
 
@@ -83,11 +83,16 @@ def get_vectorstore():
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
 
-    if not Path(PERSIST_DIRECTORY).exists():
-        raise FileNotFoundError("Vectorstore missing. Run create_vectorstore.py")
+    persist_dir_str = str(PERSIST_DIRECTORY)
+    
+    print("DEBUG: persist_directory =", persist_dir_str)
+    print("DEBUG: type =", type(persist_dir_str))
+    
+    if not PERSIST_DIRECTORY.exists():
+        raise FileNotFoundError(f"Vectorstore folder not found at:\n{persist_dir_str}\nPlease run create_vectorstore.py first.")
 
     vectorstore = Chroma(
-        persist_directory=PERSIST_DIRECTORY,
+        persist_directory=persist_dir_str,
         embedding_function=embeddings,
         collection_name="ronaldo_messi_comparison"
     )
