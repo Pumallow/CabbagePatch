@@ -53,7 +53,7 @@ def get_groq_client():
         raise ValueError("Please put your valid Groq API key in the code")
     
     return Groq(api_key=API_KEY)
-
+client = get_groq_client()
 # ====================== LLM WRAPPER ======================
 def groq_chat(prompt: str, model="llama-3.1-8b-instant", temperature=0.8):
     response = client.chat.completions.create(
