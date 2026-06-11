@@ -133,3 +133,11 @@ Final outputs also rendered the computational costs for each run (fractions of c
 
 [[{'faithfulness': 0.6153846153846154, 'answer_relevancy': 0.7083333333333334}, nan, nan, 0.0004946], [{'faithfulness': 0.7857142857142857, 'answer_relevancy': 0.8095238095238095}, nan, nan, 0.0005334000000000001], [{'faithfulness': 0.3333333333333333, 'answer_relevancy': 0.6666666666666666}, nan, nan, 0.0005244000000000001]]
 
+
+
+Further Expansions:
+
+I would resource other API taps like google search engines to find the most ideal websites with online educators and possibly quiz taking to ensure any material watched can then be tested on.
+Further testing can be done with more test sampling with stronger models to accommodate the larger work loads.
+A neutral juxtaposing LLM judge can be leveraged to unbiasely evaluate the outputs as well with deeper insight into the 4 metrics.
+Further analysis can also be done on latency and computational cost processes either through the evaluation on the OpenAI UI side or via the backend dictionary provided in outputs.
