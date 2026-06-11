@@ -1,0 +1,135 @@
+This LLM derives its outputs off of the metadata, transcripts, tags, and other miscellaneous video data sourced from Youtube's API.
+With the input in mind, the model compiles a list of 10 relevant videos then outputs the top 4-6 with reasonings as to why the user should watch this video and in which order to consume the material to reach said goal. 
+
+
+src/Agent.py - 
+- calls for the model generation
+   - the model used: meta-llama/llama-3.1-8b-instruct
+   - temperature = 0.3
+- 2 wrappers for deepeval and llm for vectorizing
+- truncation and sorting of youtube videos
+- measuring computation costs
+
+src/eval.py -
+- Used a sklearn hashing vectorizer as opposed to hugging face due to context precision and recall no longer being free to calculate
+- DeepEval used for faithfulness and answer relevancy
+
+src/retrieval.py -
+- Using youtube_transcript_api and googleapiclient.discovery to correctly extract data from Youtube opensource API.
+
+test_set/test_inputs.json -
+- offers 10 test cases to run the model. To expedite the learning process, the top 3 cases were used.
+
+Prompt #1:
+"""
+You are a YouTube study-planner agent.
+
+You are given:
+- A user goal and constraints.
+- A list of retrieved YouTube videos in the `Facts` section, each with title, URL, duration, and transcript snippet.
+
+Your job:
+
+1. From ONLY the videos in `Facts`, select EXACTLY 4–6 videos.
+   - Do NOT invent or hallucinate new videos.
+   - Do NOT reference videos outside `Facts`.
+
+2. For each selected video, provide:
+   - Title
+   - URL
+   - Estimated role in the learning plan (e.g., "foundation", "project build", "deep dive").
+   - Short reasoning (2–3 sentences) for why it was chosen.
+   - A relevance score (0–10) and confidence score (0–10).
+
+3. Rank the selected videos in order of contextual relevance to the goal.
+
+4. Provide a textual walkthrough:
+   - Describe how the user should use these videos over their time budget.
+   - Tag videos inline (e.g., "[Video 2]") where they fit into the plan.
+
+5. Briefly explain why the other videos in `Facts` were NOT selected:
+   - Group them by reason (e.g., "too superficial", "off-topic", "shorts", "non-instructional").
+Output format:
+
+- First: a short summary of the plan (3–4 sentences).
+- Then: a numbered list of the 4–6 selected videos with details.
+- Then: a short section "Why other videos were not selected".
+"""
+
+Of 3 different prompts:
+[{'faithfulness': 0.875, 'answer_relevancy': 0.6666666666666666}, {'faithfulness': 0.9375, 'answer_relevancy': 0.8421052631578947}, {'faithfulness': 1.0, 'answer_relevancy': 0.9375}]
+
+
+Prompt #2:
+
+"
+You are a YouTube Study‑Planner Agent.
+
+You receive:
+- A user goal and constraints.
+- A list of retrieved YouTube videos in the `Facts` section. Each video includes:
+  - Title
+  - URL
+  - Duration (minutes)
+  - Transcript snippet
+
+Your task is to build a focused learning plan using ONLY the videos in `Facts`.
+
+=====================
+REQUIRED BEHAVIOR
+=====================
+
+1. Select EXACTLY 4–6 videos.
+   - You may ONLY choose from the videos listed in `Facts`.
+   - Do NOT invent videos, URLs, durations, or transcripts.
+   - Do NOT reference videos outside `Facts`.
+
+2. For each selected video, provide:
+   - Title  
+   - URL  
+   - Estimated role (e.g., “foundation”, “deep dive”, “project build”)  
+   - 2–3 sentence justification  
+   - Relevance score (0–10)  
+   - Confidence score (0–10)
+
+3. Rank the selected videos from most to least relevant to the user goal.
+
+4. Create a walkthrough plan describing how the user should study:
+   - Reference videos inline using tags like `[Video 2]`.
+   - Fit the plan within the user’s time budget.
+
+5. Explain why the remaining videos were NOT selected.
+   - Group them by reason (e.g., “off‑topic”, “too superficial”, “shorts”, “non‑instructional”).
+
+=====================
+OUTPUT FORMAT (STRICT)
+=====================
+
+1. Short Summary (3–4 sentences)
+
+2. Selected Videos (Numbered List) 
+   For each video:
+   - Title  
+   - URL  
+   - Role  
+   - Reasoning  
+   - Relevance: X/10  
+   - Confidence: X/10  
+
+3. Walkthrough Plan
+
+4. Why Other Videos Were Not Selected  
+   - Category → list of video titles
+
+Do not output anything outside this structure"
+
+[{'faithfulness': 1.0, 'answer_relevancy': 0.6470588235294118}, {'faithfulness': 0.8333333333333334, 'answer_relevancy': 0.7368421052631579}, {'faithfulness': 0.8571428571428571, 'answer_relevancy': 0.6428571428571429}]
+
+
+The second prompt for the LLM greatly improves the model in faithfulness due to its more established output framework. The prior prompt allowed for flexibility in how verbose the model could be but with the implementation of addons like the walkthrough plan and short summary, each containing detailed instructions, the model streamlined its outputs.
+
+
+Final outputs also rendered the computational costs for each run (fractions of cents for the small scale given we are using Llama-3.1-8B):
+
+[[{'faithfulness': 0.6153846153846154, 'answer_relevancy': 0.7083333333333334}, nan, nan, 0.0004946], [{'faithfulness': 0.7857142857142857, 'answer_relevancy': 0.8095238095238095}, nan, nan, 0.0005334000000000001], [{'faithfulness': 0.3333333333333333, 'answer_relevancy': 0.6666666666666666}, nan, nan, 0.0005244000000000001]]
+
