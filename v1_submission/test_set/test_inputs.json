@@ -1,0 +1,122 @@
+[
+{
+    "persona_id": "weekend_react_dev",
+    "goal": "Build a small React app this weekened, something like a habit tracker with local storage",
+    "time_budget_minutes": 360,
+    "user_context": {
+        "background": "Python backend engineer, 5 years experience",
+        "known": ["JavaScript", "JSX", "Vite tooling", "React hooks", "Component patterns"],
+        "unknown": [],
+        "constraints": "I prefer project-based content. Avoid pure-theory lectures and 'in 100 seconds' surface intros."
+        }
+},
+
+{
+  "persona_id": "beginner_python_dev",
+  "goal": "Learn enough Python to automate simple tasks at work",
+  "time_budget_minutes": 240,
+  "user_context": {
+    "background": "No programming experience",
+    "known": ["Basic computer usage"],
+    "unknown": ["Python syntax", "Variables", "Loops", "Functions", "File I/O"],
+    "constraints": "Prefer slow-paced beginner-friendly tutorials; avoid advanced jargon."
+  }
+},
+
+{
+  "persona_id": "ml_engineer_upskilling",
+  "goal": "Understand modern LLM architectures and inference optimizations",
+  "time_budget_minutes": 480,
+  "user_context": {
+    "background": "Machine learning engineer, 3 years experience",
+    "known": ["Transformers", "PyTorch", "Training pipelines"],
+    "unknown": ["Speculative decoding", "KV caching", "Quantization", "LoRA adapters"],
+    "constraints": "Prefer deep technical content; avoid beginner intros."
+  }
+},
+
+{
+  "persona_id": "frontend_to_fullstack",
+  "goal": "Learn backend fundamentals to build a full-stack app",
+  "time_budget_minutes": 300,
+  "user_context": {
+    "background": "Frontend React developer",
+    "known": ["JavaScript", "React", "CSS"],
+    "unknown": ["Node.js", "Express", "Databases", "Authentication"],
+    "constraints": "Prefer project-based tutorials; avoid theory-only videos."
+  }
+},
+
+{
+  "persona_id": "data_analyst_sql",
+  "goal": "Learn SQL enough to query production datasets",
+  "time_budget_minutes": 180,
+  "user_context": {
+    "background": "Business analyst",
+    "known": ["Excel", "Basic data concepts"],
+    "unknown": ["SELECT", "JOIN", "GROUP BY", "Window functions"],
+    "constraints": "Prefer practical examples; avoid long lectures."
+  }
+},
+
+{
+  "persona_id": "rust_systems_newbie",
+  "goal": "Learn Rust basics to understand systems programming",
+  "time_budget_minutes": 420,
+  "user_context": {
+    "background": "C++ developer",
+    "known": ["Pointers", "Memory management", "Compilers"],
+    "unknown": ["Ownership", "Borrowing", "Cargo", "Traits"],
+    "constraints": "Avoid overly slow beginner content; prefer concise technical explanations."
+  }
+},
+
+{
+  "persona_id": "pm_ai_overview",
+  "goal": "Understand how LLM products are built end-to-end",
+  "time_budget_minutes": 200,
+  "user_context": {
+    "background": "Product manager",
+    "known": ["User research", "Roadmapping"],
+    "unknown": ["LLM APIs", "RAG", "Evaluation", "Latency tradeoffs"],
+    "constraints": "Avoid math-heavy videos; prefer conceptual explainers."
+  }
+},
+
+{
+  "persona_id": "designer_to_frontend",
+  "goal": "Learn enough HTML/CSS/JS to build static websites",
+  "time_budget_minutes": 240,
+  "user_context": {
+    "background": "UI/UX designer",
+    "known": ["Figma", "Design systems"],
+    "unknown": ["HTML", "CSS Grid", "Flexbox", "DOM basics"],
+    "constraints": "Prefer visual, example-driven content."
+  }
+},
+
+{
+  "persona_id": "devops_new_hire",
+  "goal": "Learn Docker fundamentals for deployment",
+  "time_budget_minutes": 180,
+  "user_context": {
+    "background": "Junior engineer",
+    "known": ["Linux basics"],
+    "unknown": ["Dockerfiles", "Images", "Containers", "Volumes"],
+    "constraints": "Avoid Kubernetes content; focus only on Docker."
+  }
+},
+
+{
+  "persona_id": "cybersec_beginner",
+  "goal": "Learn ethical hacking fundamentals",
+  "time_budget_minutes": 300,
+  "user_context": {
+    "background": "IT support",
+    "known": ["Networking basics"],
+    "unknown": ["Recon", "OWASP", "Burp Suite", "Vulnerability scanning"],
+    "constraints": "Avoid illegal content; prefer structured, ethical tutorials."
+}
+}
+
+]
