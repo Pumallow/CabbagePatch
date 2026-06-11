@@ -1,4 +1,0 @@
-# Streamlit secrets
-secrets.toml
-.streamlit/secrets.toml
-multipage_app/pages/llm/.streamlit/secrets.toml
