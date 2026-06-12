@@ -20,6 +20,9 @@ src/retrieval.py -
 test_set/test_inputs.json -
 - offers 10 test cases to run the model. To expedite the learning process, the top 5 cases were used.
 
+
+Here we compare 2 different prompts to see if the model will improve in performance:
+
 Prompt #1:
 """
 You are a YouTube study-planner agent.
@@ -123,21 +126,45 @@ OUTPUT FORMAT (STRICT)
 
 Do not output anything outside this structure"
 
+(FIRST 3 TESTS)
 [{'faithfulness': 1.0, 'answer_relevancy': 0.6470588235294118}, {'faithfulness': 0.8333333333333334, 'answer_relevancy': 0.7368421052631579}, {'faithfulness': 0.8571428571428571, 'answer_relevancy': 0.6428571428571429}]
 
 
 The second prompt for the LLM greatly improves the model in faithfulness due to its more established output framework. The prior prompt allowed for flexibility in how verbose the model could be but with the implementation of addons like the walkthrough plan and short summary, each containing detailed instructions, the model streamlined its outputs.
+The answer relevancy remains quite steady despite the number of tests. Computational lag rests heavily on the evaluation methods however, pulling the data is quick.
+
+Strengths:
+
+The model does well combining the goals with the known inputs: 
+----For test 3
+Goal: Understand modern LLM architectures and inference optimizations
+Unknown: Speculative decoding, KV caching, Quantization, LoRA adapters
+1. **Video 1: LLM inference optimization: Architecture, KV cache and Flash attention**
+
+The model also excels at takes heed to constraints at times:
+--- With test 1
+"Avoid pure-theory lectures and 'in 100 seconds' surface intros."
+* **Shorts**: Video 6: When a Javascript developer discovers React for the first time...
+
+
+Found Errors:
+Halucinations -----
+Input 2 requests a "slow-paced and beginner-friendly, avoiding advanced jargon"
+Within the short summary its states: "The selected videos are designed to be slow-paced and beginner-friendly, avoiding advanced jargon."
+
+The model then provides videos titled:
+1. **Video 1: Do THIS instead of watching endless tutorials - how I’d learn Python FAST…**
+2. **Video 6: How I Would Learn Python FAST (if I could start over)**
 
 
 Final outputs also rendered the computational costs for each run (fractions of cents for the small scale given we are using Llama-3.1-8B):
 
 [[{'faithfulness': 0.6153846153846154, 'answer_relevancy': 0.7083333333333334}, nan, nan, 0.0004946], [{'faithfulness': 0.7857142857142857, 'answer_relevancy': 0.8095238095238095}, nan, nan, 0.0005334000000000001], [{'faithfulness': 0.3333333333333333, 'answer_relevancy': 0.6666666666666666}, nan, nan, 0.0005244000000000001]]
 
-
-
 Further Expansions:
 
-I would resource other API taps like google search engines to find the most ideal websites with online educators and possibly quiz taking to ensure any material watched can then be tested on.
-Further testing can be done with more test sampling with stronger models to accommodate the larger work loads.
-A neutral juxtaposing LLM judge can be leveraged to unbiasely evaluate the outputs as well with deeper insight into the 4 metrics.
-Further analysis can also be done on latency and computational cost processes either through the evaluation on the OpenAI UI side or via the backend dictionary provided in outputs.
+I would resource other API taps like google search engines to find the most ideal websites with online educators and possibly quiz taking to ensure any material watched can then be tested on. Further testing can be done with more test sampling with stronger models to accommodate the larger work loads. A neutral juxtaposing LLM judge can be leveraged to unbiasely evaluate the outputs as well with deeper insight into the 4 metrics. Further analysis can also be done on latency and computational cost processes either through the evaluation on the OpenAI UI side or via the backend dictionary provided in outputs.
+
+A deeper dive needs to be put on the constraints portions of the input. They should influence the model's approach to sorting the videos as opposed to key terminology or inquiring about the goal.
+
+From a scalability approach, the use for each query will need to be optimized so chunking analysis should be implemented as well.
