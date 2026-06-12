@@ -18,7 +18,7 @@ src/retrieval.py -
 - Using youtube_transcript_api and googleapiclient.discovery to correctly extract data from Youtube opensource API.
 
 test_set/test_inputs.json -
-- offers 10 test cases to run the model. To expedite the learning process, the top 3 cases were used.
+- offers 10 test cases to run the model. To expedite the learning process, the top 5 cases were used.
 
 Prompt #1:
 """
